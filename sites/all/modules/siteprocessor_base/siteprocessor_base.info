@@ -1,0 +1,7 @@
+core = "7.x"
+dependencies[] = "strongarm"
+features[ctools][] = "strongarm:strongarm:1"
+features[variable][] = "admin_theme"
+features[variable][] = "clean_url"
+name = "siteprocessor_base"
+package = "Siteprocessor"

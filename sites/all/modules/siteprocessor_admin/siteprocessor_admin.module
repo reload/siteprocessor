@@ -1,0 +1,24 @@
+<?php
+
+function siteprocessor_admin_permission() {
+  return array(
+    'administer site processor configuration'=>array(
+      'title'=>t('administer site processor configuration'),
+      'description'=>t('administer site processor configuration'),
+    ),
+  );
+}
+
+function siteprocessor_admin_menu() {
+  $items['admin/config/system/gemius'] = array(
+    'title' => 'Gemius Statistics',
+    'description' => 'Configure Gemius statistics',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('gemius_admin_settings_form'),
+    'access arguments' => array('administer gemius analytics'),
+    'file' => 'gemius.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}

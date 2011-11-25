@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Code for the siteprocessor_base feature.
+ */
+
+include_once('siteprocessor_base.features.inc');
+
+function siteprocessor_base_block_info(){
+  $blocks=array(
+    'frontpage' =>array(
+      'info' => t('Front page button'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),
+  );
+  return $blocks;
+}
+
+function siteprocessor_base_block_view($delta){
+  $block=array();
+  switch ($delta){
+    case 'frontpage':
+    $block['subject'] ='Home button';
+    $block['content']='<a class="frontpage-link" href="/">'.t('Front page').'</a>';
+    break;
+  }
+  return $block;
+}

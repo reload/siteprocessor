@@ -1,0 +1,14 @@
+name = KayKay 
+description = Theme for koebenhavns kommune
+core = 7.x
+
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/colors.css
+stylesheets[print][] = css/print.css
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+plugins[panels][layouts] = layouts

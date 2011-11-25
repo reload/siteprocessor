@@ -1,0 +1,3 @@
+core = "7.x"
+name = "siteprocessor_contact"
+package = "Siteprocessor"

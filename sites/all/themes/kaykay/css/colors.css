@@ -1,0 +1,89 @@
+body {
+  background-color:#EEFFEE;
+  color:black;
+}
+
+#page-wrapper {
+  background-color:#d4e7f3;
+  border-color:black;
+}
+
+
+.summary {
+      color: #444444;
+
+}
+
+
+.submitted{
+  color:#666;
+}
+
+a {
+  color:#ce5c00;
+}
+a:hover {
+  color:#8c2e0b;
+}
+
+
+.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a {
+  color:black;
+  /*background:#DDDD44;*/
+    background-color:#FFFF88;
+}
+
+.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a.active-trail {
+  color:white;
+  background-color:#666622;
+}
+/*.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a {
+  color:white;
+  background-color:#666622;
+}
+*/
+
+
+/*.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a:hover {
+  background-color:#FFFF88;
+}*/
+
+.panel-100-66-33 .content-wrapper/* , .panel-100-66-33   .panel-row-split .panel-col-last, .panel-100-66-33   .panel-row-split .panel-col-first */{
+  background: white;
+}
+
+
+
+
+
+
+
+
+.panel-33-66 .panel-col-left  .menu-name-main-menu > ul > li > a {
+  color:black;
+  /*background:#DDDD44;*/
+    background-color:#FFFF88;
+}
+
+.panel-33-66 .panel-col-left  .menu-name-main-menu > ul > li > a.active-trail {
+  color:white;
+  background-color:#666622;
+}
+/*.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a {
+  color:white;
+  background-color:#666622;
+}
+*/
+
+
+/*.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a:hover {
+  background-color:#FFFF88;
+}*/
+
+.panel-33-66 .content-wrapper/* , .panel-100-66-33   .panel-row-split .panel-col-last, .panel-100-66-33   .panel-row-split .panel-col-first */{
+  background: white;
+}
+
+.panel-33-66 .pane-siteprocessor-base-frontpage a.frontpage-link {
+  color:black;
+}

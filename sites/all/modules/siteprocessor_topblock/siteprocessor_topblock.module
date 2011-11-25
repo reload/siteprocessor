@@ -1,0 +1,110 @@
+<?php
+
+function siteprocessor_topblock_block_info(){
+  $blocks=array(
+    'topblock' =>array(
+      'info' => t('Top block'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),
+  );
+  return $blocks;
+}
+
+function siteprocessor_topblock_block_view($delta){
+  $block=array();
+  switch ($delta){
+    case 'topblock':
+    $block['subject'] ='';
+    //$block['#theme'] ='';
+    //$block['content'] ='TOP BLOCK CONTENT';
+    if ($image_fid = variable_get('siteprocessor_topblock_image_fid', FALSE)) {
+      $image = file_load($image_fid);
+      $block['content']=theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri));
+    }
+    else {
+      $block['content']='';
+    }
+    break;
+  }
+  return $block;
+}
+
+function siteprocessor_topblock_permission() {
+  return array(
+    'administer site processor top block'=>array(
+      'title'=>t('administer site processor top block'),
+      'description'=>t('administer site processor top block'),
+    ),
+  );
+}
+
+function siteprocessor_topblock_menu() {
+  $items['admin/media/siteprocessor_topblock'] = array(
+    'title' => 'Topblock admin',
+    'description' => 'Topblock admin',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_topblock_settings_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer siteprocessor top block '),
+    'file' => 'siteprocessor_topblock.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+function siteprocessor_topblock_settings_form_submit($form, &$form_state) {
+  // When using the #managed_file form element the file is automatically
+  // uploaded an saved to the {file} table. The value of the corresponding
+  // form element is set to the {file}.fid of the new file.
+
+
+  // If fid is not 0 we have a valid file.
+  if ($form_state['values']['siteprocessor_topblock_image_fid'] != 0) {
+    // The new file's status is set to 0 or temporary and in order to ensure
+    // that the file is not removed after 6 hours we need to change it's status
+    // to 1. Save the ID of the uploaded image for later use.
+    $file = file_load($form_state['values']['siteprocessor_topblock_image_fid']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+
+    // When a module is managing a file, it must manage the usage count.
+    // Here we increment the usage count with file_usage_add().
+    file_usage_add($file, 'siteprocessor_topblock', 'topblock_image', 1);
+
+    // Save the fid of the file so that the module can reference it later.
+    variable_set('siteprocessor_topblock_image_fid', $file->fid);
+    drupal_set_message(t('The image @image_name was uploaded and saved with an ID of @fid', array('@image_name' => $file->filename, '@fid' => $file->fid)));
+  }
+  // If the file was removed we need to remove the module's reference to the
+  // removed file's fid, and remove the file.
+  elseif ($form_state['values']['siteprocessor_topblock_image_fid'] == 0) {
+    // Retrieve the old file's id.
+    $fid = variable_get('siteprocessor_topblock_image_fid', FALSE);
+    $file = $fid ? file_load($fid) : FALSE;
+    if ($file) {
+      // When a module is managing a file, it must manage the usage count.
+      // Here we decrement the usage count with file_usage_delete().
+      file_usage_delete($file, 'siteprocessor_topblock', 'topblock_image', 1);
+
+      // The file_delete() function takes a file object and checks to see if
+      // the file is being used by any other modules. If it is the delete
+      // operation is cancelled, otherwise the file is deleted.
+      file_delete($file);
+    }
+
+    // Either way the module needs to update it's reference since even if the
+    // file is in use by another module and not deleted we no longer want to
+    // use it.
+    variable_set('siteprocessor_topblock_image_fid', FALSE);
+    drupal_set_message(t('The image @image_name was removed.', array('@image_name' => $file->filename)));
+  }
+}
+
+
+function siteprocessor_topblock_settings_form_validate($form, &$form_state) {
+  if (!isset($form_state['values']['siteprocessor_topblock_image_fid']) || !is_numeric($form_state['values']['siteprocessor_topblock_image_fid'])) {
+    form_set_error('siteprocessor_topblock_image_fid', t('Please select an image to upload.'));
+  }
+}

@@ -1,0 +1,22 @@
+<?php
+
+function siteprocessor_contact_block_info(){
+  $blocks=array(
+    'footer_text' =>array(
+      'info' => t('Footer contact text'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),
+  );
+  return $blocks;
+}
+
+function siteprocessor_contact_block_view($delta){
+  $block=array();
+  switch ($delta){
+    case 'footer_text':
+    $block['subject'] ='Footer contact text';
+    $block['content']='Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
+    break;
+  }
+  return $block;
+}

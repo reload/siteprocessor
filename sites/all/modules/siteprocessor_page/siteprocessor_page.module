@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the siteprocessor_page feature.
+ */
+
+include_once('siteprocessor_page.features.inc');
