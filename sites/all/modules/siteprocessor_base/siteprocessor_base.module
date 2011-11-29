@@ -26,3 +26,15 @@ function siteprocessor_base_block_view($delta){
   }
   return $block;
 }
+
+
+function siteprocessor_base_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['large_item'] = array(
+    'label' => t('Large item'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['list_item'] = array(
+    'label' => t('List item'),
+    'custom settings' => TRUE,
+  );
+} 
