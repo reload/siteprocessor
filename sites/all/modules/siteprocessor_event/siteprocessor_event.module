@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the siteprocessor_event feature.
+ */
+
+include_once('siteprocessor_event.features.inc');

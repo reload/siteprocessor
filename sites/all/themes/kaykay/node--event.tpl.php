@@ -1,18 +1,8 @@
+<?php //krumo($node);?>
+<?php if($view_mode=='full'):?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php print $user_picture; ?>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>">a<?php print $title; ?>b</a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-
-
-
-  <div class="content"<?php print $content_attributes; ?>>
-      <h1><?php print $title; ?>  </h1>
+  <div class="clearfix content"<?php print $content_attributes; ?>>
+    <h1><?php print $title; ?>  </h1>
     <?php if($content['body']['#items'][0]['summary']): ?>
       <div class="summary"><?php print render($content['body']['#items'][0]['summary']); ?></div>
     <?php endif; ?>
@@ -21,11 +11,26 @@
         <?php print $submitted; ?>
       </div>
     <?php endif; ?>
+   <?php print render($content['field_image']);?>
+      
+    <div class="event-properties">
+      <div class="event-property event-location">
+        <?php print render($content['field_location']);?>
+      </div>
+      <div class="event-property event-datetime">
+        <?php print render($content['field_event_time']);?>
+      </div>
+      <?php if(isset($content['field_email'])||isset($content['field_website'])):?>
+      <div class="event-property event-extras">
+        <?php print render($content['field_email']);?>
+        <?php print render($content['field_links']);?>
+      </div>
+      <?php endif;?>
+    </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      hide($content['field_main_image']);
       print render($content);
     ?>
   </div>
@@ -37,3 +42,39 @@
     </div>    
   <?php endif;?>
 </div>
+
+
+
+  
+<?php elseif($view_mode=='large_item'):?>
+  <div class="large-item-wrapper">
+    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    
+    <?php print render($content['field_image']);?>
+    <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
+      <div class="property-bar">
+        <?php print render($content['field_event_time']);?>
+        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
+        <?php endif;?>
+      </div>        
+    <?php
+      // We hide the comments and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
+    ?>
+    </div>
+  </div>
+    
+    
+<?php elseif($view_mode=='list_item'):?>
+  <div class="list-item-wrapper">
+    <div class="list-item-content">
+      <div class="property-bar">
+        <?php print render($content['field_event_time']);?>
+      </div>
+    </div>
+    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+  </div>
+<?php endif; ?>
