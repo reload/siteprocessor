@@ -177,6 +177,7 @@ h1 {
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;  
+  line-height: 110%;
 }
 
 
@@ -200,4 +201,169 @@ h2 {
   margin-top:5px;
   margin-bottom:10px;
   font-size:12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.large-item-wrapper h4 {
+  font-family: 'Bitter',serif;
+  font-size: 18px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.large-item-wrapper h4 a{
+  display:block;
+}
+
+.large-item-wrapper h4 a{
+  color:#b63300;
+}
+
+.large-item-wrapper h4 a:hover {
+  color:#990000;
+}
+
+.large-item-content {
+  margin-left:130px;
+  padding-left:5px;
+} 
+
+.large-item-content.no-image {
+  margin-left:0px;
+} 
+
+
+.large-item-wrapper .field-name-field-image{
+  float:left;
+}
+
+.field-name-field-image img {
+  display:block;
+}
+
+.property-bar{
+  color: #444444;
+  font-size: 12px;  
+}
+
+li.views-row.large-item{
+  margin-top:10px;
+  padding-top:10px;
+  margin-bottom:10px;
+  border-top:1px solid silver; /*fixme*/
+}
+
+.property-bar .field-name-field-event-time {
+  display: inline-block;
+}
+.property-bar .event-location-name{
+  margin-left:5px;
+  display: inline-block;
+}
+.property-bar .event-location-name:before{
+  content:' - ';
+}
+
+
+
+
+.node-event .event-properties{
+  border-radius:5px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 256px; 
+  background-color:#AAD5FF; /*fixme*/
+}
+
+.node-event .event-properties .event-property {
+  margin:5px;
+  padding:5px;
+  border-radius:5px;
+}
+
+.node-event .event-properties .event-location {
+  background-color:#CCEEFF;
+}
+
+
+.node-event .event-properties .event-datetime {
+  background-color:#BBFFBB;
+  font-size: 20px;  
+  line-height:120%;
+  
+}
+
+/*.node-event .event-properties .event-datetime .date-display-start,.node-event .event-properties .event-datetime .date-display-single{
+  display: block;
+  font-size: 20px;  
+  margin-bottom:5px;
+}*/
+
+
+
+.node-event .event-properties .event-extras {
+  background-color:#FFF0CC;
+}
+
+.node-event .location-locations-wrapper span.fn , .node-event .field-name-field-location span.fn{
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;  
+  font-family: 'Bitter',serif;  
+}
+
+.node-event .location-locations-wrapper .map-link  , .node-event .field-name-field-location .map-link{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+
+#edit-field-event-time-value-wrapper {
+  float:left;
+}
+
+#edit-field-event-time-value-min-wrapper {
+  float:left;
+}
+
+#edit-field-event-time-value-max-wrapper {
+  float:left;
+}
+
+.view-id-search_for_events .views-exposed-widget.views-submit-button{
+  float:left;
+}
+
+
+
+
+
+
+.node .content .field-name-field-image{
+  margin-bottom:10px;
 }
