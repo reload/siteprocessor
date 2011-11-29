@@ -15,6 +15,16 @@ function siteprocessor_article_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function siteprocessor_article_views_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "views" && $api == "views_default") {
+    return array("version" => "3.0");
+  }
+}
+
+/**
  * Implements hook_node_info().
  */
 function siteprocessor_article_node_info() {
