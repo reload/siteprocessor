@@ -105,12 +105,27 @@ function siteprocessor_article_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '200',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '1',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'large_item' => array(
           'label' => 'hidden',
@@ -192,6 +207,16 @@ function siteprocessor_article_field_default_fields() {
       'deleted' => '0',
       'description' => 'Upload an image to go with this article.',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'carousel_image',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'image',
@@ -202,12 +227,18 @@ function siteprocessor_article_field_default_fields() {
           'type' => 'image',
           'weight' => '-1',
         ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'large_item' => array(
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',
-            'image_style' => 'thumbnail',
+            'image_style' => 'large_item_image',
           ),
           'type' => 'image',
           'weight' => '0',
@@ -294,12 +325,24 @@ function siteprocessor_article_field_default_fields() {
       'deleted' => '0',
       'description' => 'Enter a comma-separated list of words to describe your content.',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '10',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'large_item' => array(
           'label' => 'above',

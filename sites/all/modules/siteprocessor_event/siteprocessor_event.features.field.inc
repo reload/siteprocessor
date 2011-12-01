@@ -44,12 +44,30 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '200',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '3',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '3',
+        ),
+        'imagetile_item' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '200',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '1',
         ),
         'large_item' => array(
           'label' => 'hidden',
@@ -64,7 +82,7 @@ function siteprocessor_event_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -118,6 +136,12 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'email',
@@ -125,17 +149,23 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'email_default',
           'weight' => '4',
         ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'large_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '6',
         ),
         'list_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -153,6 +183,98 @@ function siteprocessor_event_field_default_fields() {
         ),
         'type' => 'email_textfield',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_category'
+  $fields['node-event-field_event_category'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_category',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'event_categories',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '1',
+        ),
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '7',
+        ),
+        'imagetile_item' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '3',
+        ),
+        'large_item' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '3',
+        ),
+        'list_item' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '1',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_category',
+      'label' => 'Event category',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '8',
       ),
     ),
   );
@@ -190,6 +312,20 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'event_short',
+            'fromto' => 'value',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_repeat_rule' => 'show',
+          ),
+          'type' => 'date_default',
+          'weight' => '2',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'date',
@@ -203,6 +339,20 @@ function siteprocessor_event_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => '1',
+        ),
+        'imagetile_item' => array(
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'event_short',
+            'fromto' => 'value',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_repeat_rule' => 'show',
+          ),
+          'type' => 'date_default',
+          'weight' => '0',
         ),
         'large_item' => array(
           'label' => 'hidden',
@@ -296,6 +446,16 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'carousel_image',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'image',
@@ -305,6 +465,16 @@ function siteprocessor_event_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '0',
+        ),
+        'imagetile_item' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'image_tile',
+          ),
+          'type' => 'image',
+          'weight' => '2',
         ),
         'large_item' => array(
           'label' => 'hidden',
@@ -320,7 +490,7 @@ function siteprocessor_event_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'node',
@@ -385,24 +555,36 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => 6,
+          'weight' => '6',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'large_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '4',
         ),
         'list_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -528,6 +710,12 @@ function siteprocessor_event_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'location_cck',
@@ -535,17 +723,23 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'location_default',
           'weight' => '2',
         ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'large_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '5',
         ),
         'list_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -569,6 +763,7 @@ function siteprocessor_event_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Email');
+  t('Event category');
   t('Event time');
   t('Image');
   t('Links');
