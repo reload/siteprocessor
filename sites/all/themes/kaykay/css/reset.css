@@ -54,3 +54,14 @@ table {
 object, embed {
   display:block;
 }
+
+
+.item-list ul li {
+  margin:0;
+  padding:0;
+}
+
+.item-list ul  {
+  margin:0;
+  padding:0;
+}

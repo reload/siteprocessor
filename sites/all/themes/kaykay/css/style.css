@@ -1,9 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Bitter);
 @import url(http://fonts.googleapis.com/css?family=Convergence);
+@import url(http://fonts.googleapis.com/css?family=Signika:400,700,600,300);
+@import url(http://fonts.googleapis.com/css?family=Rosario:400,400italic);
 
 
 body {
-  font-family: 'Convergence', sans-serif;
+  /*font-family: 'Convergence', sans-serif;*/
+  font-family: 'Rosario', sans-serif;
+  /*font-weight:300;*/
   font-size: 14px;
   line-height: 130%;  
   /*font-family: 'Bitter', serif;
@@ -213,9 +217,111 @@ h2 {
 
 
 
+.carousel-item-wrapper {
+  position:relative;
+}
+
+.carousel-item-content {
+  background-color: black;
+  bottom: 0;
+  color: white;
+  left: 0;
+  opacity: 0.8;
+  padding: 15px;
+  position: absolute;
+}
+
+.carousel-item-wrapper .field-name-field-image img {
+  border-radius:5px;
+}
+
+.carousel-item-wrapper h4 {
+  font-family: 'Bitter',serif;
+  font-size: 18px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.carousel-item-wrapper h4 a{
+  display:block;
+}
+
+.carousel-item-wrapper h4 a{
+  color: #DDDDAA;
+}
+
+.carousel-item-wrapper h4 a:hover {
+  color:#990000;
+}
+
+
+.carousel-item-content.no-image {
+  margin-left:0px;
+} 
+
+
+.carousel-item-wrapper .field-name-field-image{
+}
+
+li.views-row.carousel-item{
+  width:600px;
+
+}
+
+li.views-row.carousel-item.views-row-odd{
+}
+
+
+.carousel-item-wrapper .property-bar{
+  color: #CCCCCC;
+}
 
 
 
+
+.imagetile-item-wrapper h4 {
+  font-family: 'Bitter',serif;
+  font-size: 18px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.imagetile-item-wrapper h4 a{
+  display:block;
+}
+
+.imagetile-item-wrapper h4 a{
+  color:#b63300;
+}
+
+.imagetile-item-wrapper h4 a:hover {
+  color:#990000;
+}
+
+.imagetile-item-content {
+  padding-left:5px;
+} 
+
+.imagetile-item-content.no-image {
+  margin-left:0px;
+} 
+
+
+.imagetile-item-wrapper .field-name-field-image{
+  float:left;
+}
+
+li.views-row.imagetile-item{
+  width:300px;
+  float:left;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+li.views-row.imagetile-item.views-row-odd{
+  clear:left;
+  margin-right:10px;
+}
 
 
 
@@ -280,14 +386,21 @@ li.views-row.large-item{
   display: inline-block;
 }
 .property-bar .event-location-name{
-  margin-left:5px;
+  margin-left:2px;
   display: inline-block;
 }
 .property-bar .event-location-name:before{
   content:' - ';
 }
 
+.property-bar .field-name-field-event-category {
+  margin-left:2px;
+  display: inline-block;
+}
 
+.property-bar .field-name-field-event-category .field-item:before {
+  content:' - ';
+}
 
 
 .node-event .event-properties{
@@ -316,6 +429,13 @@ li.views-row.large-item{
   line-height:120%;
   
 }
+.node-event .event-properties .event-category {
+  font-size: 20px;
+  text-align: right;
+}
+
+
+
 
 /*.node-event .event-properties .event-datetime .date-display-start,.node-event .event-properties .event-datetime .date-display-single{
   display: block;
@@ -343,6 +463,15 @@ li.views-row.large-item{
 
 
 
+
+
+.view-filters {
+  background-color:#EEE;
+  border-radius:5px;
+  padding:5px;
+}
+
+
 #edit-field-event-time-value-wrapper {
   float:left;
 }
@@ -360,10 +489,15 @@ li.views-row.large-item{
 }
 
 
-
-
+#bef-datepicker-wrapper input  {
+  border:1px solid #ccc;
+  width:80px;
+  color:#666;
+}
 
 
 .node .content .field-name-field-image{
   margin-bottom:10px;
 }
+
+
