@@ -37,4 +37,12 @@ function siteprocessor_base_entity_info_alter(&$entity_info) {
     'label' => t('List item'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['imagetile_item'] = array(
+    'label' => t('Image tile item'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['carousel_item'] = array(
+    'label' => t('Carousel item'),
+    'custom settings' => TRUE,
+  );  
 } 
