@@ -229,6 +229,7 @@ h2 {
   opacity: 0.8;
   padding: 15px;
   position: absolute;
+  border-radius:0 5px 0 5px;
 }
 
 .carousel-item-wrapper .field-name-field-image img {
