@@ -86,6 +86,56 @@ a {
 
 
 
+.panel-100  #mini-panel-top_row  .pane-page-primary-links ul li a {
+  background-image:url(../img/menu-gradient.png);
+  background-repeat:repeat-x;
+  
+}
+
+.panel-100 #mini-panel-top_row  .pane-page-primary-links ul li a:hover,.panel-100-66-33 .toparea-wrapper .pane-page-primary-links ul li a.active-trail  {
+  background-image:url(../img/menu-gradient-hover.png);  
+}
+
+
+.panel-100 #mini-panel-top_row .pane-page-primary-links ul li{
+  margin:5px;
+}
+
+.panel-100 #mini-panel-top_row .pane-page-primary-links ul li a {
+  display:block;
+  border:1px solid black;
+  border-radius:3px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  text-decoration:none;
+}
+
+.panel-100 .content-wrapper  {
+  border-radius:5px;
+}
+
+.panel-100 .panel-col-right h2 {
+  font-family: 'Bitter', serif;
+  font-size:22px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.panel-100 .pane-siteprocessor-base-frontpage a.frontpage-link {
+  text-indent: -900em;
+  background-image:url(../img/frontpage-icon.png);
+  background-repeat: no-repeat;
+  display: block;
+  height: 16px;
+  opacity: 0.8;
+  width: 16px;  
+}
+
+
+
+
+
+
 
 
 

@@ -44,6 +44,26 @@
 
 
 
+.panel-100 #mini-panel-top_row .panel-pane {
+  float:left;
+}
+
+
+.panel-100 #mini-panel-top_row .pane-block {
+  float:left;
+}
+
+.panel-100 #mini-panel-top_row .pane-page-primary-links {
+  float:right;
+}
+.panel-100 #mini-panel-top_row .pane-page-primary-links ul li{
+  float:left;
+}
+
+
+
+
+
 #page-wrapper {
   margin-top:10px;
   width:980px;
