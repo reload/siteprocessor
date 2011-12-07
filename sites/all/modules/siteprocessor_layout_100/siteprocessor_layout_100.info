@@ -10,3 +10,5 @@ features[page_manager_pages][] = "front_page"
 features[panels_mini][] = "top_row"
 name = "siteprocessor_layout_100"
 package = "Siteprocessor"
+siteprocessor[layout][siteprocessor_layout_100] = "Full width - one column"
+
