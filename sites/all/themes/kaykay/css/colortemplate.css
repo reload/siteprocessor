@@ -1,0 +1,29 @@
+body {
+  background-color: [[page_body_background]];
+  color:[[page_body_text]];
+}
+
+#page-wrapper {
+  background-color:[[page_wrapper_background]];
+  border-color:[[page_wrapper_border]];
+}
+
+
+.pane-page-primary-links ul li a {
+  color: [[menu_text]];
+  background-color:[[menu_background]];
+}
+
+.pane-page-primary-links ul li a.active-trail {
+  color:[[menu_text_active]];
+  background-color:[[menu_background_active]];
+}
+
+
+.content-wrapper{
+  background: [[page_content_wrapper_background]];
+}
+
+.pane-siteprocessor-base-frontpage a.frontpage-link {
+  color:[[menu_frontpage_link_text]];
+}

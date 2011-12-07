@@ -1,0 +1,22 @@
+name = dummyTheme 
+description = Theme for dummies
+core = 7.x
+
+
+siteprocessor[color_groups][menu]="Menu"
+siteprocessor[color_groups][page]="Page"
+siteprocessor[color_groups][content]="Content"
+siteprocessor[color_groups][footer]="Footer"
+
+siteprocessor[colors][footer][footer_text][name]="footer text"
+siteprocessor[colors][footer][footer_text][value]=223499
+siteprocessor[colors][footer][footer_text_hover][name]="footer text - hover"
+siteprocessor[colors][footer][footer_text_hover][value]=FF3311
+
+siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
+siteprocessor[colors][menu][menu_text_active][value]=FFFFFF
+siteprocessor[colors][menu][menu_text_active][name]="Menu text - hover"
+siteprocessor[colors][menu][menu_text_active][value]=0000FF
+
+siteprocessor[color_css][dummytheme][]=css/colortemplate_base.css
+siteprocessor[color_css][dummytheme][]=css/colortemplate_base2.css

@@ -1,0 +1,163 @@
+.<?php
+
+function siteprocessor_config_visual_permission() {
+  return array(
+    'administer siteprocessor colors'=>array(
+      'title'=>t('administer siteprocessor colors'),
+      'description'=>t('administer siteprocessor colors'),
+    ),
+  );
+}
+
+function siteprocessor_config_visual_menu() {
+  $items['admin/media/siteprocessor_colors'] = array(
+    'title' => 'Colors',
+    'description' => 'Adjust colors',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_config_visual_colors_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer siteprocessor colors '),
+    'file' => 'siteprocessor_config_visual.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+function siteprocessor_config_visual_init(){
+  siteprocessor_config_visual_color_set_css();
+}
+
+
+function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
+  krumo($form_state);
+  $color_keys=siteprocessor_config_visual_colors_get(array('keys_list'=>true));
+  $color_list=array();
+  foreach($color_keys as $key){
+    if(isset($form_state['values'][$key])) {
+      $color_list[$key]=$form_state['values'][$key];
+    }
+  }
+  siteprocessor_config_visual_colors_set($color_list);
+  drupal_set_message(t('Colors have been saved'), 'status');
+}
+
+
+
+
+
+//From http://www.php.net/manual/en/function.array-merge-recursive.php
+function MergeArrays($Arr1, $Arr2)
+{
+  foreach($Arr2 as $key => $Value)
+  {
+    if(array_key_exists($key, $Arr1) && is_array($Value))
+      $Arr1[$key] = MergeArrays($Arr1[$key], $Arr2[$key]);
+    else
+      $Arr1[$key] = $Value;
+  }
+  return $Arr1;
+}
+
+
+function siteprocessor_config_visual_color_set_css(){
+  
+  //cache from here
+  $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
+  
+  $active_theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);  
+  
+  $css2add='';
+  //FIXME: Order themes by inheritance
+  foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
+    foreach($files as $file){
+      $filename=drupal_get_path('theme',$theme).'/'.$file;
+      if(file_exists($filename)) {
+        $file_content=file_get_contents($filename);
+        foreach($colors as $key=>$color){
+          $file_content=str_replace("[[$key]]","#$color",$file_content);
+        }
+        $file_content=preg_replace('/(\[\[[A-Za-z0-9_-]+\]\])/','magenta',$file_content);
+        $css2add.=$file_content;
+        
+      }
+    }
+  }
+  //to here
+  drupal_add_css($css2add,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));
+}
+
+
+function siteprocessor_config_visual_parse_theme_info($theme){
+  $infofile=drupal_get_path('theme', $theme).'/'.$theme.'.info';
+  $file_arr=drupal_parse_info_file($infofile);
+  //check for basetheme
+  if(isset($file_arr['base theme'])){
+    $base_arr=siteprocessor_config_visual_parse_theme_info($file_arr['base theme']);
+    //merge from basetheme info
+    $file_arr=MergeArrays($base_arr,$file_arr);
+  }
+  
+  //FIXME: register order of inherited themes
+  return $file_arr;
+}
+
+
+function siteprocessor_config_visual_color_groups_get(){
+  $active_theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  $color_groups=$info_arr['siteprocessor']['color_groups'];
+  return $color_groups;
+  
+}
+
+function siteprocessor_config_visual_colors_get($args=null){
+  $active_theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  $colors=$info_arr['siteprocessor']['colors'];
+  
+  //returns list of keys
+  if($args){
+    if(isset($args['keys_list'])){
+      $keys=array();
+      foreach($colors as $group){
+        foreach($group as $key=>$item){
+          $keys[]=$key;
+        }
+      }
+      return $keys;
+    }
+  }
+  
+  //getting customized colors
+  $colors_var=variable_get('siteprocessor_config_visual_colors', array());
+  foreach($colors as $gkey=>$group){
+    foreach($group as $key=>$item){
+      if(isset($colors_var[$key])){
+        $colors[$gkey][$key]['value']=$colors_var[$key];
+      }
+    }
+  }  
+  
+  //returns list of keys and values
+  if($args){
+    if(isset($args['keys_values_list'])){
+      $list=array();
+      foreach($colors as $group){
+        foreach($group as $key=>$item){
+          $list[$key]=$item['value'];
+        }
+      }
+      return $list;
+    }  
+  }
+  
+  //returns entire structure
+  return $colors;
+}
+
+function siteprocessor_config_visual_colors_set($color_list){
+  variable_set('siteprocessor_config_visual_colors',$color_list);
+}
