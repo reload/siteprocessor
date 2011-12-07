@@ -26,5 +26,12 @@ dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
+
+; Contrib modules
+dependencies[] = features
+
+; SiteProcessor modules
+dependencies[] = siteprocessor_base
 dependencies[] = siteprocessor_config
+dependencies[] = siteprocessor_page
 
