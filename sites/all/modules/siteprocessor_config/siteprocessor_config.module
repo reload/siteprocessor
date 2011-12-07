@@ -7,7 +7,7 @@
  * Dynamic generate tabs for the siteprocessor.
  * In module info file, create an entry like
  * siteprocessor[part1].... = partN
- * A part1 tab will show up, and a custom form 
+ * A part1 tab will show up, and a custom form
  * 'siteprocessor_config_part1_form' will be accessible.
  */
 function siteprocessor_config_menu() {
@@ -47,6 +47,32 @@ function siteprocessor_config_menu() {
   }
 
   return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * If a new site have been set up, the one-time-login is presented, UID = 1, and the form havent been submitted before
+ * Then change the submit handler.
+ *
+ */
+function siteprocessor_config_form_user_profile_form_alter(&$form, &$form_state) {
+  global $user;
+  if (array_key_exists('pass-reset-token', $_GET) && user_access('administer site configuration') && $user->uid == 1 && !variable_get('siteprocessor_setup', FALSE)) {
+    $form['#submit'] = array('user_profile_form_submit', 'siteprocessor_config_form_user_profile_form_submit');
+  }
+}
+
+
+/**
+ * Custom form submit handler for user profile form.
+ * Only used if site havent been setup.
+ * Redirect to the config page.
+ */
+function siteprocessor_config_form_user_profile_form_submit($form, &$form_state) {
+  drupal_set_message(t('Use time to set the system up.'));
+  variable_set('siteprocessor_setup', TRUE);
+  $form_state['redirect'] = 'admin/config/siteprocessor/config';
 }
 
 /**
