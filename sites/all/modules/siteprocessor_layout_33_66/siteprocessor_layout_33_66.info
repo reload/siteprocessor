@@ -9,3 +9,5 @@ features[panels_mini][] = "left_column"
 name = "siteprocessor_layout_33_66"
 package = "Siteprocessor"
 php = "5.2.4"
+siteprocessor[layout][siteprocessor_layout_33_66] = Two columns (33% and 66%)
+

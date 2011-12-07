@@ -11,3 +11,5 @@ features[panels_mini][] = "right_column"
 name = "siteprocessor_layout_100_66_33"
 package = "Siteprocessor"
 php = "5.2.4"
+siteprocessor[layout][siteprocessor_layout_100_66_33] = "Top column 100% + Two column (66% + 33)"
+
