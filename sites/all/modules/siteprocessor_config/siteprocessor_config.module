@@ -1,0 +1,165 @@
+<?php
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Dynamic generate tabs for the siteprocessor.
+ * In module info file, create an entry like
+ * siteprocessor[part1].... = partN
+ * A part1 tab will show up, and a custom form 
+ * 'siteprocessor_config_part1_form' will be accessible.
+ */
+function siteprocessor_config_menu() {
+  $items['admin/config/siteprocessor'] = array(
+    'title' => 'SiteProcessor',
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'position' => 'right',
+    'weight' => -20,
+  );
+  $items['admin/config/siteprocessor/config'] = array(
+    'title' => 'Base configuration',
+    'description' => 'Base website configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_config_variable_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  // Fetch info from modules info files
+  $configuration_parts = _siteprocessor_config_get_config('siteprocessor');
+  $first_attempt = TRUE;
+
+  // Dynamic generate admin page tabs.
+  foreach ($configuration_parts as $item => $array) {
+      $items['admin/config/siteprocessor/config/' . $item] = array(
+        'title' => $item . ' configuration',
+        'description' => 'Base website configuration',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('siteprocessor_config_' . $item. '_form'),
+        'access arguments' => array('administer site configuration'),
+        'type' => $first_attempt ? MENU_DEFAULT_LOCAL_TASK : MENU_LOCAL_TASK,
+        'weight' => $first_attempt ? -20 : 0,
+      );
+      $first_attempt = FALSE;
+  }
+
+  return $items;
+}
+
+/**
+ * Create custom form for 'variable' defined in hook_menu.
+ *
+ * This form will save entries into variable table, and will be used for
+ * a simple shortcut page to handle variables.
+ *
+ * In this module's info file, add entries for every variable you want to handle.
+ * siteprocessor[variable][MODULENAME][VARIABLE_KEY] = VARIABLE_LABEL_TEXT
+ */
+function siteprocessor_config_variable_form($form_state) {
+  $form_config = _siteprocessor_config_get_config('siteprocessor');
+  $config_variable = $form_config['variable'][0];
+  $form = array();
+  foreach ($config_variable as $module => $module_key) {
+    // Dont show configuration for module, unless it's enabled
+    if (!module_exists($module)) {
+      continue;
+    }
+    $form[$module] = array(
+      '#type' => 'fieldset',
+      '#title' => t($module),
+      '#collapsed' => FALSE,
+      '#collapsible' => TRUE,
+    );
+    foreach ($module_key as $variable => $part) {
+
+      $form[$module][$variable] = array(
+        '#type' => 'textfield',
+        '#title' => $part,
+        '#default_value' => variable_get($variable, NULL),
+      );
+    }
+  }
+  if ($form) {
+    return system_settings_form($form);
+  }
+}
+
+/**
+ * Create custom form for 'layout' im hook_menu.
+ * In a siteprocessor_layout_* modules info file, define the layout.
+ */
+function siteprocessor_config_layout_form($form_state) {
+  $form_config = _siteprocessor_config_get_config('siteprocessor');
+  $form = array();
+  $radios = array();
+  $form['text'] = array(
+    '#markup' => t('Define which layout to be default.'),
+  );
+  foreach ($form_config['layout'] as $entry) {
+    foreach ($entry as $module_name => $string) {
+        $radios[$module_name] = theme('image', array('path' => drupal_get_path('module', $module_name) . '/' . $module_name . '_layout.jpg')) . $string;
+    }
+  }
+
+  $form['siteprocessor_layout'] = array(
+    '#type' => 'radios',
+    '#title' => 'Choose layout',
+    '#default_value' => variable_get('siteprocessor_layout', FALSE),
+    '#options' => $radios,
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+  return $form;
+}
+
+/**
+ * Submit handler for custom 'layout' form.
+ */
+function siteprocessor_config_layout_form_submit(&$form, &$form_state) {
+  if (variable_get('siteprocessor_layout', NULL) !== $form_state['values']['siteprocessor_layout']) {
+    variable_set('siteprocessor_layout', $form_state['values']['siteprocessor_layout']);
+
+    $form_config = _siteprocessor_config_get_config('siteprocessor');
+    foreach ($form_config['layout'] as $entry) {
+      foreach ($entry as $module_name => $module_info) {
+        if ($module_name != $form_state['values']['siteprocessor_layout']) {
+          module_disable(array($module_name));
+        }
+        else {
+          if (module_enable(array($module_name))) {
+            drupal_set_message(t('Layout "@module" has been enabled.', array('@module' => $module_info)), 'status');
+          }
+        }
+      }
+    }
+    cache_clear_all();
+  }
+}
+
+/**
+ * Fetch module info file from all modules prefixed with 'siteprocessor_'
+ *
+ * @param String $type which part of info file to return
+ * @return Array info file parts.
+ */
+function _siteprocessor_config_get_config($type = NULL) {
+  $return_config = array();
+  $result = db_query("SELECT filename, name FROM {system} WHERE name LIKE 'siteprocessor_%'");
+  foreach ($result as $record) {
+    $config = drupal_parse_info_file(dirname($record->filename) . '/' . $record->name . '.info');
+    if ($type && array_key_exists($type, $config)) {
+      if (is_array($config[$type])) {
+      foreach ($config[$type] as $config_type => $array) {}
+        $return_config[$config_type][] = $array;
+      }
+    }
+  }
+
+  return $return_config;
+}
+
