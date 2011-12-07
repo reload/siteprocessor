@@ -25,8 +25,6 @@ function siteprocessor_config_visual_colors_form($form,&$form_state) {
         '#title'=>t($item['name']),
         '#default_value'=>$item['value'],
       );
-      print ($key);
-      print strlen($item['value']);
     }
   }
   
