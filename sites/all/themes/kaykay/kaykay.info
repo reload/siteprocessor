@@ -11,6 +11,9 @@ stylesheets[print][] = css/print.css
 regions[header] = Header
 regions[content] = Content
 regions[footer] = Footer
+regions[ownerbox] = Owner box
+
+
 plugins[panels][layouts] = layouts
 
 siteprocessor[color_groups][menu]="Menu"
