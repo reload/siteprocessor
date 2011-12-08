@@ -48,8 +48,10 @@ siteprocessor[colors][page][page_content_wrapper_background][value]=8f83da
 siteprocessor[colors][page][page_body_text][name]="page_body_text"
 siteprocessor[colors][page][page_body_text][value]=333399
 
+siteprocessor[color_css][kaykay][]=css/colortemplate.css
+
+siteprocessor[theme_available]=true
 
 base theme=dummytheme
 
 
-siteprocessor[color_css][kaykay][]=css/colortemplate.css

@@ -1,4 +1,4 @@
-.<?php
+<?php
 
 function siteprocessor_config_visual_permission() {
   return array(
@@ -62,15 +62,16 @@ function MergeArrays($Arr1, $Arr2)
 
 
 function siteprocessor_config_visual_color_set_css(){
+  //FIXME: cache from here (with theme as key)
+    
+  global $theme_key;
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);  
+  //skip if not supported by active theme
+  if(!isset($info_arr['siteprocessor']['colors'])) return array();
   
-  //cache from here
   $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
   
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);  
-  
   $css2add='';
-  //FIXME: Order themes by inheritance
   foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
     foreach($files as $file){
       $filename=drupal_get_path('theme',$theme).'/'.$file;
@@ -101,21 +102,24 @@ function siteprocessor_config_visual_parse_theme_info($theme){
   }
   
   //FIXME: register order of inherited themes
+  $file_arr['siteprocessor']['theme_order'][]=$theme;
   return $file_arr;
 }
 
 
 function siteprocessor_config_visual_color_groups_get(){
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  global $theme_key;
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
   $color_groups=$info_arr['siteprocessor']['color_groups'];
   return $color_groups;
   
 }
 
 function siteprocessor_config_visual_colors_get($args=null){
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  global $theme_key;
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
+  //skip if not supported by active theme
+  if(!isset($info_arr['siteprocessor']['colors'])) return array();
   $colors=$info_arr['siteprocessor']['colors'];
   
   //returns list of keys
