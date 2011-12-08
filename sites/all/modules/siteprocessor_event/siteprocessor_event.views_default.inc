@@ -46,6 +46,14 @@ function siteprocessor_event_views_default_views() {
         'bef_filter_description' => '',
       ),
     ),
+    'field_event_target_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'bef_filter_description' => '',
+      ),
+    ),
   );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -126,8 +134,23 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['reduce'] = 0;
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = 0;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_categories';
+  $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Event target (field_event_target) */
+  $handler->display->display_options['filters']['field_event_target_tid']['id'] = 'field_event_target_tid';
+  $handler->display->display_options['filters']['field_event_target_tid']['table'] = 'field_data_field_event_target';
+  $handler->display->display_options['filters']['field_event_target_tid']['field'] = 'field_event_target_tid';
+  $handler->display->display_options['filters']['field_event_target_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator_id'] = 'field_event_target_tid_op';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['label'] = 'Event target';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator'] = 'field_event_target_tid_op';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['identifier'] = 'field_event_target_tid';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['multiple'] = 1;
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_event_target_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_event_target_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_event_target_tid']['vocabulary'] = 'event_target';
+  $handler->display->display_options['filters']['field_event_target_tid']['error_message'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
