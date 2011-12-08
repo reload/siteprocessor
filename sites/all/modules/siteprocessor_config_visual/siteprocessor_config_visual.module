@@ -261,16 +261,16 @@ function siteprocessor_config_visual_parse_theme_info($theme){
 
 
 function siteprocessor_config_visual_color_groups_get(){
-  global $theme_key;
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
+  $theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);
   $color_groups=$info_arr['siteprocessor']['color_groups'];
   return $color_groups;
   
 }
 
 function siteprocessor_config_visual_colors_get($args=null){
-  global $theme_key;
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
+  $theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);;
   //skip if not supported by active theme
   if(!isset($info_arr['siteprocessor']['colors'])) return array();
   $colors=$info_arr['siteprocessor']['colors'];
