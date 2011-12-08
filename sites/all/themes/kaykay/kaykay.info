@@ -19,37 +19,48 @@ plugins[panels][layouts] = layouts
 siteprocessor[color_groups][menu]="Menu"
 siteprocessor[color_groups][page]="Page"
 siteprocessor[color_groups][content]="Content"
+siteprocessor[color_groups][views]="Views"
 
-siteprocessor[colors][menu][menu_text][name]="Menu text"
-siteprocessor[colors][menu][menu_text][value]=343499
-siteprocessor[colors][menu][menu_text_hover][name]="Menu text - hover"
-siteprocessor[colors][menu][menu_text_hover][value]=FF33DD
-siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
-siteprocessor[colors][menu][menu_text_active][value]=B29D21
-siteprocessor[colors][menu][menu_text_active_hover][name]="Menu text - active - hover"
-siteprocessor[colors][menu][menu_text_active_hover][value]=945BA3
+siteprocessor[colors][views][views-filter-background][name]="views-filter-background"
+siteprocessor[colors][views][views-filter-background][value]=EEE
+siteprocessor[colors][views][views-filter-border][name]="views-filter-border"
+siteprocessor[colors][views][views-filter-border][value]=000
 
-siteprocessor[colors][menu][menu_background_active][name]="Menu background active"
-siteprocessor[colors][menu][menu_background_active][value]=92f3a2
-siteprocessor[colors][menu][menu_background][name]="Menu background"
-siteprocessor[colors][menu][menu_background][value]=99FF11
+siteprocessor[colors][content][content_summary_text][name]=content_summary_text
+siteprocessor[colors][content][content_summary_text][value]=444
 
-siteprocessor[colors][menu][menu_frontpage_link_text][name]="Menu frontpage link text"
-siteprocessor[colors][menu][menu_frontpage_link_text][value]=63FF33
-
-
-siteprocessor[colors][page][page_body_background][name]="page_body_background"
-siteprocessor[colors][page][page_body_background][value]=945BA3
+siteprocessor[colors][page][page_body_text][name]="page_body_text"
+siteprocessor[colors][page][page_body_text][value]=000
 siteprocessor[colors][page][page_wrapper_border][name]="page_wrapper_border"
 siteprocessor[colors][page][page_wrapper_border][value]=000000
 siteprocessor[colors][page][page_wrapper_background][name]="page_wrapper_background"
-siteprocessor[colors][page][page_wrapper_background][value]=FF5BA3
-
+siteprocessor[colors][page][page_wrapper_background][value]=d4e7f3
+siteprocessor[colors][page][page_link][name]="page_link"
+siteprocessor[colors][page][page_link][value]=ce5c00
+siteprocessor[colors][page][page_link_hover][name]="page_link_hover"
+siteprocessor[colors][page][page_link_hover][value]=8c2e0b
 siteprocessor[colors][page][page_content_wrapper_background][name]="page_content_wrapper_background"
-siteprocessor[colors][page][page_content_wrapper_background][value]=8f83da
+siteprocessor[colors][page][page_content_wrapper_background][value]=ffffff
+siteprocessor[colors][page][page_body_background][name]="page_body_background"
+siteprocessor[colors][page][page_body_background][value]=EEFFEE
 
-siteprocessor[colors][page][page_body_text][name]="page_body_text"
-siteprocessor[colors][page][page_body_text][value]=333399
+
+siteprocessor[colors][menu][menu_text][name]="Menu text"
+siteprocessor[colors][menu][menu_text][value]=000
+siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
+siteprocessor[colors][menu][menu_text_active][value]=000
+siteprocessor[colors][menu][menu_background_active][name]="Menu background active"
+siteprocessor[colors][menu][menu_background_active][value]=666622
+siteprocessor[colors][menu][menu_background][name]="Menu background"
+siteprocessor[colors][menu][menu_background][value]=FFFF88
+;siteprocessor[colors][menu][menu_text_active_hover][name]="Menu text - active - hover"
+;siteprocessor[colors][menu][menu_text_active_hover][value]=945BA3
+;siteprocessor[colors][menu][menu_text_hover][name]="Menu text - hover"
+;siteprocessor[colors][menu][menu_text_hover][value]=FF33DD
+siteprocessor[colors][menu][menu_frontpage_link_text][name]="Menu frontpage link text"
+siteprocessor[colors][menu][menu_frontpage_link_text][value]=000
+
+
 
 siteprocessor[color_css][kaykay][]=css/colortemplate.css
 

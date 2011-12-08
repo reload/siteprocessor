@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+/*real content here*/
 body {
   background-color: [[page_body_background]];
   color:[[page_body_text]];
@@ -8,6 +17,25 @@ body {
   border-color:[[page_wrapper_border]];
 }
 
+
+.view-filters {
+  background-color:[[views-filter-background]];
+  border-color:[[views-filter-border]];
+  padding:5px;
+}
+
+.summary {
+      color: [[content_summary_text]];
+}
+
+
+
+a {
+  color:[[page_link]];
+}
+a:hover {
+  color:[[page_link_hover]];
+}
 
 .pane-page-primary-links ul li a {
   color: [[menu_text]];
@@ -24,6 +52,8 @@ body {
   background: [[page_content_wrapper_background]];
 }
 
+
 .pane-siteprocessor-base-frontpage a.frontpage-link {
   color:[[menu_frontpage_link_text]];
 }
+
