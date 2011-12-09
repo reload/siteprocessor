@@ -123,6 +123,10 @@ siteprocessor[colors][views][views_carousel_item_text][value]=FFFFFF
 
 
 
+siteprocessor[colors][views][views_carousel_item_property_bar_text][name]="views_carousel_item_property_bar_text"
+siteprocessor[colors][views][views_carousel_item_property_bar_text][value]=999
+
+
 
 
 
