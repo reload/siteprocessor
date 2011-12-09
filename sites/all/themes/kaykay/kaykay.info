@@ -134,4 +134,4 @@ siteprocessor[theme_available]=true
 
 base theme=dummytheme
 
-
+siteprocessor[theme][kaykay] = "KayKay theme"
