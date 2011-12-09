@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 /*real content here*/
 body {
   background-color: [[page_body_background]];
@@ -28,8 +20,6 @@ body {
       color: [[content_summary_text]];
 }
 
-
-
 a {
   color:[[page_link]];
 }
@@ -37,16 +27,38 @@ a:hover {
   color:[[page_link_hover]];
 }
 
-.pane-page-primary-links ul li a {
+.pane-page-primary-links ul li a,
+.menu-name-main-menu.menu-level-1 > ul > li > a 
+{
   color: [[menu_text]];
   background-color:[[menu_background]];
+  border-color:[[menu_border]];
 }
 
-.pane-page-primary-links ul li a.active-trail {
+.pane-page-primary-links ul li a.active-trail,
+.menu-name-main-menu.menu-level-1 > ul > li > a.active-trail
+{
   color:[[menu_text_active]];
   background-color:[[menu_background_active]];
+  border-color:[[menu_border_active]];
+
 }
 
+.pane-page-primary-links ul li a:hover,
+.menu-name-main-menu.menu-level-1 > ul > li > a:hover
+{
+  color: [[menu_text_hover]];
+  background-color:[[menu_background_hover]];
+  border-color:[[menu_border_hover]];
+}
+
+.pane-page-primary-links ul li a.active-trail:hover, 
+.menu-name-main-menu.menu-level-1 > ul > li > a.active-trail:hover 
+{
+  color:[[menu_text_active_hover]];
+  background-color:[[menu_background_active_hover]];
+  border-color:[[menu_border_active_hover]];
+}
 
 .content-wrapper{
   background: [[page_content_wrapper_background]];
@@ -55,5 +67,71 @@ a:hover {
 
 .pane-siteprocessor-base-frontpage a.frontpage-link {
   color:[[menu_frontpage_link_text]];
+  border-color:[[menu_frontpage_link_border]];
 }
 
+
+.carousel-item-wrapper .property-bar{
+  color: [[views_carousel_item_property_bar_text]];
+}
+
+.imagetile-item-wrapper h4 a{
+  color:[[views_imagetile_item_header_link_text]];
+}
+
+.imagetile-item-wrapper h4 a:hover {
+  color:[[views_imagetile_item_header_link_text_hover]];
+}
+
+.large-item-wrapper h4 a{
+  color:[[views_large_item_header_link_text]];
+}
+
+.large-item-wrapper h4 a:hover {
+  color:[[views_large_item_header_link_text_hover]];
+}
+
+
+.property-bar{
+  color: [[content_property_bar_text]];
+}
+
+
+.node-event .event-properties{
+  background-color:[[content_event_properties_background]]; /*fixme*/
+}
+
+
+.node-event .event-properties .event-location {
+  background-color:[[content_event_location_background]];
+}
+
+
+.node-event .event-properties .event-datetime {
+  background-color:[[content_event_datetime_background]];
+}
+
+.node-event .event-properties .event-category {
+  background-color:[[content_event_category_background]];
+}
+
+.node-event .event-properties .event-target {
+  background-color:[[content_event_target_background]];
+}
+
+.node-event .event-properties .event-extras {
+  background-color:[[content_event_extras_background]];
+}
+
+.carousel-item-wrapper h4 a{
+  color: [[views_carousel_item_header_link_text]];
+}
+
+.carousel-item-wrapper h4 a:hover {
+  color:[[views_carousel_item_header_link_text_hover]];
+}
+
+.carousel-item-content {
+  background-color: [[views_carousel_item_background]];
+  color: [[views_carousel_item_text]];
+}
