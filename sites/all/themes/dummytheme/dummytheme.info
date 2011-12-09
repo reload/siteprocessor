@@ -20,3 +20,5 @@ siteprocessor[colors][menu][menu_text_active][value]=0000FF
 
 siteprocessor[color_css][dummytheme][]=css/colortemplate_base.css
 siteprocessor[color_css][dummytheme][]=css/colortemplate_base2.css
+
+siteprocessor[theme][dummytheme] = "Dummy theme"

@@ -53,3 +53,5 @@ base theme=dummytheme
 
 
 siteprocessor[color_css][kaykay][]=css/colortemplate.css
+
+siteprocessor[theme][kaykay] = "KayKay theme"
