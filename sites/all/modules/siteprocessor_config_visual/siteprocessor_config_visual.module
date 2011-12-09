@@ -4,12 +4,12 @@ function siteprocessor_config_visual_block_info(){
   $blocks=array(
     'topblock' =>array(
       'info' => t('Top block'),
-      'cache' => DRUPAL_NO_CACHE, 
+      'cache' => DRUPAL_NO_CACHE,
     ),
     'ownerblock' =>array(
       'info' => t('Owner block'),
-      'cache' => DRUPAL_NO_CACHE, 
-    ),      
+      'cache' => DRUPAL_NO_CACHE,
+    ),
   );
   return $blocks;
 }
@@ -36,7 +36,7 @@ function siteprocessor_config_visual_block_view($delta){
       else {
         $block['content']='';
       }
-      break;      
+      break;
   }
   return $block;
 }
@@ -62,7 +62,7 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     variable_set('siteprocessor_config_visual_top_image_fid', FALSE);
     drupal_set_message(t('The image @image_name was removed.', array('@image_name' => $file->filename)));
   }
-  
+
   if ($form_state['values']['siteprocessor_config_visual_background_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_background_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -82,7 +82,7 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     drupal_set_message(t('The background image @image_name was removed.', array('@image_name' => $file->filename)));
   }
 
-  
+
   if ($form_state['values']['siteprocessor_config_visual_owner_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_owner_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -101,8 +101,8 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     variable_set('siteprocessor_config_visual_owner_image_fid', FALSE);
     drupal_set_message(t('The owner image @image_name was removed.', array('@image_name' => $file->filename)));
   }
-    
-  
+
+
 }
 
 function siteprocessor_config_visual_permission() {
@@ -114,11 +114,11 @@ function siteprocessor_config_visual_permission() {
     'administer site processor images'=>array(
       'title'=>t('administer site processor images'),
       'description'=>t('administer site processor images'),
-    ),      
+    ),
     'administer site processor custom css'=>array(
       'title'=>t('administer site processor custom css'),
       'description'=>t('administer site processor custom css'),
-    ),         
+    ),
   );
 }
 
@@ -144,7 +144,7 @@ function siteprocessor_config_visual_menu() {
     'file' => 'siteprocessor_config_visual.admin.inc',
     'type' => MENU_NORMAL_ITEM,
   );
-  
+
 
   $items['admin/config/siteprocessor/custom_css'] = array(
     'title' => 'Custom CSS',
@@ -156,7 +156,7 @@ function siteprocessor_config_visual_menu() {
     'file' => 'siteprocessor_config_visual.admin.inc',
     'type' => MENU_NORMAL_ITEM,
   );
-  
+
   return $items;
 }
 
@@ -171,23 +171,17 @@ function siteprocessor_config_visual_init(){
       body{
         background-image:url($image_url);
         background-position:top center;
-        background-repeat:no-repeat;         
+        background-repeat:no-repeat;
       }
     ",'inline');
   }
-  
+
   if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
     drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
   }
-  
 
-  
-}
 
-function siteprocessor_config_visual_custom_css_form_submit($form, &$form_state) {
-  $custom_css=$form_state['values']['custom_css'];
-  variable_set('siteprocessor_config_visual_custom_css',$custom_css);
-  drupal_set_message(t('Custom CSS have been saved'), 'status');
+
 }
 
 function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
@@ -218,14 +212,14 @@ function MergeArrays($Arr1, $Arr2)
 
 function siteprocessor_config_visual_color_set_css(){
   //FIXME: cache from here (with theme as key)
-    
+
   global $theme_key;
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);  
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
   //skip if not supported by active theme
   if(!isset($info_arr['siteprocessor']['colors'])) return array();
-  
+
   $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
-  
+
   $css2add='';
   foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
     foreach($files as $file){
@@ -237,7 +231,7 @@ function siteprocessor_config_visual_color_set_css(){
         }
         $file_content=preg_replace('/(\[\[[A-Za-z0-9_-]+\]\])/','magenta',$file_content);
         $css2add.=$file_content;
-        
+
       }
     }
   }
@@ -255,7 +249,7 @@ function siteprocessor_config_visual_parse_theme_info($theme){
     //merge from basetheme info
     $file_arr=MergeArrays($base_arr,$file_arr);
   }
-  
+
   //FIXME: register order of inherited themes
   $file_arr['siteprocessor']['theme_order'][]=$theme;
   return $file_arr;
@@ -267,7 +261,7 @@ function siteprocessor_config_visual_color_groups_get(){
   $info_arr=siteprocessor_config_visual_parse_theme_info($theme);
   $color_groups=$info_arr['siteprocessor']['color_groups'];
   return $color_groups;
-  
+
 }
 
 function siteprocessor_config_visual_colors_get($args=null){
@@ -276,7 +270,7 @@ function siteprocessor_config_visual_colors_get($args=null){
   //skip if not supported by active theme
   if(!isset($info_arr['siteprocessor']['colors'])) return array();
   $colors=$info_arr['siteprocessor']['colors'];
-  
+
   //returns list of keys
   if($args){
     if(isset($args['keys_list'])){
@@ -289,7 +283,7 @@ function siteprocessor_config_visual_colors_get($args=null){
       return $keys;
     }
   }
-  
+
   //getting customized colors
   $colors_var=variable_get('siteprocessor_config_visual_colors', array());
   foreach($colors as $gkey=>$group){
@@ -298,8 +292,8 @@ function siteprocessor_config_visual_colors_get($args=null){
         $colors[$gkey][$key]['value']=$colors_var[$key];
       }
     }
-  }  
-  
+  }
+
   //returns list of keys and values
   if($args){
     if(isset($args['keys_values_list'])){
@@ -310,9 +304,9 @@ function siteprocessor_config_visual_colors_get($args=null){
         }
       }
       return $list;
-    }  
+    }
   }
-  
+
   //returns entire structure
   return $colors;
 }

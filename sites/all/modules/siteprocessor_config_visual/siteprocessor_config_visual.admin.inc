@@ -2,40 +2,32 @@
 
 function siteprocessor_config_visual_custom_css_form($form,&$form_state) {
   $form = array();
-  $form['custom_css']=array(
+  $form['siteprocessor_config_visual_custom_css']=array(
     '#type'=>'textarea',
     '#title'=>t('Custom CSS'),
     '#default_value'=>variable_get('siteprocessor_config_visual_custom_css', ''),
-    '#description' => t('Enter custom CSS code here'),  
-      
+    '#description' => t('Enter custom CSS code here'),
   );
-  
-   // Submit Button.
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save'),
-  );
-  return($form);
-  
+
+  return system_settings_form($form);
 }
 
 function siteprocessor_config_visual_colors_form($form,&$form_state) {
   $colors=siteprocessor_config_visual_colors_get();
   $groups=siteprocessor_config_visual_color_groups_get();
-  
   $fieldtype = module_exists('jquery_colorpicker') ? 'jquery_colorpicker' : 'textfield';
- 
+
   $form = array();
-  
+
   foreach($groups as $gkey=>$group){
     $form[$gkey] = array(
           '#type' => 'fieldset',
           '#title' => t($group),
           '#collapsible' => TRUE,
           '#collapsed' => TRUE,
-    );    
+    );
   }
-  
+
   foreach($colors as $gkey=>$group){
     foreach($group as $key=>$item){
       $form[$gkey][$key]=array(
@@ -45,14 +37,14 @@ function siteprocessor_config_visual_colors_form($form,&$form_state) {
       );
     }
   }
-  
+
    // Submit Button.
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
   );
   return($form);
-  
+
 }
 
 
@@ -70,10 +62,10 @@ function siteprocessor_config_visual_images_form($form,&$form_state) {
     '#description' => t('The uploaded image will be displayed on the top of every page'),
     '#default_value' => variable_get('siteprocessor_config_visual_top_image_fid', ''),
     '#upload_location' => 'public://siteprocessor_config_visual_images/',
-  );  
+  );
 
-   
-  
+
+
   if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
     $image = file_load($image_fid);
     $form['background_image'] = array(
@@ -87,9 +79,9 @@ function siteprocessor_config_visual_images_form($form,&$form_state) {
     '#description' => t('The uploaded image will be displayed on the top background of every page'),
     '#default_value' => variable_get('siteprocessor_config_visual_background_image_fid', ''),
     '#upload_location' => 'public://siteprocessor_config_visual_images/',
-  );  
-  
-  
+  );
+
+
   if ($image_fid = variable_get('siteprocessor_config_visual_owner_image_fid', FALSE)) {
     $image = file_load($image_fid);
     $form['owner_image'] = array(
@@ -103,17 +95,17 @@ function siteprocessor_config_visual_images_form($form,&$form_state) {
     '#description' => t('Owner logo will be displayed in the background of every page'),
     '#default_value' => variable_get('siteprocessor_config_visual_owner_image_fid', ''),
     '#upload_location' => 'public://siteprocessor_config_visual_images/',
-  );  
-    
-  
-  
+  );
+
+
+
    // Submit Button.
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
   );
   return $form;
-  
+
   return system_settings_form($form);
 }
 
