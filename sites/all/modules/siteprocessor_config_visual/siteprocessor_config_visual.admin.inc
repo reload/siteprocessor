@@ -1,5 +1,23 @@
 <?php
 
+function siteprocessor_config_visual_custom_css_form($form,&$form_state) {
+  $form = array();
+  $form['custom_css']=array(
+    '#type'=>'textarea',
+    '#title'=>t('Custom CSS'),
+    '#default_value'=>variable_get('siteprocessor_config_visual_custom_css', ''),
+    '#description' => t('Enter custom CSS code here'),  
+      
+  );
+  
+   // Submit Button.
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+  return($form);
+  
+}
 
 function siteprocessor_config_visual_colors_form($form,&$form_state) {
   $colors=siteprocessor_config_visual_colors_get();

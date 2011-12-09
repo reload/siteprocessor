@@ -21,7 +21,7 @@ function siteprocessor_config_visual_block_view($delta){
       $block['subject'] ='';
       if ($image_fid = variable_get('siteprocessor_config_visual_top_image_fid', FALSE)) {
         $image = file_load($image_fid);
-        $block['content']=theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri));
+        $block['content']=l(theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri)),'<front>',array('html'=>true));
       }
       else {
         $block['content']='';
@@ -62,9 +62,6 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     variable_set('siteprocessor_config_visual_top_image_fid', FALSE);
     drupal_set_message(t('The image @image_name was removed.', array('@image_name' => $file->filename)));
   }
-
-  
-  
   
   if ($form_state['values']['siteprocessor_config_visual_background_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_background_image_fid']);
@@ -85,7 +82,6 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     drupal_set_message(t('The background image @image_name was removed.', array('@image_name' => $file->filename)));
   }
 
-  
   
   if ($form_state['values']['siteprocessor_config_visual_owner_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_owner_image_fid']);
@@ -109,17 +105,6 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
 function siteprocessor_config_visual_permission() {
   return array(
     'administer siteprocessor colors'=>array(
@@ -130,6 +115,10 @@ function siteprocessor_config_visual_permission() {
       'title'=>t('administer site processor images'),
       'description'=>t('administer site processor images'),
     ),      
+    'administer site processor custom css'=>array(
+      'title'=>t('administer site processor custom css'),
+      'description'=>t('administer site processor custom css'),
+    ),         
   );
 }
 
@@ -156,6 +145,18 @@ function siteprocessor_config_visual_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
   
+
+  $items['admin/config/siteprocessor/custom_css'] = array(
+    'title' => 'Custom CSS',
+    'description' => 'Custom CSS',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_config_visual_custom_css_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site processor custom css'),
+    'file' => 'siteprocessor_config_visual.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   return $items;
 }
 
@@ -173,18 +174,23 @@ function siteprocessor_config_visual_init(){
         background-repeat:no-repeat;         
       }
     ",'inline');
-  }    
+  }
+  
+  if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
+    drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
+  }
+  
+
+  
 }
 
-
-
-
-
-
-
+function siteprocessor_config_visual_custom_css_form_submit($form, &$form_state) {
+  $custom_css=$form_state['values']['custom_css'];
+  variable_set('siteprocessor_config_visual_custom_css',$custom_css);
+  drupal_set_message(t('Custom CSS have been saved'), 'status');
+}
 
 function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
-  krumo($form_state);
   $color_keys=siteprocessor_config_visual_colors_get(array('keys_list'=>true));
   $color_list=array();
   foreach($color_keys as $key){
@@ -195,10 +201,6 @@ function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
   siteprocessor_config_visual_colors_set($color_list);
   drupal_set_message(t('Colors have been saved'), 'status');
 }
-
-
-
-
 
 //From http://www.php.net/manual/en/function.array-merge-recursive.php
 function MergeArrays($Arr1, $Arr2)
