@@ -155,7 +155,7 @@ function siteprocessor_layout_100_66_33_default_panels_mini() {
     $display->content['new-6'] = $pane;
     $display->panels['middle'][5] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->title_pane = 'new-3';
   $mini->display = $display;
   $export['right_column'] = $mini;
 
