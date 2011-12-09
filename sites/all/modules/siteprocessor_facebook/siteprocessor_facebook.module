@@ -1,29 +1,42 @@
 <?php
 
+/**
+ * Implements hook_block_info().
+ */
 function siteprocessor_facebook_block_info(){
-  $blocks=array(
-    'like_box' =>array(
+  $blocks = array(
+    'like_box' => array(
       'info' => t('Facebook like box'),
-      'cache' => DRUPAL_NO_CACHE, 
+      'cache' => DRUPAL_NO_CACHE,
     ),
   );
   return $blocks;
 }
 
+/**
+ * Implements hook_block_view().
+ */
 function siteprocessor_facebook_block_view($delta){
-  $block=array();
-  switch ($delta){
+  $block = array();
+
+  switch ($delta) {
     case 'like_box':
-    $block['subject'] ='Facebook like box';
-    //$block['#theme'] ='';
-    //$block['content'] ='TOP BLOCK CONTENT';
-    $facebook_pageurl=variable_get('siteprocessor_facebook_pageurl','http://www.facebook.com/reloaddk');
-    $block['content']='<div class="fb-like-box" data-href="'.$facebook_pageurl.'" data-width="292" data-show-faces="false" data-stream="false" data-header="false"></div>';
+    $block['subject'] = t('Facebook like box');
+    $facebook_pageurl = variable_get('siteprocessor_facebook_pageurl', NULL);
+    $block['content']='<div class="fb-like-box" data-href="' . $facebook_pageurl . '" data-width="292" data-show-faces="false" data-stream="false" data-header="false"></div>';
     break;
   }
   return $block;
 }
 
-function siteprocessor_facebook_init(){
-  drupal_add_js(drupal_get_path('module', 'siteprocessor_facebook').'/siteprocessor_facebook.js',array('group'=>JS_LIBRARY,'every_page'=>true));
+/**
+ * Implements hook_init().
+ */
+function siteprocessor_facebook_init() {
+  drupal_add_js(array('siteprocessor_facebook_appid' => variable_get('siteprocessor_facebook_appid', NULL)), 'setting');
+  drupal_add_js(drupal_get_path('module', 'siteprocessor_facebook') . '/siteprocessor_facebook.js', array(
+    'group' => JS_LIBRARY,
+    'every_page'=>true,
+  ));
 }
+

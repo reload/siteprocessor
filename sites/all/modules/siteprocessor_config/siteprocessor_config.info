@@ -6,4 +6,6 @@ version = 7.x-0.1
 ; Define variables which should be configurable from admin interface
 siteprocessor[variable][googleanalytics][googleanalytics_account] = "Google Analytics Account ID"
 siteprocessor[variable][googleanalytics][googleanalytics_domain_mode] = "Google Analytics Domain Mode"
+siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_appid] = "Facebook Application ID"
+siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_pageurl] = "Facebook Page URL"
 
