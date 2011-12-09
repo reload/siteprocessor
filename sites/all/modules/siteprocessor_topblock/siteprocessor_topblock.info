@@ -1,3 +1,0 @@
-core = "7.x"
-name = "siteprocessor_topblock"
-package = "Siteprocessor"

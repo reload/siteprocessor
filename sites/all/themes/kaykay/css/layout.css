@@ -90,3 +90,10 @@
   margin:10px;
   min-height: 120px;
 }
+
+#ownerbox {
+  position:fixed;
+  top:500px;
+  right:0;
+  z-index:-100;
+}

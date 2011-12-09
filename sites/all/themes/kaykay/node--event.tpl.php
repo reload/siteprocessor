@@ -16,6 +16,9 @@
         <div class="event-property event-category">
           <?php print render($content['field_event_category']);?>
         </div>
+        <div class="event-property event-target">
+          <?php print render($content['field_event_target']);?>
+        </div>        
         <div class="event-property event-location">
           <?php print render($content['field_location']);?>
         </div>

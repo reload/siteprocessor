@@ -1,4 +1,124 @@
-.<?php
+<?php
+
+function siteprocessor_config_visual_block_info(){
+  $blocks=array(
+    'topblock' =>array(
+      'info' => t('Top block'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),
+    'ownerblock' =>array(
+      'info' => t('Owner block'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),      
+  );
+  return $blocks;
+}
+
+function siteprocessor_config_visual_block_view($delta){
+  $block=array();
+  switch ($delta){
+    case 'topblock':
+      $block['subject'] ='';
+      if ($image_fid = variable_get('siteprocessor_config_visual_top_image_fid', FALSE)) {
+        $image = file_load($image_fid);
+        $block['content']=theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri));
+      }
+      else {
+        $block['content']='';
+      }
+      break;
+    case 'ownerblock':
+      $block['subject'] ='';
+      if ($image_fid = variable_get('siteprocessor_config_visual_owner_image_fid', FALSE)) {
+        $image = file_load($image_fid);
+        $block['content']=theme('image',array('path'=>$image->uri));
+      }
+      else {
+        $block['content']='';
+      }
+      break;      
+  }
+  return $block;
+}
+
+
+
+function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
+  if ($form_state['values']['siteprocessor_config_visual_top_image_fid'] != 0) {
+    $file = file_load($form_state['values']['siteprocessor_config_visual_top_image_fid']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    file_usage_add($file, 'siteprocessor_config_visual', 'top_image', 1);
+    variable_set('siteprocessor_config_visual_top_image_fid', $file->fid);
+    drupal_set_message(t('The top image @image_name was uploaded and saved with an ID of @fid', array('@image_name' => $file->filename, '@fid' => $file->fid)));
+  }
+  elseif ($form_state['values']['siteprocessor_config_visual_top_image_fid'] == 0) {
+    $fid = variable_get('siteprocessor_config_visual_top_image_fid', FALSE);
+    $file = $fid ? file_load($fid) : FALSE;
+    if ($file) {
+      file_usage_delete($file, 'siteprocessor_config_visual', 'top_image', 1);
+      file_delete($file);
+    }
+    variable_set('siteprocessor_config_visual_top_image_fid', FALSE);
+    drupal_set_message(t('The image @image_name was removed.', array('@image_name' => $file->filename)));
+  }
+
+  
+  
+  
+  if ($form_state['values']['siteprocessor_config_visual_background_image_fid'] != 0) {
+    $file = file_load($form_state['values']['siteprocessor_config_visual_background_image_fid']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    file_usage_add($file, 'siteprocessor_config_visual', 'background_image', 1);
+    variable_set('siteprocessor_config_visual_background_image_fid', $file->fid);
+    drupal_set_message(t('The background image @image_name was uploaded and saved with an ID of @fid', array('@image_name' => $file->filename, '@fid' => $file->fid)));
+  }
+  elseif ($form_state['values']['siteprocessor_config_visual_background_image_fid'] == 0) {
+    $fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE);
+    $file = $fid ? file_load($fid) : FALSE;
+    if ($file) {
+      file_usage_delete($file, 'siteprocessor_config_visual', 'background_image', 1);
+      file_delete($file);
+    }
+    variable_set('siteprocessor_config_visual_background_image_fid', FALSE);
+    drupal_set_message(t('The background image @image_name was removed.', array('@image_name' => $file->filename)));
+  }
+
+  
+  
+  if ($form_state['values']['siteprocessor_config_visual_owner_image_fid'] != 0) {
+    $file = file_load($form_state['values']['siteprocessor_config_visual_owner_image_fid']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    file_usage_add($file, 'siteprocessor_config_visual', 'owner_image', 1);
+    variable_set('siteprocessor_config_visual_owner_image_fid', $file->fid);
+    drupal_set_message(t('The background image @image_name was uploaded and saved with an ID of @fid', array('@image_name' => $file->filename, '@fid' => $file->fid)));
+  }
+  elseif ($form_state['values']['siteprocessor_config_visual_owner_image_fid'] == 0) {
+    $fid = variable_get('siteprocessor_config_visual_owner_image_fid', FALSE);
+    $file = $fid ? file_load($fid) : FALSE;
+    if ($file) {
+      file_usage_delete($file, 'siteprocessor_config_visual', 'owner_image', 1);
+      file_delete($file);
+    }
+    variable_set('siteprocessor_config_visual_owner_image_fid', FALSE);
+    drupal_set_message(t('The owner image @image_name was removed.', array('@image_name' => $file->filename)));
+  }
+    
+  
+}
+
+
+
+
+
+
+
+
+
+
+
 
 function siteprocessor_config_visual_permission() {
   return array(
@@ -6,28 +126,61 @@ function siteprocessor_config_visual_permission() {
       'title'=>t('administer siteprocessor colors'),
       'description'=>t('administer siteprocessor colors'),
     ),
+    'administer site processor images'=>array(
+      'title'=>t('administer site processor images'),
+      'description'=>t('administer site processor images'),
+    ),      
   );
 }
 
 function siteprocessor_config_visual_menu() {
-  $items['admin/media/siteprocessor_colors'] = array(
+  $items['admin/config/siteprocessor/colors'] = array(
     'title' => 'Colors',
     'description' => 'Adjust colors',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('siteprocessor_config_visual_colors_form'),
     'access callback' => 'user_access',
-    'access arguments' => array('administer siteprocessor colors '),
+    'access arguments' => array('administer siteprocessor colors'),
     'file' => 'siteprocessor_config_visual.admin.inc',
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['admin/config/siteprocessor/images'] = array(
+    'title' => 'Images',
+    'description' => 'Images',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_config_visual_images_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site processor images'),
+    'file' => 'siteprocessor_config_visual.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   return $items;
 }
 
 
 function siteprocessor_config_visual_init(){
   siteprocessor_config_visual_color_set_css();
+
+  if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
+    $image = file_load($image_fid);
+    $image_url=file_create_url($image->uri);
+    drupal_add_css("
+      body{
+        background-image:url($image_url);
+        background-position:top center;
+        background-repeat:no-repeat;         
+      }
+    ",'inline');
+  }    
 }
+
+
+
+
+
+
 
 
 function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
@@ -62,15 +215,16 @@ function MergeArrays($Arr1, $Arr2)
 
 
 function siteprocessor_config_visual_color_set_css(){
+  //FIXME: cache from here (with theme as key)
+    
+  global $theme_key;
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);  
+  //skip if not supported by active theme
+  if(!isset($info_arr['siteprocessor']['colors'])) return array();
   
-  //cache from here
   $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
   
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);  
-  
   $css2add='';
-  //FIXME: Order themes by inheritance
   foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
     foreach($files as $file){
       $filename=drupal_get_path('theme',$theme).'/'.$file;
@@ -101,21 +255,24 @@ function siteprocessor_config_visual_parse_theme_info($theme){
   }
   
   //FIXME: register order of inherited themes
+  $file_arr['siteprocessor']['theme_order'][]=$theme;
   return $file_arr;
 }
 
 
 function siteprocessor_config_visual_color_groups_get(){
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  $theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);
   $color_groups=$info_arr['siteprocessor']['color_groups'];
   return $color_groups;
   
 }
 
 function siteprocessor_config_visual_colors_get($args=null){
-  $active_theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($active_theme);
+  $theme=variable_get('theme_default','kaykay');
+  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);;
+  //skip if not supported by active theme
+  if(!isset($info_arr['siteprocessor']['colors'])) return array();
   $colors=$info_arr['siteprocessor']['colors'];
   
   //returns list of keys

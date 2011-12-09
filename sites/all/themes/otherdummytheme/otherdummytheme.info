@@ -1,5 +1,5 @@
-name = dummyTheme 
-description = Theme for dummies
+name = otherdummytheme 
+description = other Theme for dummies
 core = 7.x
 
 
@@ -18,8 +18,5 @@ siteprocessor[colors][menu][menu_text_active][value]=FFFFFF
 siteprocessor[colors][menu][menu_text_active][name]="Menu text - hover"
 siteprocessor[colors][menu][menu_text_active][value]=0000FF
 
-siteprocessor[color_css][dummytheme][]=css/colortemplate_base.css
-siteprocessor[color_css][dummytheme][]=css/colortemplate_base2.css
-
-siteprocessor[theme][dummytheme] = "Dummy theme"
-base theme=otherdummytheme
+siteprocessor[color_css][otherdummytheme][]=css/colortemplate_base1.css
+siteprocessor[color_css][otherdummytheme][]=css/colortemplate_basex2.css
