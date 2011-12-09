@@ -29,7 +29,8 @@ function siteprocessor_article_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['row_class'] = 'large-item clearfix';
   $handler->display->display_options['row_plugin'] = 'node';
@@ -75,8 +76,8 @@ function siteprocessor_article_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Latest 5 articles */
+  $handler = $view->new_display('panel_pane', 'Latest 5 articles', 'panel_pane_1');
 
   /* Display: Latest Articles (small list) */
   $handler = $view->new_display('panel_pane', 'Latest Articles (small list)', 'panel_pane_2');
@@ -90,6 +91,13 @@ function siteprocessor_article_views_default_views() {
   $handler->display->display_options['row_options']['links'] = 0;
   $handler->display->display_options['row_options']['comments'] = 0;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Entire list */
+  $handler = $view->new_display('panel_pane', 'Entire list', 'panel_pane_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $export['latest_articles'] = $view;
 
   return $export;
