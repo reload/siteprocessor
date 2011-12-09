@@ -35,7 +35,7 @@ function siteprocessor_frontpage_carousel_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => '600',
-          'height' => '450',
+          'height' => '330',
         ),
         'weight' => '1',
       ),

@@ -44,12 +44,24 @@ function siteprocessor_page_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '1',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'large_item' => array(
           'label' => 'above',
@@ -131,6 +143,12 @@ function siteprocessor_page_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'image',
@@ -140,6 +158,12 @@ function siteprocessor_page_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '0',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'large_item' => array(
           'label' => 'above',
