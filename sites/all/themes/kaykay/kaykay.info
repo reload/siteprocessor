@@ -42,7 +42,9 @@ siteprocessor[colors][page][page_link_hover][value]=8c2e0b
 siteprocessor[colors][page][page_content_wrapper_background][name]="page_content_wrapper_background"
 siteprocessor[colors][page][page_content_wrapper_background][value]=ffffff
 siteprocessor[colors][page][page_body_background][name]="page_body_background"
-siteprocessor[colors][page][page_body_background][value]=EEFFEE
+siteprocessor[colors][page][page_body_background][value]=FFFFCC
+siteprocessor[colors][page][page-pane-separator-border][name]="page-pane-separator-border"
+siteprocessor[colors][page][page-pane-separator-border][value]=999999
 
 
 siteprocessor[colors][menu][menu_text][name]="Menu text"
@@ -85,9 +87,9 @@ siteprocessor[colors][content][content_event_properties_background][value]=AAD5F
 siteprocessor[colors][content][content_event_extras_background][name]="content_event_extras_background"
 siteprocessor[colors][content][content_event_extras_background][value]=FFF0CC
 siteprocessor[colors][content][content_event_category_background][name]="content_event_category_background"
-siteprocessor[colors][content][content_event_category_background][value]=AAD5FF
+siteprocessor[colors][content][content_event_category_background][value]=BBAAFF
 siteprocessor[colors][content][content_event_target_background][name]="content_event_target_background"
-siteprocessor[colors][content][content_event_target_background][value]=AAD5FF
+siteprocessor[colors][content][content_event_target_background][value]=FFFFAA
 siteprocessor[colors][content][content_event_datetime_background][name]="content_event_datetime_background"
 siteprocessor[colors][content][content_event_datetime_background][value]=BBFFBB
 siteprocessor[colors][content][content_event_location_background][name]="content_event_location_background"
@@ -97,7 +99,13 @@ siteprocessor[colors][content][content_event_location_background][value]=CCEEFF
 siteprocessor[colors][content][content_property_bar_text][name]="content_property_bar_text"
 siteprocessor[colors][content][content_property_bar_text][value]=444444
 
+siteprocessor[colors][views][views_item_hover_background][name]="views_item_hover_background"
+siteprocessor[colors][views][views_item_hover_background][value]=f0f0f0
+siteprocessor[colors][views][views_item_hover_border][name]="views_item_hover_border"
+siteprocessor[colors][views][views_item_hover_border][value]=dddddd
 
+siteprocessor[colors][views][views_item_separator_border][name]="views_item_separator_border"
+siteprocessor[colors][views][views_item_separator_border][value]=C0C0C0
 
 siteprocessor[colors][views][views_large_item_header_link_text][name]="views_large_item_header_link_text"
 siteprocessor[colors][views][views_large_item_header_link_text][value]=b63300

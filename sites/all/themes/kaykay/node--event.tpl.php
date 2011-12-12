@@ -25,7 +25,7 @@
         <div class="event-property event-datetime">
           <?php print render($content['field_event_time']);?>
         </div>
-        <?php if(isset($content['field_email'])||isset($content['field_website'])):?>
+        <?php if(isset($content['field_email'])||isset($content['field_links'])):?>
         <div class="event-property event-extras">
           <?php print render($content['field_email']);?>
           <?php print render($content['field_links']);?>

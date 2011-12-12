@@ -65,3 +65,17 @@ object, embed {
   margin:0;
   padding:0;
 }
+
+ul.menu li {
+  margin:0;
+}
+
+
+li.expanded, li.collapsed, li.leaf{
+  margin:0;
+  padding:0;
+}
+
+ul li.expanded {
+  list-style:none;
+}

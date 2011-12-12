@@ -11,7 +11,7 @@
       <div class="panel-panel panel-col panel-col-first panel-col-maincontent">
         <div class="inside"><?php print $content['2_1']; ?></div>
       </div>
-      <div class="panel-panel panel-col panel-col-last panel-col-right">
+      <div class="panel-panel panel-col panel-col-last panel-col-right panel-sidebar">
         <div class="inside"><?php print $content['2_2']; ?></div>
       </div>
     </div>

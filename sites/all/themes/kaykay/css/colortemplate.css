@@ -9,7 +9,6 @@ body {
   border-color:[[page_wrapper_border]];
 }
 
-
 .view-filters {
   background-color:[[views-filter-background]];
   border-color:[[views-filter-border]];
@@ -41,7 +40,6 @@ a:hover {
   color:[[menu_text_active]];
   background-color:[[menu_background_active]];
   border-color:[[menu_border_active]];
-
 }
 
 .pane-page-primary-links ul li a:hover,
@@ -70,7 +68,6 @@ a:hover {
   border-color:[[menu_frontpage_link_border]];
 }
 
-
 .carousel-item-wrapper .property-bar{
   color: [[views_carousel_item_property_bar_text]];
 }
@@ -91,21 +88,49 @@ a:hover {
   color:[[views_large_item_header_link_text_hover]];
 }
 
+li.list-item h4 a:hover,
+.imagetile-item-wrapper:hover,
+.large-item-wrapper:hover 
+ {
+  background-color:[[views_item_hover_background]];
+  border-color:[[views_item_hover_border]];  
+}
+
+/*
+li.list-item h4 a:hover {
+  border-color:[[views_item_hover_border]];
+}
+*/
+
+
+.menu-name-main-menu.menu-level-2 ul li a:hover,
+.menu-name-main-menu.menu-level-2 ul li a.active,
+.menu-name-main-menu.menu-level-1 > ul > li ul li a.active,
+.menu-name-main-menu.menu-level-1 > ul > li ul li a:hover
+{
+  background-color: [[views_item_hover_background]];
+  border-color: [[views_item_hover_border]];
+}
+
+.menu-name-main-menu.menu-level-2 > ul > li,
+.menu-name-main-menu.menu-level-1 > ul > li > ul > li,
+li.large-item,
+li.list-item
+{
+  border-bottom-color: [[views_item_separator_border]];
+}
 
 .property-bar{
   color: [[content_property_bar_text]];
 }
 
-
 .node-event .event-properties{
   background-color:[[content_event_properties_background]]; /*fixme*/
 }
 
-
 .node-event .event-properties .event-location {
   background-color:[[content_event_location_background]];
 }
-
 
 .node-event .event-properties .event-datetime {
   background-color:[[content_event_datetime_background]];
@@ -134,4 +159,8 @@ a:hover {
 .carousel-item-content {
   background-color: [[views_carousel_item_background]];
   color: [[views_carousel_item_text]];
+}
+
+.content-wrapper .panel-pane {
+    border-bottom-color: [[page-pane-separator-border]];
 }
