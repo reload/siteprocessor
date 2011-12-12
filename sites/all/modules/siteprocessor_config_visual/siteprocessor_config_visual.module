@@ -286,6 +286,9 @@ function siteprocessor_config_visual_colors_get($args=null){
 
   //getting customized colors
   $colors_var=variable_get('siteprocessor_config_visual_colors', array());
+  if(!is_array($colors_var)){
+    $colors_var=array();
+  }
   foreach($colors as $gkey=>$group){
     foreach($group as $key=>$item){
       if(isset($colors_var[$key])){
