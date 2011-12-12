@@ -29,6 +29,8 @@ dependencies[] = rdf
 
 ; Contrib modules
 dependencies[] = features
+dependencies[] = media
+dependencies[] = wysiwyg
 
 ; SiteProcessor modules
 dependencies[] = siteprocessor_page
