@@ -40,6 +40,7 @@ dependencies[] = siteprocessor_contact
 dependencies[] = siteprocessor_event
 dependencies[] = siteprocessor_facebook
 dependencies[] = siteprocessor_frontpage_carousel
+dependencies[] = siteprocessor_permissions
 
 ; SiteProcessor frontend layout
 dependencies[] = siteprocessor_layout_100_66_33
