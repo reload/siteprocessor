@@ -10,7 +10,7 @@ function siteprocessor_base_block_info(){
   $blocks=array(
     'frontpage' =>array(
       'info' => t('Front page button'),
-      'cache' => DRUPAL_NO_CACHE, 
+      'cache' => DRUPAL_NO_CACHE,
     ),
   );
   return $blocks;
@@ -44,5 +44,6 @@ function siteprocessor_base_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['carousel_item'] = array(
     'label' => t('Carousel item'),
     'custom settings' => TRUE,
-  );  
-} 
+  );
+}
+
