@@ -33,10 +33,13 @@ function siteprocessor_facebook_block_view($delta){
  * Implements hook_init().
  */
 function siteprocessor_facebook_init() {
-  drupal_add_js(array('siteprocessor_facebook_appid' => variable_get('siteprocessor_facebook_appid', NULL)), 'setting');
-  drupal_add_js(drupal_get_path('module', 'siteprocessor_facebook') . '/siteprocessor_facebook.js', array(
-    'group' => JS_LIBRARY,
-    'every_page'=>true,
-  ));
+  if($appid=variable_get('siteprocessor_facebook_appid', NULL)){
+    drupal_add_js(array('siteprocessor_facebook_appid' => $appid), 'setting');
+    drupal_add_js(drupal_get_path('module', 'siteprocessor_facebook') . '/siteprocessor_facebook.js', array(
+      'group' => JS_LIBRARY,
+      'every_page'=>true,
+      'scope'=>'footer',
+    ));
+  }
 }
 
