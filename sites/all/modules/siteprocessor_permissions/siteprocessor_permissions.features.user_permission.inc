@@ -56,7 +56,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'sponsor',
+      1 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -116,7 +117,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'roles' => array(
       0 => 'editor',
       1 => 'site admin',
-      2 => 'superadmin',
+      2 => 'sponsor',
+      3 => 'superadmin',
     ),
     'module' => 'toolbar',
   );
@@ -827,7 +829,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'sponsor',
+      1 => 'superadmin',
     ),
     'module' => 'system',
   );
