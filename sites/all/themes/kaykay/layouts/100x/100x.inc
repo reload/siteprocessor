@@ -8,6 +8,8 @@ $plugin = array(
   'theme' => '100x',
   'css' => '100x.css',
   'regions' => array(
-    '1' => t('Main area'),
+    '1' => t('Top area'),
+    '2' => t('Main area'),
+
   ),
 );
