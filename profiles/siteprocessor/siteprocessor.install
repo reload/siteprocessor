@@ -74,9 +74,6 @@ function siteprocessor_install() {
   }
   $query->execute();
 
-  // Enable the page manager node view templates
-  variable_set('page_manager_node_view_disabled', FALSE);
-
 }
 
 
