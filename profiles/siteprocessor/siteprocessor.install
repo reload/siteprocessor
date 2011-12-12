@@ -73,6 +73,10 @@ function siteprocessor_install() {
     $query->values($record);
   }
   $query->execute();
+
+  // Enable the page manager node view templates
+  variable_set('page_manager_node_view_disabled', FALSE);
+
 }
 
 
