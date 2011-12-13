@@ -1,3 +1,5 @@
 core = "7.x"
 name = "siteprocessor_config_visual"
 package = "Siteprocessor"
+dependencies[] = "jquery_colorpicker"
+
