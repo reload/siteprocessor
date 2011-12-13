@@ -14,7 +14,7 @@ function siteprocessor_article_user_default_permissions() {
   $permissions['create article content'] = array(
     'name' => 'create article content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -23,7 +23,7 @@ function siteprocessor_article_user_default_permissions() {
   $permissions['delete any article content'] = array(
     'name' => 'delete any article content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -32,7 +32,7 @@ function siteprocessor_article_user_default_permissions() {
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -41,7 +41,7 @@ function siteprocessor_article_user_default_permissions() {
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -50,7 +50,7 @@ function siteprocessor_article_user_default_permissions() {
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'superadmin',
     ),
     'module' => 'node',
   );
