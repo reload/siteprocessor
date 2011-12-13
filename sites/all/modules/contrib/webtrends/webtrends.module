@@ -47,8 +47,8 @@ EOT;
 
   // We're relying on Drupal inserting inline js after references to
   // external files.
+  drupal_add_js(drupal_get_path('module', 'webtrends') . '/webtrends.js', array('scope' => 'footer'));
   drupal_add_js($script, array('type' => 'inline', 'scope' => 'footer'));
-  drupal_add_js(drupal_get_path('module', 'webtrends') . '/webtrends.js', 'module', 'footer');
 
   $page['page_bottom']['webtrends_script'] = array(
     '#markup' => $html,
