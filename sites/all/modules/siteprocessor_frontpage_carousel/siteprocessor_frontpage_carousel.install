@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function siteprocessor_frontpage_carousel_install() {
+  // Create the nodequeue for the frontpage carousel
+  $carousel_nodequeue = array(
+    'title' => 'Front page carousel',
+    'name' => 'front_page_carousel',
+    'subqueue_title' => '',
+    'size' => 10,
+    'reverse' => 0,
+    'i18n' => 0,
+    'show_in_links' => FALSE,
+    'show_in_tab' => TRUE,
+    'show_in_ui' => TRUE,
+    'subqueues' => array(),
+    'add_subqueue' => array('Front page carousel'),
+    'owner' => 'nodequeue',
+    'new' => TRUE,
+    'types' => array(
+      'article',
+      'event'
+    ),
+    'roles' => array(3, 4, 5),
+  );
+
+  $queue = (object) $carousel_nodequeue;
+  $qid = nodequeue_save($queue);
+}
