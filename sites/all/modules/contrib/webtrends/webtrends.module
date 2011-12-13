@@ -27,7 +27,7 @@ function webtrends_page_alter(&$page) {
 
   if (!$domain || !$dcs_id) {
     watchdog('webtrends', 'Webtrends module not configured.', array(), WATCHDOG_NOTICE);
-    //return;
+    return;
   }
 
     $script = <<<EOT
