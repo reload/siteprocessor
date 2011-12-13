@@ -146,7 +146,10 @@ function siteprocessor_layout_100_66_33_default_page_manager_pages() {
   $page->admin_title = 'Articles';
   $page->admin_description = '';
   $page->path = 'articles';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Artikler',
