@@ -180,6 +180,15 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: administer date tools
+  $permissions['administer date tools'] = array(
+    'name' => 'administer date tools',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'date_tools',
+  );
+
   // Exported permission: administer features
   $permissions['administer features'] = array(
     'name' => 'administer features',
@@ -206,6 +215,24 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'image',
+  );
+
+  // Exported permission: administer jquery colorpicker
+  $permissions['administer jquery colorpicker'] = array(
+    'name' => 'administer jquery colorpicker',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'jquery_colorpicker',
+  );
+
+  // Exported permission: administer media
+  $permissions['administer media'] = array(
+    'name' => 'administer media',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'media',
   );
 
   // Exported permission: administer menu
@@ -235,6 +262,17 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: administer nodequeue
+  $permissions['administer nodequeue'] = array(
+    'name' => 'administer nodequeue',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'nodequeue',
+  );
+
   // Exported permission: administer nodes
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
@@ -260,6 +298,15 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'panels',
+  );
+
+  // Exported permission: administer panel-nodes
+  $permissions['administer panel-nodes'] = array(
+    'name' => 'administer panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
   );
 
   // Exported permission: administer panels layouts
@@ -501,6 +548,24 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'panels_mini',
   );
 
+  // Exported permission: create panel content
+  $permissions['create panel content'] = array(
+    'name' => 'create panel content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: create panel-nodes
+  $permissions['create panel-nodes'] = array(
+    'name' => 'create panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
+  );
+
   // Exported permission: create url aliases
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -528,6 +593,24 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any panel content
+  $permissions['delete any panel content'] = array(
+    'name' => 'delete any panel content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any panel-nodes
+  $permissions['delete any panel-nodes'] = array(
+    'name' => 'delete any panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
+  );
+
   // Exported permission: delete own event content
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
@@ -536,6 +619,24 @@ function siteprocessor_permissions_user_default_permissions() {
       1 => 'superadmin',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: delete own panel content
+  $permissions['delete own panel content'] = array(
+    'name' => 'delete own panel content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own panel-nodes
+  $permissions['delete own panel-nodes'] = array(
+    'name' => 'delete own panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
   );
 
   // Exported permission: delete revisions
@@ -587,6 +688,33 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any panel content
+  $permissions['edit any panel content'] = array(
+    'name' => 'edit any panel content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any panel-nodes
+  $permissions['edit any panel-nodes'] = array(
+    'name' => 'edit any panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
+  );
+
+  // Exported permission: edit media
+  $permissions['edit media'] = array(
+    'name' => 'edit media',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: edit own comments
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
@@ -603,6 +731,24 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: edit own panel content
+  $permissions['edit own panel content'] = array(
+    'name' => 'edit own panel content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own panel-nodes
+  $permissions['edit own panel-nodes'] = array(
+    'name' => 'edit own panel-nodes',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'panels_node',
   );
 
   // Exported permission: edit terms in 1
@@ -635,6 +781,15 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: import media
+  $permissions['import media'] = array(
+    'name' => 'import media',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'media',
+  );
+
   // Exported permission: manage features
   $permissions['manage features'] = array(
     'name' => 'manage features',
@@ -642,6 +797,28 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: manipulate all queues
+  $permissions['manipulate all queues'] = array(
+    'name' => 'manipulate all queues',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'nodequeue',
+  );
+
+  // Exported permission: manipulate queues
+  $permissions['manipulate queues'] = array(
+    'name' => 'manipulate queues',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'nodequeue',
   );
 
   // Exported permission: post comments
@@ -786,6 +963,17 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'location',
+  );
+
+  // Exported permission: view media
+  $permissions['view media'] = array(
+    'name' => 'view media',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+      2 => 'superadmin',
+    ),
+    'module' => 'media',
   );
 
   // Exported permission: view node location table
