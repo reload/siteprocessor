@@ -5,8 +5,15 @@ version = 7.x-0.1
 package = "Siteprocessor"
 
 ; Define variables which should be configurable from admin interface
-siteprocessor[variable][googleanalytics][googleanalytics_account] = "Google Analytics Account ID"
-siteprocessor[variable][googleanalytics][googleanalytics_domain_mode] = "Google Analytics Domain Mode"
+
+; Configuration for Facebook like page button
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_appid] = "Facebook Application ID"
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_pageurl] = "Facebook Page URL"
 
+; Configuration for Google Analytics
+siteprocessor[variable][googleanalytics][googleanalytics_account] = "Google Analytics Account ID"
+siteprocessor[variable][googleanalytics][googleanalytics_domain_mode] = "Google Analytics Domain Mode"
+
+; Configuration for Webtrends
+siteprocessor[variable][webtrends][webtrends_dcs_id] = "The site identification key."
+siteprocessor[variable][webtrends][webtrends_domain] = "The hostname of the tracked site."
