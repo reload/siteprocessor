@@ -66,33 +66,6 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     $pane = new stdClass;
     $pane->pid = 'new-2';
     $pane->panel = '2';
-    $pane->type = 'node_content';
-    $pane->subtype = 'node_content';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'links' => 0,
-      'no_extras' => 0,
-      'override_title' => 1,
-      'override_title_text' => '',
-      'identifier' => 'layout1',
-      'link' => 0,
-      'leave_node_title' => 1,
-      'build_mode' => 'full',
-      'context' => 'argument_entity_id:node_1',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $display->content['new-2'] = $pane;
-    $display->panels['2'][0] = 'new-2';
-    $pane = new stdClass;
-    $pane->pid = 'new-3';
-    $pane->panel = '2';
     $pane->type = 'panels_mini';
     $pane->subtype = 'node_view';
     $pane->shown = TRUE;
@@ -105,12 +78,14 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
       'override_title_text' => '',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $display->content['new-3'] = $pane;
-    $display->panels['2'][1] = 'new-3';
+    $pane->position = 0;
+    $display->content['new-2'] = $pane;
+    $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -131,7 +106,10 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $page->admin_title = 'Articles';
   $page->admin_description = '';
   $page->path = 'articles';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Artikler',
@@ -236,7 +214,10 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $page->admin_title = 'Event overview';
   $page->admin_description = '';
   $page->path = 'events';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Arrangementer',

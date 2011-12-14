@@ -107,7 +107,10 @@ function siteprocessor_layout_33_66_default_page_manager_pages() {
   $page->admin_title = 'Articles';
   $page->admin_description = '';
   $page->path = 'articles';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Artikler',
@@ -213,7 +216,10 @@ function siteprocessor_layout_33_66_default_page_manager_pages() {
   $page->admin_title = 'Event overview';
   $page->admin_description = '';
   $page->path = 'events';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Arrangementer',
