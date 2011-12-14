@@ -56,8 +56,10 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -226,6 +228,15 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'jquery_colorpicker',
   );
 
+  // Exported permission: administer languages
+  $permissions['administer languages'] = array(
+    'name' => 'administer languages',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'locale',
+  );
+
   // Exported permission: administer media
   $permissions['administer media'] = array(
     'name' => 'administer media',
@@ -248,7 +259,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer mini panels'] = array(
     'name' => 'administer mini panels',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'panels_mini',
   );
@@ -277,7 +289,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'node',
   );
@@ -430,7 +443,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer siteprocessor variable configuration'] = array(
     'name' => 'administer siteprocessor variable configuration',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'siteprocessor_config',
   );
@@ -467,7 +481,9 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'path',
   );
@@ -524,19 +540,11 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: create event content
-  $permissions['create event content'] = array(
-    'name' => 'create event content',
-    'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: create mini panels
@@ -570,7 +578,9 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'path',
   );
@@ -582,15 +592,6 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'shortcut',
-  );
-
-  // Exported permission: delete any event content
-  $permissions['delete any event content'] = array(
-    'name' => 'delete any event content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: delete any panel content
@@ -609,16 +610,6 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'panels_node',
-  );
-
-  // Exported permission: delete own event content
-  $permissions['delete own event content'] = array(
-    'name' => 'delete own event content',
-    'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: delete own panel content
@@ -653,7 +644,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'delete terms in 1',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
   );
@@ -663,7 +655,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'delete terms in 2',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
   );
@@ -673,19 +666,10 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'delete terms in 3',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
-  );
-
-  // Exported permission: edit any event content
-  $permissions['edit any event content'] = array(
-    'name' => 'edit any event content',
-    'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: edit any panel content
@@ -724,15 +708,6 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'comment',
   );
 
-  // Exported permission: edit own event content
-  $permissions['edit own event content'] = array(
-    'name' => 'edit own event content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: edit own panel content
   $permissions['edit own panel content'] = array(
     'name' => 'edit own panel content',
@@ -756,7 +731,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'edit terms in 1',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
   );
@@ -766,7 +742,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'edit terms in 2',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
   );
@@ -776,7 +753,8 @@ function siteprocessor_permissions_user_default_permissions() {
     'name' => 'edit terms in 3',
     'roles' => array(
       0 => 'editor',
-      1 => 'superadmin',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'taxonomy',
   );
@@ -876,7 +854,10 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['submit latitude/longitude'] = array(
     'name' => 'submit latitude/longitude',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
     ),
     'module' => 'location',
   );
@@ -888,6 +869,16 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'shortcut',
+  );
+
+  // Exported permission: translate interface
+  $permissions['translate interface'] = array(
+    'name' => 'translate interface',
+    'roles' => array(
+      0 => 'site admin',
+      1 => 'superadmin',
+    ),
+    'module' => 'locale',
   );
 
   // Exported permission: use advanced search
@@ -989,8 +980,10 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
     ),
     'module' => 'node',
   );
