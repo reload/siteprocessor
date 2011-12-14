@@ -12,7 +12,6 @@ body {
 .view-filters {
   background-color:[[views-filter-background]];
   border-color:[[views-filter-border]];
-  padding:5px;
 }
 
 .summary {
@@ -117,6 +116,7 @@ li.list-item h4 a:hover {
 li.large-item,
 li.list-item
 {
+  border-top-color: [[views_item_separator_border]];
   border-bottom-color: [[views_item_separator_border]];
 }
 
@@ -148,6 +148,16 @@ li.list-item
   background-color:[[content_event_extras_background]];
 }
 
+.node-event .event-properties .event-property {
+  border-color:[[content_event_property_border]];
+}
+
+
+
+.node-event .event-properties .field-label{
+  color: [[content_event_properties_label_text]];
+}
+
 .carousel-item-wrapper h4 a{
   color: [[views_carousel_item_header_link_text]];
 }
@@ -163,4 +173,9 @@ li.list-item
 
 .content-wrapper .panel-pane {
     border-bottom-color: [[page-pane-separator-border]];
+}
+.comments-box,
+hr
+{
+    border-top-color: [[page-pane-separator-border]];
 }

@@ -97,6 +97,14 @@ siteprocessor[colors][content][content_event_datetime_background][name]="content
 siteprocessor[colors][content][content_event_datetime_background][value]=BBFFBB
 siteprocessor[colors][content][content_event_location_background][name]="content_event_location_background"
 siteprocessor[colors][content][content_event_location_background][value]=CCEEFF
+siteprocessor[colors][content][content_event_properties_label_text][name]="content_event_properties_label_text"
+siteprocessor[colors][content][content_event_properties_label_text][value]=333333
+
+siteprocessor[colors][content][content_event_property_border][name]="content_event_property_border"
+siteprocessor[colors][content][content_event_property_border][value]=666666
+
+
+
 
 
 siteprocessor[colors][content][content_property_bar_text][name]="content_property_bar_text"

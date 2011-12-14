@@ -61,10 +61,9 @@
   
 <?php elseif($view_mode=='large_item'):?>
   <div class="large-item-wrapper">
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
-    
     <?php print render($content['field_image']);?>
     <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
+      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
