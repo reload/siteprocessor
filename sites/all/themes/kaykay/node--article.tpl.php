@@ -22,7 +22,7 @@
     <?php /*FIXME move to module and print $comments*/if($node->comment==COMMENT_NODE_OPEN):?>
       <div class="comments-box">
         <h2><?php print t('Comments');?></h2>
-        <div class="fb-comments" data-num-posts="3"></div>
+        <div class="fb-comments" data-num-posts="3" width="600"></div>
       </div>    
     <?php endif;?>
   </div>
