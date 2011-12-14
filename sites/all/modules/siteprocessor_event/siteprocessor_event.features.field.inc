@@ -240,7 +240,7 @@ function siteprocessor_event_field_default_fields() {
           'weight' => '1',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_plain',
@@ -337,7 +337,7 @@ function siteprocessor_event_field_default_fields() {
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_plain',
@@ -433,7 +433,7 @@ function siteprocessor_event_field_default_fields() {
           'weight' => '2',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'event_long',
@@ -841,7 +841,7 @@ function siteprocessor_event_field_default_fields() {
           'weight' => '5',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'location_cck',
           'settings' => array(),
           'type' => 'location_default',
