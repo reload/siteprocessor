@@ -9,6 +9,10 @@
  */
 function siteprocessor_base_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "panels_mini" && $api == "panels_default") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -19,29 +23,6 @@ function siteprocessor_base_ctools_plugin_api() {
  */
 function siteprocessor_base_image_default_styles() {
   $styles = array();
-
-  // Exported image style: content_top_image
-  $styles['content_top_image'] = array(
-    'name' => 'content_top_image',
-    'effects' => array(
-      1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => '600',
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => '1',
-      ),
-    ),
-  );
 
   // Exported image style: image_tile
   $styles['image_tile'] = array(
@@ -57,8 +38,8 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '300',
-          'height' => '225',
+          'width' => '290',
+          'height' => '218',
         ),
         'weight' => '1',
       ),
