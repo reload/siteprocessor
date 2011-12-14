@@ -22,7 +22,7 @@ function siteprocessor_event_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Search for events';
+  $handler->display->display_options['title'] = 'Filter events';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -155,11 +155,11 @@ function siteprocessor_event_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Large Items */
+  $handler = $view->new_display('panel_pane', 'Large Items', 'panel_pane_1');
 
-  /* Display: Events - tiles */
-  $handler = $view->new_display('panel_pane', 'Events - tiles', 'panel_pane_2');
+  /* Display: Image tiles */
+  $handler = $view->new_display('panel_pane', 'Image tiles', 'panel_pane_2');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['row_class'] = 'imagetile-item';
@@ -232,6 +232,10 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['sorts']['field_event_time_value']['id'] = 'field_event_time_value';
   $handler->display->display_options['sorts']['field_event_time_value']['table'] = 'field_data_field_event_time';
   $handler->display->display_options['sorts']['field_event_time_value']['field'] = 'field_event_time_value';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    0 => 'AND',
+    1 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -246,11 +250,13 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  $handler->display->display_options['filters']['type']['group'] = 0;
   /* Filter criterion: Content: Event time -  start date (field_event_time) */
   $handler->display->display_options['filters']['field_event_time_value']['id'] = 'field_event_time_value';
   $handler->display->display_options['filters']['field_event_time_value']['table'] = 'field_data_field_event_time';
   $handler->display->display_options['filters']['field_event_time_value']['field'] = 'field_event_time_value';
   $handler->display->display_options['filters']['field_event_time_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_event_time_value']['group'] = 1;
   $handler->display->display_options['filters']['field_event_time_value']['expose']['operator_id'] = 'field_event_time_value_op';
   $handler->display->display_options['filters']['field_event_time_value']['expose']['operator'] = 'field_event_time_value_op';
   $handler->display->display_options['filters']['field_event_time_value']['expose']['identifier'] = 'field_event_time_value';
@@ -259,12 +265,32 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_time_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_event_time_value']['default_date'] = '-1 day';
   $handler->display->display_options['filters']['field_event_time_value']['default_to_date'] = '+1 month';
+  /* Filter criterion: Content: Event time - end date (field_event_time:value2) */
+  $handler->display->display_options['filters']['field_event_time_value2']['id'] = 'field_event_time_value2';
+  $handler->display->display_options['filters']['field_event_time_value2']['table'] = 'field_data_field_event_time';
+  $handler->display->display_options['filters']['field_event_time_value2']['field'] = 'field_event_time_value2';
+  $handler->display->display_options['filters']['field_event_time_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_event_time_value2']['group'] = 1;
+  $handler->display->display_options['filters']['field_event_time_value2']['default_date'] = 'now';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: List Items */
+  $handler = $view->new_display('panel_pane', 'List Items', 'panel_pane_1');
+
+  /* Display: Large Items */
+  $handler = $view->new_display('panel_pane', 'Large Items', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix  large-item';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'large_item';
+  $handler->display->display_options['row_options']['links'] = 0;
+  $handler->display->display_options['row_options']['comments'] = 0;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['upcoming_events'] = $view;
 
   return $export;
