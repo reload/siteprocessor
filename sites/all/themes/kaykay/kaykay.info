@@ -1,6 +1,8 @@
 name = KayKay 
-description = Theme for koebenhavns kommune
+description = Theme for Koebenhavns Kommune
 core = 7.x
+
+
 
 stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/layout.css
@@ -12,6 +14,8 @@ regions[header] = Header
 regions[content] = Content
 regions[footer] = Footer
 regions[ownerbox] = Owner box
+
+scripts[] = js/kaykay.js
 
 
 plugins[panels][layouts] = layouts
@@ -47,30 +51,29 @@ siteprocessor[colors][page][page-pane-separator-border][name]="page-pane-separat
 siteprocessor[colors][page][page-pane-separator-border][value]=999999
 
 
-siteprocessor[colors][menu][menu_text][name]="Menu text"
-siteprocessor[colors][menu][menu_text][value]=000000
-siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
-siteprocessor[colors][menu][menu_text_active][value]=000000
+
 siteprocessor[colors][menu][menu_background_active][name]="Menu background active"
 siteprocessor[colors][menu][menu_background_active][value]=666622
 siteprocessor[colors][menu][menu_background][name]="Menu background"
 siteprocessor[colors][menu][menu_background][value]=FFFF88
-
-
 siteprocessor[colors][menu][menu_background_active_hover][name]="menu_background_active_hover"
-siteprocessor[colors][menu][menu_background_active_hover][value]=945BA3
+siteprocessor[colors][menu][menu_background_active_hover][value]=666622
 siteprocessor[colors][menu][menu_background_hover][name]="menu_background_hover"
-siteprocessor[colors][menu][menu_background_hover][value]=FF33DD
+siteprocessor[colors][menu][menu_background_hover][value]=FFFF88
+
+siteprocessor[colors][menu][menu_text][name]="Menu text"
+siteprocessor[colors][menu][menu_text][value]=000000
+siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
+siteprocessor[colors][menu][menu_text_active][value]=FFFFFF
 siteprocessor[colors][menu][menu_text_active_hover][name]="menu_text_active_hover"
-siteprocessor[colors][menu][menu_text_active_hover][value]=945BA3
+siteprocessor[colors][menu][menu_text_active_hover][value]=FFFFFF
 siteprocessor[colors][menu][menu_text_hover][name]="menu_text_hover"
-siteprocessor[colors][menu][menu_text_hover][value]=FF33DD
+siteprocessor[colors][menu][menu_text_hover][value]=000000
+
 siteprocessor[colors][menu][menu_border][name]="menu_border"
 siteprocessor[colors][menu][menu_border][value]=000000
-
-
 siteprocessor[colors][menu][menu_border_hover][name]="menu_border_hover"
-siteprocessor[colors][menu][menu_border_hover][value]=ff0000
+siteprocessor[colors][menu][menu_border_hover][value]=000000
 siteprocessor[colors][menu][menu_border_active][name]="menu_border_active"
 siteprocessor[colors][menu][menu_border_active][value]=000000
 siteprocessor[colors][menu][menu_border_active_hover][name]="menu_border_active_hover"

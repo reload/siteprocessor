@@ -13,23 +13,31 @@
      <?php print render($content['field_image']);?>
 
       <div class="event-properties">
-        <div class="event-property event-category">
-          <?php print render($content['field_event_category']);?>
-        </div>
-        <div class="event-property event-target">
-          <?php print render($content['field_event_target']);?>
-        </div>        
-        <div class="event-property event-location">
-          <?php print render($content['field_location']);?>
-        </div>
-        <div class="event-property event-datetime">
-          <?php print render($content['field_event_time']);?>
-        </div>
+        <?php if(isset($content['field_event_category'])):?>
+          <div class="event-property event-category">
+            <?php print render($content['field_event_category']);?>
+          </div>
+        <?php endif;?>
+        <?php if(isset($content['field_event_target'])):?>
+          <div class="event-property event-target">
+            <?php print render($content['field_event_target']);?>
+          </div>
+        <?php endif;?>
+        <?php if(isset($content['field_location'])):?>        
+          <div class="event-property event-location">
+            <?php print render($content['field_location']);?>
+          </div>
+        <?php endif;?>
+        <?php if(isset($content['field_event_time'])):?>
+          <div class="event-property event-datetime">
+            <?php print render($content['field_event_time']);?>
+          </div>
+        <?php endif;?>
         <?php if(isset($content['field_email'])||isset($content['field_links'])):?>
-        <div class="event-property event-extras">
-          <?php print render($content['field_email']);?>
-          <?php print render($content['field_links']);?>
-        </div>
+          <div class="event-property event-extras">
+            <?php print render($content['field_email']);?>
+            <?php print render($content['field_links']);?>
+          </div>
         <?php endif;?>
       </div>
       <?php
@@ -63,6 +71,7 @@
           <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
+        <?php print render($content['field_event_target']);?>
       </div>        
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -85,6 +94,8 @@
           <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
+        <?php print render($content['field_event_target']);?>
+          
       </div>        
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -107,7 +118,9 @@
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
           <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
         <?php endif;?>
-        <?php print render($content['field_event_category']);?>          
+        <?php print render($content['field_event_category']);?>  
+        <?php print render($content['field_event_target']);?>
+          
       </div>        
     <?php
       // We hide the comments and links now so that we can render them later.
