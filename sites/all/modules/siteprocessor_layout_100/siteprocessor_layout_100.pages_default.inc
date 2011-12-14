@@ -19,7 +19,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Node page (layout 1)',
+    'title' => 'Node page',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -36,6 +36,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
       1 => NULL,
       '2_1' => NULL,
       '2_2' => NULL,
+      2 => NULL,
     ),
   );
   $display->cache = array();
@@ -64,7 +65,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     $display->panels['1'][0] = 'new-1';
     $pane = new stdClass;
     $pane->pid = 'new-2';
-    $pane->panel = '1';
+    $pane->panel = '2';
     $pane->type = 'node_content';
     $pane->subtype = 'node_content';
     $pane->shown = TRUE;
@@ -86,9 +87,30 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $display->content['new-2'] = $pane;
-    $display->panels['1'][1] = 'new-2';
+    $display->panels['2'][0] = 'new-2';
+    $pane = new stdClass;
+    $pane->pid = 'new-3';
+    $pane->panel = '2';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'node_view';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $display->content['new-3'] = $pane;
+    $display->panels['2'][1] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -153,10 +175,11 @@ function siteprocessor_layout_100_default_page_manager_pages() {
       1 => NULL,
       '2_1' => NULL,
       '2_2' => NULL,
+      2 => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Seneste nyheder';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass;
@@ -181,21 +204,24 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $display->panels['1'][0] = 'new-1';
     $pane = new stdClass;
     $pane->pid = 'new-2';
-    $pane->panel = '1';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'latest_articles-panel_pane_3';
+    $pane->panel = '2';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'article_page';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $display->content['new-2'] = $pane;
-    $display->panels['1'][1] = 'new-2';
+    $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -210,10 +236,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $page->admin_title = 'Event overview';
   $page->admin_description = '';
   $page->path = 'events';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->access = array();
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Arrangementer',
@@ -240,7 +263,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Front page',
+    'title' => 'Panel',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -254,17 +277,14 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
       1 => NULL,
       '2_1' => NULL,
       '2_2' => NULL,
+      2 => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Seneste nyheder';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass;
@@ -289,21 +309,24 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $display->panels['1'][0] = 'new-1';
     $pane = new stdClass;
     $pane->pid = 'new-2';
-    $pane->panel = '1';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'search_for_events-panel_pane_2';
+    $pane->panel = '2';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'events_page';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $display->content['new-2'] = $pane;
-    $display->panels['1'][1] = 'new-2';
+    $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -358,6 +381,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
       1 => NULL,
       '2_1' => NULL,
       '2_2' => NULL,
+      2 => NULL,
     ),
   );
   $display->cache = array();
@@ -386,66 +410,13 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $display->panels['1'][0] = 'new-1';
     $pane = new stdClass;
     $pane->pid = 'new-2';
-    $pane->panel = '1';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'front_page_carousel-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $display->content['new-2'] = $pane;
-    $display->panels['1'][1] = 'new-2';
-    $pane = new stdClass;
-    $pane->pid = 'new-3';
-    $pane->panel = '1';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->panel = '2';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'front_page_content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Main content',
-      'title' => '',
-      'body' => '<div class="dummy">
-MAIN CONTENT </div>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $display->content['new-3'] = $pane;
-    $display->panels['1'][2] = 'new-3';
-    $pane = new stdClass;
-    $pane->pid = 'new-4';
-    $pane->panel = '1';
-    $pane->type = 'views';
-    $pane->subtype = 'latest_articles';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '100',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -454,26 +425,9 @@ MAIN CONTENT </div>',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
-    $display->content['new-4'] = $pane;
-    $display->panels['1'][3] = 'new-4';
-    $pane = new stdClass;
-    $pane->pid = 'new-5';
-    $pane->panel = '1';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'search_for_events-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $display->content['new-5'] = $pane;
-    $display->panels['1'][4] = 'new-5';
+    $pane->position = 0;
+    $display->content['new-2'] = $pane;
+    $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
