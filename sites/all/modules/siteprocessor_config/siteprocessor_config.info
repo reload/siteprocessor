@@ -5,7 +5,16 @@ version = 7.x-0.1
 package = "Siteprocessor"
 
 ; Define variables which should be configurable from admin interface
-
+; This values below will show up in configuration -> Siteprocessor -> base configuration -> Variable configuration
+; And it's mostly just a shortcut between variables database table and a simple layout.
+; the values in below is:
+;
+; siteprocessor[VALUE_1][VALUE_2][VALUE_3] = "VALUE_4"
+; VALUE_1 = definition of the menu tab which is used, in this ex. the variables.
+; VALUE_2 = the module of which the variable is originally defined.
+; VALUE_3 = the variable name, should be exact the same as in the variables table.
+; VALUE_4 = The description above the textfield in the forumlar.
+;
 ; Configuration for Facebook like page button
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_appid] = "Facebook Application ID"
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_pageurl] = "Facebook Page URL"
@@ -17,3 +26,4 @@ siteprocessor[variable][googleanalytics][googleanalytics_domain_mode] = "Google 
 ; Configuration for Webtrends
 siteprocessor[variable][webtrends][webtrends_dcs_id] = "The site identification key."
 siteprocessor[variable][webtrends][webtrends_domain] = "The hostname of the tracked site."
+

@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Implements hook_menu().
  *
@@ -206,6 +205,10 @@ function siteprocessor_config_layout_form_submit(&$form, &$form_state) {
   }
 }
 
+/**
+ * Custom callback function for the theme page
+ * Which toggle themes en/disabled.
+ */
 function siteprocessor_config_theme_page() {
   $form_config = _siteprocessor_config_get_config('siteprocessor');
   $siteprocessor_themes = array_unique(call_user_func_array('array_merge', $form_config['theme']));
