@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up this site.
+ */
+function siteprocessor_article_install() {
+  
+  //Installs date formats
+  $values = array(
+    array(
+      'format' => 'D, j. M. Y G:i',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+    array(
+      'format' => 'j/m G:i',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+  );
+
+  $query = db_insert('date_formats')->fields(array('format', 'type', 'locked'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+  
+  $values = array(
+    array(
+      'type' => 'article_long',
+      'title' => 'Article long',
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'article_short',
+      'title' => 'Article short',
+      'locked' => 0,
+    ),
+  );
+
+  $query = db_insert('date_formats')->fields(array('type', 'title', 'locked'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+    
+}

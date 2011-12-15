@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up this site.
+ */
+function siteprocessor_event_install() {
+  
+  //Installs date formats
+  $values = array(
+    array(
+      'format' => 'D, j. M. Y G:i',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+    array(
+      'format' => 'D, d. M. Y',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+  );
+
+  $query = db_insert('date_formats')->fields(array('format', 'type', 'locked'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+  
+  $values = array(
+    array(
+      'type' => 'event_long',
+      'title' => 'Event long',
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'event_short',
+      'title' => 'Event short',
+      'locked' => 0,
+    ),
+  );
+
+  $query = db_insert('date_formats')->fields(array('type', 'title', 'locked'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+    
+}
