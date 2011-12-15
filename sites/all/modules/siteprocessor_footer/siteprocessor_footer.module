@@ -20,7 +20,7 @@ function siteprocessor_footer_block_view($delta){
   switch ($delta){
     case 'footer_text':
       if($content=variable_get('siteprocessor_footer_text','')){
-        $block['content']=$content;//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
+        $block['content']=check_markup($content['value'],$content['format']);//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
       }    
       else{
         $block['content']='This text needs to be configured '.l('right here','admin/config/siteprocessor/footer_text');
@@ -33,12 +33,13 @@ function siteprocessor_footer_block_view($delta){
 
 function siteprocessor_footer_text_form($form,&$form_state){
   $form = array();
+  $content=variable_get('siteprocessor_footer_text', array('value'=>'','format'=>''));
   $form['siteprocessor_footer_text']=array(
     '#type'=>'text_format',
     '#title'=>t('Footer text'),
-    '#default_value'=>variable_get('siteprocessor_footer_text', ''),
+    '#default_value'=>$content['value'],
     '#description' => t('Enter footer text here'),
-    '#format'=>NULL,  
+    '#format'=>$content['format'],  
   );
 
   return system_settings_form($form);
