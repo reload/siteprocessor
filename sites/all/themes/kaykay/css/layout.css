@@ -43,17 +43,30 @@
 }
 
 
-#footer #block-siteprocessor-contact-footer-text {
+#footer #block-siteprocessor-footer-footer-text {
   float:left;
+  width:440px;
+  margin-left:10px;
+  padding-left:10px;  
 }
 
 #footer #block-siteprocessor-facebook-like-box {
-  float:right;
+  float:left;
+  width:265px;
 }
+
+#footer #block-menu-menu-footer-menu{
+  float: right;
+  width: 200px;  
+  margin-left:10px;
+  padding-left:10px;
+}
+
 
 #footer {
   margin:10px;
   min-height: 120px;
+  margin-bottom:85px;
 }
 
 #ownerbox {
@@ -65,4 +78,12 @@
 
 .toparea-wrapper {
   margin-bottom: 6px
+}
+
+
+
+#footer {
+    border-radius: 5px 5px 5px 5px;
+    min-height: 120px;
+    padding: 20px 10px;
 }

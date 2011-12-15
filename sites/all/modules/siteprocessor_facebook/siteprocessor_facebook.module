@@ -23,7 +23,7 @@ function siteprocessor_facebook_block_view($delta){
     case 'like_box':
     $block['subject'] = t('Facebook like box');
     $facebook_pageurl = variable_get('siteprocessor_facebook_pageurl', NULL);
-    $block['content']='<div class="fb-like-box" data-href="' . $facebook_pageurl . '" data-width="292" data-show-faces="false" data-stream="false" data-header="false"></div>';
+    $block['content']='<div class="fb-like-box" data-href="' . $facebook_pageurl . '" data-width="265" data-show-faces="false" data-stream="false" data-header="false"></div>';
     break;
   }
   return $block;

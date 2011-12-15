@@ -179,3 +179,15 @@ hr
 {
     border-top-color: [[page-pane-separator-border]];
 }
+
+
+#footer {
+    background-color: [[page-footer-background]];
+}
+
+#block-menu-menu-footer-menu,
+#block-siteprocessor-footer-footer-text,
+#block-siteprocessor-facebook-like-box 
+{
+  border-left-color:[[page-footer-item-border]];
+}

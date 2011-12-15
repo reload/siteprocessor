@@ -96,6 +96,7 @@ hr{
   padding: 5px 10px;
   text-transform: uppercase;
   text-decoration:none;	
+  font-family: 'Rosario',sans-serif
 }
 
 .menu-name-main-menu  ul li.expanded,
@@ -648,3 +649,31 @@ li.large-item:last-child{
 .fb-like {
   margin-bottom:10px;
 }
+
+
+
+
+#block-siteprocessor-footer-footer-text{
+  border-left-style: solid;
+  border-left-width:1px;
+}
+
+#block-menu-menu-footer-menu{
+  border-left-style: solid;
+  border-left-width:1px;
+}
+
+.region-footer ul.menu li.leaf {
+  list-style: none;
+}
+
+.region-footer ul.menu li.leaf {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family:'Bitter',serif;
+}
+.region-footer ul.menu li.leaf  a{
+  display:block;
+}
+
+

@@ -50,6 +50,11 @@ siteprocessor[colors][page][page_body_background][value]=FFFFCC
 siteprocessor[colors][page][page-pane-separator-border][name]="page-pane-separator-border"
 siteprocessor[colors][page][page-pane-separator-border][value]=999999
 
+siteprocessor[colors][page][page-footer-background][name]="page-footer-background"
+siteprocessor[colors][page][page-footer-background][value]=F5f5F5
+siteprocessor[colors][page][page-footer-item-border][name]="page-footer-item-border"
+siteprocessor[colors][page][page-footer-item-border][value]=CCCCCC
+
 
 
 siteprocessor[colors][menu][menu_background_active][name]="Menu background active"
