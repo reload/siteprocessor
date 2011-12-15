@@ -20,7 +20,7 @@ function siteprocessor_event_install() {
     ),
   );
 
-  $query = db_insert('date_formats')->fields(array('type', 'title', 'locked'));
+  $query = db_insert('date_format_type')->fields(array('type', 'title', 'locked'));
   foreach ($values as $record) {
     $query->values($record);
   }
