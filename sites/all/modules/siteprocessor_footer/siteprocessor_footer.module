@@ -1,0 +1,73 @@
+<?php
+/**
+ * Implements hook_block_info().
+ */
+function siteprocessor_footer_block_info(){
+  $blocks=array(
+    'footer_text' =>array(
+      'info' => t('Footer contact text'),
+      'cache' => DRUPAL_NO_CACHE, 
+    ),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function siteprocessor_footer_block_view($delta){
+  $block=array();
+  switch ($delta){
+    case 'footer_text':
+      if($content=variable_get('siteprocessor_footer_text','')){
+        $block['content']=$content;//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
+      }    
+      else{
+        $block['content']='This text needs to be configured';
+      }
+      $block['subject'] ='Footer text';
+    break;
+  }
+  return $block;
+} 
+
+function siteprocessor_footer_text_form($form,&$form_state){
+  $form = array();
+  $form['siteprocessor_footer_text']=array(
+    '#type'=>'text_format',
+    '#title'=>t('Footer text'),
+    '#default_value'=>variable_get('siteprocessor_footer_text', ''),
+    '#description' => t('Enter footer text here'),
+    '#format'=>NULL,  
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_permission().
+ */
+function siteprocessor_footer_permission() {
+  return array(
+    'administer siteprocessor footer'=>array(
+      'title'=>t('administer siteprocessor footer'),
+      'description'=>t('administer siteprocessor footer'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function siteprocessor_footer_menu() {
+  $items['admin/config/siteprocessor/footer_text'] = array(
+    'title' => 'Footer text',
+    'description' => 'Edit footer text',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_footer_text_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer siteprocessor footer'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
