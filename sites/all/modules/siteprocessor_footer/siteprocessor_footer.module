@@ -23,7 +23,7 @@ function siteprocessor_footer_block_view($delta){
         $block['content']=$content;//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
       }    
       else{
-        $block['content']='This text needs to be configured';
+        $block['content']='This text needs to be configured '.l('right here','admin/config/siteprocessor/footer_text');
       }
       $block['subject'] ='Footer text';
     break;
