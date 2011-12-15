@@ -105,7 +105,5 @@ function siteprocessor_config_visual_images_form($form,&$form_state) {
     '#value' => t('Save'),
   );
   return $form;
-
-  return system_settings_form($form);
 }
 
