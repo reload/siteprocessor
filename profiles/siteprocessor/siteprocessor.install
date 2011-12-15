@@ -7,6 +7,36 @@
  */
 function siteprocessor_install() {
 
+  
+  
+  //Install date formats
+  $values = array(
+    array(
+      'format' => 'D, j. M. Y G:i',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+    array(
+      'format' => 'D, d. M. Y',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+    array(
+      'format' => 'j/m G:i',
+      'type' => 'custom',
+      'locked' => 0,
+    ),
+  );
+
+  $query = db_insert('date_formats')->fields(array('format', 'type', 'locked'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+    
+  
+  
+  //Setup blocks in regions
   $default_theme = 'kaykay';
 
   $values = array(

@@ -6,27 +6,7 @@
  * Perform actions to set up this site.
  */
 function siteprocessor_article_install() {
-  
-  //Installs date formats
-  $values = array(
-    array(
-      'format' => 'D, j. M. Y G:i',
-      'type' => 'custom',
-      'locked' => 0,
-    ),
-    array(
-      'format' => 'j/m G:i',
-      'type' => 'custom',
-      'locked' => 0,
-    ),
-  );
-
-  $query = db_insert('date_formats')->fields(array('format', 'type', 'locked'));
-  foreach ($values as $record) {
-    $query->values($record);
-  }
-  $query->execute();
-  
+  //Set up date formats for events
   $values = array(
     array(
       'type' => 'article_long',
