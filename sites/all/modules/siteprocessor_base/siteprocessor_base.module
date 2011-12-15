@@ -6,6 +6,9 @@
 
 include_once('siteprocessor_base.features.inc');
 
+/**
+ * Implements hook_block_info().
+ */
 function siteprocessor_base_block_info(){
   $blocks=array(
     'frontpage' =>array(
@@ -16,6 +19,9 @@ function siteprocessor_base_block_info(){
   return $blocks;
 }
 
+/**
+ * Implements hook_block_view().
+ */
 function siteprocessor_base_block_view($delta){
   $block=array();
   switch ($delta){
@@ -27,7 +33,24 @@ function siteprocessor_base_block_view($delta){
   return $block;
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Hide views exposed filters for taxonomy terms
+ * if no terms available.
+ */
+function siteprocessor_base_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['field_event_category_tid']['#size'] == 0) {
+    unset($form['#info']['filter-field_event_category_tid']) ;
+  }
+  if ($form['field_event_target_tid']['#size'] == 0) {
+    unset($form['#info']['filter-field_event_target_tid']) ;
+  }
+}
 
+/**
+ * Implements hook_entity_info_alter().
+ */
 function siteprocessor_base_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['large_item'] = array(
     'label' => t('Large item'),
