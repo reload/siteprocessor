@@ -419,6 +419,16 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'siteprocessor_config',
   );
 
+  // Exported permission: administer siteprocessor footer
+  $permissions['administer siteprocessor footer'] = array(
+    'name' => 'administer siteprocessor footer',
+    'roles' => array(
+      0 => 'site admin',
+      1 => 'superadmin',
+    ),
+    'module' => 'siteprocessor_footer',
+  );
+
   // Exported permission: administer siteprocessor layout configuration
   $permissions['administer siteprocessor layout configuration'] = array(
     'name' => 'administer siteprocessor layout configuration',
