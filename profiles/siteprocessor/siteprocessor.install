@@ -7,7 +7,6 @@
  */
 function siteprocessor_install() {
 
-  variable_set('theme_default', 'kaykay');
   $default_theme = 'kaykay';
 
   $values = array(
@@ -155,6 +154,10 @@ function siteprocessor_install() {
   drupal_write_record('wysiwyg', $wysiwyg);
   wysiwyg_profile_cache_clear();
 
+  // Enable default frontend and admin theme
+  theme_enable(array('kaykay', 'seven'));
+  variable_set('theme_default', 'kaykay');
+  variable_set('admin_theme', 'seven');
 }
 
 

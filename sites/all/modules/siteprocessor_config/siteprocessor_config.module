@@ -205,7 +205,7 @@ function siteprocessor_config_theme_page() {
   $all_themes = system_rebuild_theme_data();
   $themes = array_intersect_key($all_themes, $siteprocessor_themes);
 
-  $theme_default = variable_get('theme_default', 'bartik');
+  $theme_default = variable_get('theme_default', 'kaykay');
   $theme_groups  = array();
 
   foreach ($themes as &$theme) {
