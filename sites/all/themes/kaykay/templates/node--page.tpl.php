@@ -1,6 +1,6 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-      <h1><?php print $title; ?>  </h1>
+      <h1><?php print $title; ?></h1>
     <?php if($content['body']['#items'][0]['summary']): ?>
       <div class="summary"><?php print render($content['body']['#items'][0]['summary']); ?></div>
     <?php endif; ?>
@@ -22,6 +22,6 @@
     <div class="comments-box">
       <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600"></div>
-    </div>    
+    </div>
   <?php endif;?>
 </div>

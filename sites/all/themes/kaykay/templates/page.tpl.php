@@ -67,7 +67,7 @@
  */
 ?>
   <div id="fb-root"></div>
-  <div id="ownerbox"><?php print render($page['ownerbox']);?></div>  
+  <div id="ownerbox"><?php print render($page['ownerbox']);?></div>
   <div id="page-wrapper"><div id="page">
 
     <div id="header"><div class="section clearfix">
@@ -96,4 +96,4 @@
     </div></div> <!-- /.section, /#footer -->
 
   </div></div> <!-- /#page, /#page-wrapper -->
-  
+

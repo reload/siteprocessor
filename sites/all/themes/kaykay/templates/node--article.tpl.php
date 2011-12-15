@@ -1,7 +1,7 @@
 <?php  if($view_mode=='full'):?>
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="clearfix content"<?php print $content_attributes; ?>>
-        <h1><?php print $title; ?>  </h1>
+        <h1><?php print $title; ?></h1>
       <?php if($content['body']['#items'][0]['summary']): ?>
         <div class="summary"><?php print render($content['body']['#items'][0]['summary']); ?></div>
       <?php endif; ?>
@@ -21,7 +21,7 @@
       <div class="comments-box">
         <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600"></div>
-      </div>    
+      </div>
     <?php endif;?>
   </div>
 
@@ -33,9 +33,9 @@
       <div class="property-bar">
         <?php print format_date($node->created,'article_short');?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="article-author"><?php print $node->author; ?></div> 
+          <div class="article-author"><?php print $node->author; ?></div>
         <?php endif;?>
-      </div>        
+      </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -45,7 +45,6 @@
     </div>
   </div>
 
-  
 <?php elseif($view_mode=='carousel_item'):?>
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
@@ -54,9 +53,9 @@
       <div class="property-bar">
         <?php print format_date($node->created,'article_short');?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="article-author"><?php print $node->author; ?></div> 
+          <div class="article-author"><?php print $node->author; ?></div>
         <?php endif;?>
-      </div>        
+      </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -66,9 +65,6 @@
     </div>
   </div>
 
-
-
-    
 <?php elseif($view_mode=='list_item'):?>
   <div class="list-item-wrapper">
     <div class="list-item-content">

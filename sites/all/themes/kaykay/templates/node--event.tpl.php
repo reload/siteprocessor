@@ -1,7 +1,7 @@
 <?php if($view_mode=='full'):?>
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="clearfix content"<?php print $content_attributes; ?>>
-      <h1><?php print $title; ?>  </h1>
+      <h1><?php print $title; ?></h1>
       <?php if($content['body']['#items'][0]['summary']): ?>
         <div class="summary"><?php print render($content['body']['#items'][0]['summary']); ?></div>
       <?php endif; ?>
@@ -23,7 +23,7 @@
             <?php print render($content['field_event_target']);?>
           </div>
         <?php endif;?>
-        <?php if(isset($content['field_location'])):?>        
+        <?php if(isset($content['field_location'])):?>
           <div class="event-property event-location">
             <?php print render($content['field_location']);?>
           </div>
@@ -52,13 +52,10 @@
       <div class="comments-box">
         <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600"></div>
-      </div>    
+      </div>
     <?php endif;?>
   </div>
 
-
-
-  
 <?php elseif($view_mode=='large_item'):?>
   <div class="large-item-wrapper">
     <?php print render($content['field_image']);?>
@@ -67,11 +64,11 @@
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
-      </div>        
+      </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -81,7 +78,6 @@
     </div>
   </div>
 
-  
 <?php elseif($view_mode=='carousel_item'):?>
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
@@ -90,12 +86,11 @@
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
-          
-      </div>        
+      </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -109,18 +104,17 @@
 <?php elseif($view_mode=='imagetile_item'):?>
   <div class="imagetile-item-wrapper">
     <h4><?php print l($title,'node/'.$node->nid); ?></h4>
-    
+
     <?php print render($content['field_image']);?>
     <div class="imagetile-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div> 
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
         <?php endif;?>
-        <?php print render($content['field_event_category']);?>  
+        <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
-          
-      </div>        
+      </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -129,9 +123,9 @@
     ?>
     </div>
   </div>
-    
-    
-    
+
+
+
 <?php elseif($view_mode=='list_item'):?>
   <div class="list-item-wrapper">
     <div class="list-item-content">
