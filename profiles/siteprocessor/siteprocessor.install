@@ -158,6 +158,9 @@ function siteprocessor_install() {
   theme_enable(array('kaykay', 'seven'));
   variable_set('theme_default', 'kaykay');
   variable_set('admin_theme', 'seven');
+
+  // Set default layout
+  variable_set('siteprocessor_layout', 'siteprocessor_layout_100_66_33');
 }
 
 
