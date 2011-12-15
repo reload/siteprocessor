@@ -11,7 +11,7 @@
         </div>
       <?php endif; ?>
      <?php print render($content['field_image']);?>
-
+     <div class="fb-like" data-send="true" data-width="600" data-show-faces="false"></div>  
       <div class="event-properties">
         <?php if(isset($content['field_event_category'])):?>
           <div class="event-property event-category">
@@ -51,7 +51,7 @@
     <?php /*FIXME move to module and print $comments*/if($node->comment==COMMENT_NODE_OPEN):?>
       <div class="comments-box">
         <h2><?php print t('Comments');?></h2>
-        <div class="fb-comments" data-num-posts="3" width="600"></div>
+        <div class="fb-comments" data-num-posts="3" width="600" data-href="<?php print "http://" .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];?>"></div>
       </div>
     <?php endif;?>
   </div>
