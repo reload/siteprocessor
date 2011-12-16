@@ -2,6 +2,22 @@
 
 ## Installation ##
 
+### Automatic installation ###
+
+Create a folder where you want the site.
+
+	mkdir WEBFOLDER
+
+Go into that folder
+
+	cd WEBFOLDER
+
+Execute the build_siteprocessor.make file
+
+	drush make https://raw.github.com/reload/siteprocessor/master/build_siteprocessor.make
+
+### Manual installation ###
+
 Download drupal 7.x core.
 
 	cd DRUPAL/profiles
@@ -18,4 +34,6 @@ Install SiteProcessor profile.
 
 	drush make --no-core profiles/siteprocessor/siteprocessor.make
 
+
+### Step 2 ###
 After that, in your browser go to your new site, and install it. Choose the SiteProcessor profile.
