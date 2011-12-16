@@ -6,6 +6,9 @@
 
 include_once('siteprocessor_layout_100_66_33.features.inc');
 
+/**
+ * Implements hook_image_styles_alter().
+ */
 function siteprocessor_layout_100_66_33_image_styles_alter(&$styles){
   if ($styles['content_top_image']['storage'] == IMAGE_STORAGE_DEFAULT) {
     // Add an additional effect to the thumbnail style.
@@ -18,16 +21,16 @@ function siteprocessor_layout_100_66_33_image_styles_alter(&$styles){
         'form callback' => 'image_scale_form',
         'summary theme' => 'image_scale_summary',
         'module' => 'image',
-        'name' => 'image_scale', 
+        'name' => 'image_scale',
         'data' => array(
           'width' => '600',
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => 1, 
+        'weight' => 1,
       )
     );
-  }  
+  }
   if ($styles['carousel_image']['storage'] == IMAGE_STORAGE_DEFAULT) {
     // Add an additional effect to the thumbnail style.
     $styles['carousel_image']['effects']=array(
@@ -47,5 +50,6 @@ function siteprocessor_layout_100_66_33_image_styles_alter(&$styles){
         'weight' => '1',
       ),
     );
-  }  
+  }
 }
+

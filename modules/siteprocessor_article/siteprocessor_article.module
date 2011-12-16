@@ -35,3 +35,4 @@ function siteprocessor_article_date_formats() {
     ),
   );
 }
+

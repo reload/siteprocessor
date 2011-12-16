@@ -6,7 +6,13 @@
 
 include_once('siteprocessor_frontpage_carousel.features.inc');
 
+/**
+ * Implements hook_init()
+ *
+ * Add some javascript
+ */
 function siteprocessor_frontpage_carousel_init(){
   drupal_add_js(drupal_get_path('module', 'siteprocessor_frontpage_carousel').'/jcarousellite.js');
-  drupal_add_js(drupal_get_path('module', 'siteprocessor_frontpage_carousel').'/siteprocessor_frontpage_carousel.js');  
+  drupal_add_js(drupal_get_path('module', 'siteprocessor_frontpage_carousel').'/siteprocessor_frontpage_carousel.js');
 }
+

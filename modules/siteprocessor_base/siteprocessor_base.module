@@ -27,7 +27,7 @@ function siteprocessor_base_block_view($delta){
   switch ($delta){
     case 'frontpage':
     $block['subject'] ='Home button';
-    $block['content']='<a class="frontpage-link" href="/">'.t('Front page').'</a>';
+    $block['content'] = l(t('Front page'), '', array('attributes' => array('class' => 'frontpage-link')));
     break;
   }
   return $block;
