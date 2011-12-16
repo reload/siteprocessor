@@ -7,6 +7,46 @@
 include_once('siteprocessor_base.features.inc');
 
 /**
+ * Implements hook_date_format_types().
+ *
+ * Create a few custom date formatters.
+ */
+function siteprocessor_base_date_format_types() {
+  return array(
+    'event_short' => t('Short event'),
+    'event_long' => t('Long event'),
+    'article_short' => t('Short article'),
+    'article_long' => t('Long article'),
+  );
+}
+
+/**
+ * Implements hook_date_formats().
+ *
+ * Create a few custom date formats
+ */
+function siteprocessor_base_date_formats() {
+  return array(
+    array(
+    'type' => 'event_short',
+    'format' => 'D, d. M. Y',
+    ),
+    array(
+    'type' => 'event_long',
+    'format' => 'D, j. M. Y G:i',
+    ),
+    array(
+    'type' => 'article_short',
+    'format' => 'j/m G:i',
+    ),
+    array(
+    'type' => 'article_long',
+    'format' => 'D, j. M. Y G:i"',
+    ),
+  );
+}
+
+/**
  * Implements hook_block_info().
  */
 function siteprocessor_base_block_info(){
