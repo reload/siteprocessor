@@ -51,6 +51,7 @@ function siteprocessor_config_visual_block_view($delta){
  * Implement a custom form submit handler
  */
 function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
+  //Saves or deletes top image (logo)
   if ($form_state['values']['siteprocessor_config_visual_top_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_top_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -70,6 +71,7 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     variable_set('siteprocessor_config_visual_top_image_fid', FALSE);
   }
 
+  //Saves or deletes background image
   if ($form_state['values']['siteprocessor_config_visual_background_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_background_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -89,6 +91,7 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
     variable_set('siteprocessor_config_visual_background_image_fid', FALSE);
   }
 
+  //Saves or deletes owner image
   if ($form_state['values']['siteprocessor_config_visual_owner_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_owner_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -173,8 +176,7 @@ function siteprocessor_config_visual_menu() {
  * Implements hook_init().
  */
 function siteprocessor_config_visual_init(){
-  siteprocessor_config_visual_color_set_css();
-
+  //add background image
   if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
     $image = file_load($image_fid);
     $image_url=file_create_url($image->uri);
@@ -184,9 +186,12 @@ function siteprocessor_config_visual_init(){
         background-position:top center;
         background-repeat:no-repeat;
       }
-    ",'inline');
+    ",array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>4000));
   }
+  //add custom colors
+  siteprocessor_config_visual_color_set_css();
 
+  //add custom css
   if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
     drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
   }
@@ -210,6 +215,8 @@ function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
 
 /**
  * From http://www.php.net/manual/en/function.array-merge-recursive.php
+ * 
+ * Merges arrays in many levels
  */
 function MergeArrays($Arr1, $Arr2) {
   foreach($Arr2 as $key => $Value) {
@@ -223,14 +230,16 @@ function MergeArrays($Arr1, $Arr2) {
   return $Arr1;
 }
 
-
+/*
+ * Sets the custom color CSS by getting custom colors and replacing the tags in the color template css files. Unmatched tags are set to magenta
+ */
 function siteprocessor_config_visual_color_set_css(){
   //FIXME: cache from here (with theme as key)
 
   global $theme_key;
   $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
   //skip if not supported by active theme
-  if(!isset($info_arr['siteprocessor']['colors'])) return array();
+  if(!isset($info_arr['siteprocessor']['colors'])) return;
 
   $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
 
@@ -253,6 +262,9 @@ function siteprocessor_config_visual_color_set_css(){
   drupal_add_css($css2add,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));
 }
 
+/*
+ * Returns parsed info from the chosen theme and all its subthemes
+ */
 
 function siteprocessor_config_visual_parse_theme_info($theme){
   $infofile=drupal_get_path('theme', $theme).'/'.$theme.'.info';
@@ -269,7 +281,9 @@ function siteprocessor_config_visual_parse_theme_info($theme){
   return $file_arr;
 }
 
-
+/*
+ * Returns a list of color groups defined in the themes, as a key=>value array
+ */
 function siteprocessor_config_visual_color_groups_get(){
   $theme=variable_get('theme_default','kaykay');
   $info_arr=siteprocessor_config_visual_parse_theme_info($theme);
@@ -277,6 +291,19 @@ function siteprocessor_config_visual_color_groups_get(){
   return $color_groups;
 }
 
+/*
+ * Returns a list of color definitions defined in the themes, and merged with the customized colors stored in a variable. Can return various formats depending on args:
+ * 
+ * keys_list=>true:
+ *   returns a list of color keys
+ * 
+ * keys_values_list=>true:
+ *   returns a list of color keys and values
+ * 
+ * Default:
+ *   returns a structure
+ * 
+ */
 function siteprocessor_config_visual_colors_get($args=null){
   $theme=variable_get('theme_default','kaykay');
   $info_arr=siteprocessor_config_visual_parse_theme_info($theme);;
@@ -327,6 +354,10 @@ function siteprocessor_config_visual_colors_get($args=null){
   return $colors;
 }
 
+
+/*
+ * Saves the custom colors in a variable
+ */
 function siteprocessor_config_visual_colors_set($color_list){
   variable_set('siteprocessor_config_visual_colors',$color_list);
 }
