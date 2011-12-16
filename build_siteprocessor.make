@@ -6,5 +6,5 @@ projects[drupal][version] = "7.10"
 
 projects[siteprocessor][type] = "profile"
 projects[siteprocessor][download][type] = "git"
-projects[siteprocessor][download][url] = "git@github.com:reload/siteprocessor.git"
+projects[siteprocessor][download][url] = "https://github.com/reload/siteprocessor.git"
 
