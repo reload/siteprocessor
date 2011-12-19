@@ -7,3 +7,7 @@ sites/*/private
 modules/contrib
 modules/webtrends
 libraries
+
+# Ignore paths created by build
+site/*
+database.sqlite
