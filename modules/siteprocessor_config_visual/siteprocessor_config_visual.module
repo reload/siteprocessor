@@ -30,7 +30,7 @@ function siteprocessor_config_visual_block_view($delta){
         $block['content']=l(theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri)),'<front>',array('html'=>true));
       }
       else {
-        $block['content']='you can upload the site logo '.l('right here','admin/config/siteprocessor/images');;
+        $block['content']='you can upload the site logo '.l('right here','admin/config/siteprocessor/config_visual/images');;
       }
       break;
     case 'ownerblock':
@@ -40,7 +40,7 @@ function siteprocessor_config_visual_block_view($delta){
         $block['content']=theme('image',array('path'=>$image->uri));
       }
       else {
-        $block['content']='you can upload the owner logo '.l('right here','admin/config/siteprocessor/images');
+        $block['content']='you can upload the owner logo '.l('right here','admin/config/siteprocessor/config_visual/images');
       }
       break;
   }
@@ -188,26 +188,28 @@ function siteprocessor_config_visual_menu() {
  * Implements hook_init().
  */
 function siteprocessor_config_visual_init(){
-  //add background image
-  if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
-    $image = file_load($image_fid);
-    $image_url=file_create_url($image->uri);
-    drupal_add_css("
-      body{
-        background-image:url($image_url);
-        background-position:top center;
-        background-repeat:no-repeat;
-      }
-    ",array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>4000));
-  }
-  //add custom colors
-  siteprocessor_config_visual_color_set_css();
+  global $theme_key;
+  if(variable_get('theme_default','')==$theme_key){
+    //add background image
+    if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
+      $image = file_load($image_fid);
+      $image_url=file_create_url($image->uri);
+      drupal_add_css("
+        body{
+          background-image:url($image_url);
+          background-position:top center;
+          background-repeat:no-repeat;
+        }
+      ",array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>4000));
+    }
+    //add custom colors
+    siteprocessor_config_visual_color_set_css();
 
-  //add custom css
-  if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
-    drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
+    //add custom css
+    if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
+      drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
+    }
   }
-
 }
 
 /**
@@ -247,28 +249,32 @@ function MergeArrays($Arr1, $Arr2) {
  */
 function siteprocessor_config_visual_color_set_css(){
   //FIXME: cache from here (with theme as key)
+  if($css_cache=cache_get('siteprocessor_config_visual_color_generated_css')){
+    $css2add=$css_cache->data;
+  }
+  else{
+    global $theme_key;
+    $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
+    //skip if not supported by active theme
+    if(!isset($info_arr['siteprocessor']['colors'])) return;
 
-  global $theme_key;
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
-  //skip if not supported by active theme
-  if(!isset($info_arr['siteprocessor']['colors'])) return;
+    $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
 
-  $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
-
-  $css2add='';
-  foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
-    foreach($files as $file){
-      $filename=drupal_get_path('theme',$theme).'/'.$file;
-      if(file_exists($filename)) {
-        $file_content=file_get_contents($filename);
-        foreach($colors as $key=>$color){
-          $file_content=str_replace("[[$key]]","#$color",$file_content);
+    $css2add='';
+    foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
+      foreach($files as $file){
+        $filename=drupal_get_path('theme',$theme).'/'.$file;
+        if(file_exists($filename)) {
+          $file_content=file_get_contents($filename);
+          foreach($colors as $key=>$color){
+            $file_content=str_replace("[[$key]]","#$color",$file_content);
+          }
+          $file_content=preg_replace('/(\[\[[A-Za-z0-9_-]+\]\])/','magenta',$file_content);
+          $css2add.=$file_content;
         }
-        $file_content=preg_replace('/(\[\[[A-Za-z0-9_-]+\]\])/','magenta',$file_content);
-        $css2add.=$file_content;
-
       }
     }
+    cache_set('siteprocessor_config_visual_color_generated_css',$css2add);
   }
   //to here
   drupal_add_css($css2add,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));
