@@ -136,18 +136,17 @@ function siteprocessor_config_visual_permission() {
  * Implements hook_menu().
  */
 function siteprocessor_config_visual_menu() {
-  $items['admin/config/siteprocessor/colors'] = array(
-    'title' => 'Colors',
-    'description' => 'Adjust colors',
+  $items['admin/config/siteprocessor/config_visual'] = array(
+    'title' => 'Visual configuration',
+    'description' => 'Visual website configuration',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('siteprocessor_config_visual_colors_form'),
-    'access callback' => 'user_access',
-    'access arguments' => array('administer siteprocessor colors'),
+    'page arguments' => array('siteprocessor_config_visual_images_form'),
+    'access arguments' => array('administer site processor images'),
     'file' => 'siteprocessor_config_visual.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['admin/config/siteprocessor/images'] = array(
+  
+  $items['admin/config/siteprocessor/config_visual/images'] = array(
     'title' => 'Images',
     'description' => 'Images',
     'page callback' => 'drupal_get_form',
@@ -155,10 +154,22 @@ function siteprocessor_config_visual_menu() {
     'access callback' => 'user_access',
     'access arguments' => array('administer site processor images'),
     'file' => 'siteprocessor_config_visual.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  $items['admin/config/siteprocessor/config_visual/colors'] = array(
+    'title' => 'Colors',
+    'description' => 'Adjust colors',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('siteprocessor_config_visual_colors_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer siteprocessor colors'),
+    'file' => 'siteprocessor_config_visual.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 0,
   );
 
-  $items['admin/config/siteprocessor/custom_css'] = array(
+  $items['admin/config/siteprocessor/config_visual/custom_css'] = array(
     'title' => 'Custom CSS',
     'description' => 'Custom CSS',
     'page callback' => 'drupal_get_form',
@@ -166,7 +177,8 @@ function siteprocessor_config_visual_menu() {
     'access callback' => 'user_access',
     'access arguments' => array('administer site processor custom css'),
     'file' => 'siteprocessor_config_visual.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,      
   );
 
   return $items;

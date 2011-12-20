@@ -49,6 +49,7 @@ function siteprocessor_config_menu() {
 
   // Dynamic generate admin page tabs.
   foreach ($configuration_parts as $item => $array) {
+    if(function_exists('siteprocessor_config_' . $item . '_form') || $item == 'theme'){
       $items['admin/config/siteprocessor/config/' . $item] = array(
         'title' => $item . ' configuration',
         'description' => 'Base website configuration',
@@ -59,11 +60,12 @@ function siteprocessor_config_menu() {
         'type' => $first_attempt ? MENU_DEFAULT_LOCAL_TASK : MENU_LOCAL_TASK,
         'weight' => $first_attempt ? -20 : 0,
       );
-      if ($item == 'theme') {
-        $items['admin/config/siteprocessor/config/theme']['page callback'] = 'siteprocessor_config_theme_page';
-        unset($items['admin/config/siteprocessor/config/theme']['page arguments']);
-      }
-      $first_attempt = FALSE;
+    }  
+    if ($item == 'theme') {
+      $items['admin/config/siteprocessor/config/theme']['page callback'] = 'siteprocessor_config_theme_page';
+      unset($items['admin/config/siteprocessor/config/theme']['page arguments']);
+    }
+    $first_attempt = FALSE;
   }
 
   return $items;

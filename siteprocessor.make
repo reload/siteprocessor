@@ -56,7 +56,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0-beta4"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.0-rc3"
+projects[views][version] = "3.0"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.1"
