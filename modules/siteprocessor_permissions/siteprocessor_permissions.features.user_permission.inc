@@ -14,7 +14,9 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'system',
   );
@@ -77,9 +79,7 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
     'roles' => array(
-      0 => 'editor',
-      1 => 'site admin',
-      2 => 'superadmin',
+      0 => 'superadmin',
     ),
     'module' => 'dashboard',
   );
@@ -204,10 +204,19 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
     'roles' => array(
-      0 => 'site admin',
-      1 => 'superadmin',
+      0 => 'superadmin',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: administer google analytics
+  $permissions['administer google analytics'] = array(
+    'name' => 'administer google analytics',
+    'roles' => array(
+      0 => 'superadmin',
+      1 => 'site admin',
+    ),
+    'module' => 'googleanalytics',
   );
 
   // Exported permission: administer image styles
@@ -250,7 +259,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'menu',
   );
@@ -313,21 +323,11 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'panels',
   );
 
-  // Exported permission: administer panel-nodes
-  $permissions['administer panel-nodes'] = array(
-    'name' => 'administer panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: administer panels layouts
   $permissions['administer panels layouts'] = array(
     'name' => 'administer panels layouts',
     'roles' => array(
-      0 => 'site admin',
-      1 => 'superadmin',
+      0 => 'superadmin',
     ),
     'module' => 'panels',
   );
@@ -336,8 +336,7 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
-      0 => 'site admin',
-      1 => 'superadmin',
+      0 => 'superadmin',
     ),
     'module' => 'user',
   );
@@ -566,24 +565,6 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'panels_mini',
   );
 
-  // Exported permission: create panel content
-  $permissions['create panel content'] = array(
-    'name' => 'create panel content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: create panel-nodes
-  $permissions['create panel-nodes'] = array(
-    'name' => 'create panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: create url aliases
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -602,42 +583,6 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'shortcut',
-  );
-
-  // Exported permission: delete any panel content
-  $permissions['delete any panel content'] = array(
-    'name' => 'delete any panel content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: delete any panel-nodes
-  $permissions['delete any panel-nodes'] = array(
-    'name' => 'delete any panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
-  );
-
-  // Exported permission: delete own panel content
-  $permissions['delete own panel content'] = array(
-    'name' => 'delete own panel content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: delete own panel-nodes
-  $permissions['delete own panel-nodes'] = array(
-    'name' => 'delete own panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
   );
 
   // Exported permission: delete revisions
@@ -682,29 +627,13 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: edit any panel content
-  $permissions['edit any panel content'] = array(
-    'name' => 'edit any panel content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit any panel-nodes
-  $permissions['edit any panel-nodes'] = array(
-    'name' => 'edit any panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: edit media
   $permissions['edit media'] = array(
     'name' => 'edit media',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'media',
   );
@@ -716,24 +645,6 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'comment',
-  );
-
-  // Exported permission: edit own panel content
-  $permissions['edit own panel content'] = array(
-    'name' => 'edit own panel content',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit own panel-nodes
-  $permissions['edit own panel-nodes'] = array(
-    'name' => 'edit own panel-nodes',
-    'roles' => array(
-      0 => 'superadmin',
-    ),
-    'module' => 'panels_node',
   );
 
   // Exported permission: edit terms in 1
@@ -773,7 +684,9 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['import media'] = array(
     'name' => 'import media',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
     ),
     'module' => 'media',
   );
@@ -807,6 +720,16 @@ function siteprocessor_permissions_user_default_permissions() {
       2 => 'superadmin',
     ),
     'module' => 'nodequeue',
+  );
+
+  // Exported permission: opt-in or out of tracking
+  $permissions['opt-in or out of tracking'] = array(
+    'name' => 'opt-in or out of tracking',
+    'roles' => array(
+      0 => 'superadmin',
+      1 => 'site admin',
+    ),
+    'module' => 'googleanalytics',
   );
 
   // Exported permission: post comments
@@ -889,6 +812,15 @@ function siteprocessor_permissions_user_default_permissions() {
       1 => 'superadmin',
     ),
     'module' => 'locale',
+  );
+
+  // Exported permission: use PHP for tracking visibility
+  $permissions['use PHP for tracking visibility'] = array(
+    'name' => 'use PHP for tracking visibility',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'googleanalytics',
   );
 
   // Exported permission: use advanced search
@@ -1020,8 +952,10 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
-      0 => 'sponsor',
-      1 => 'superadmin',
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
     ),
     'module' => 'system',
   );
