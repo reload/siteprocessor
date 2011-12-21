@@ -33,7 +33,7 @@ function siteprocessor_footer_block_view($delta){
 
 function siteprocessor_footer_text_form($form,&$form_state){
   $form = array();
-  $content=variable_get('siteprocessor_footer_text', array('value'=>'','format'=>''));
+  $content=variable_get('siteprocessor_footer_text', array('value'=>'','format'=>'full_html'));
   $form['siteprocessor_footer_text']=array(
     '#type'=>'text_format',
     '#title'=>t('Footer text'),

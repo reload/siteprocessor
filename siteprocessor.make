@@ -34,6 +34,18 @@ projects[jquery_colorpicker][version] = "1.0-beta3"
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.0"
 
+projects[variable][subdir] = "contrib"
+projects[variable][version] = "1.1"
+
+projects[i18n][subdir] = "contrib"
+projects[i18n][version] = "1.2"
+
+projects[i18nviews][type] = "module"
+projects[i18nviews][subdir] = "contrib"
+projects[i18nviews][download][type] = "git"
+projects[i18nviews][download][url] = "http://git.drupal.org/project/i18nviews.git"
+projects[i18nviews][download][revision] = "3cd62248d392f52fc708a4f74ca5418470bb3ad7"
+
 projects[location][type] = "module"
 projects[location][subdir] = "contrib"
 projects[location][download][type] = "git"
@@ -69,3 +81,8 @@ projects[webtrends][download][branch] = "7.x"
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
 
+;This file is from http://www.eyecon.ro/colorpicker/ but stored at github because the original location rejects all HTTP requests made with a "curl" user agent - and this makes life hard when using drush make....
+libraries[colorpicker][download][type] = "get"
+libraries[colorpicker][download][url] = "https://github.com/downloads/reload/siteprocessor/colorpicker.zip"
+libraries[colorpicker][directory_name] = "colorpicker"
+libraries[colorpicker][destination] = "modules/contrib/jquery_colorpicker"

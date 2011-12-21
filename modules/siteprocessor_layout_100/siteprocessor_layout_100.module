@@ -44,6 +44,7 @@ function siteprocessor_layout_100_image_styles_alter(&$styles){
         'data' => array(
           'width' => '930',
           'height' => '450',
+          'upscale' => 1,            
         ),
         'weight' => '1',
       ),
