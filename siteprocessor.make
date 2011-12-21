@@ -69,3 +69,8 @@ projects[webtrends][download][branch] = "7.x"
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
 
+;This file is from http://www.eyecon.ro/colorpicker/ but stored at github because the original location rejects all HTTP requests made with a "curl" user agent - and this makes life hard when using drush make....
+libraries[colorpicker][download][type] = "get"
+libraries[colorpicker][download][url] = "https://github.com/downloads/reload/siteprocessor/colorpicker.zip"
+libraries[colorpicker][directory_name] = "colorpicker"
+libraries[colorpicker][destination] = "modules/contrib/jquery_colorpicker"
