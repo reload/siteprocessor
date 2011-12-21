@@ -1,6 +1,6 @@
 name = SiteProcessor
 description = Install profile for the SiteProcessor
-version = 7.x-0.2
+version = 7.x-1.0-beta1
 core = 7.x
 
 distribution_name = "SiteProcessor"
