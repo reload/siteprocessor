@@ -47,6 +47,7 @@ function siteprocessor_layout_33_66_image_styles_alter(&$styles){
         'data' => array(
           'width' => '600',
           'height' => '330',
+          'upscale' => 1,            
         ),
         'weight' => '1',
       ),

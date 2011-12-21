@@ -40,6 +40,7 @@ function siteprocessor_base_image_default_styles() {
         'data' => array(
           'width' => '600',
           'height' => '330',
+          'upscale' => 1,            
         ),
         'weight' => '1',
       ),
@@ -85,6 +86,7 @@ function siteprocessor_base_image_default_styles() {
         'data' => array(
           'width' => '285',
           'height' => '214',
+          'upscale' => 1,            
         ),
         'weight' => '1',
       ),
@@ -107,6 +109,7 @@ function siteprocessor_base_image_default_styles() {
         'data' => array(
           'width' => '160',
           'height' => '120',
+          'upscale' => 1,            
         ),
         'weight' => '1',
       ),
