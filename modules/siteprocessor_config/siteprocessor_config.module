@@ -81,10 +81,12 @@ function siteprocessor_config_permission() {
     'description' => t('Configure siteprocessor'),
   ));
   foreach ($configuration_parts as $item => $array) {
-    $permission_parts['administer siteprocessor ' . $item . ' configuration'] = array(
+    if(function_exists('siteprocessor_config_' . $item . '_form') || $item == 'theme'){
+      $permission_parts['administer siteprocessor ' . $item . ' configuration'] = array(
         'title' => t('Administer SiteProcessor ' . $item . ' configuration'),
         'description' => t('Configure siteprocessor ' . $item . 's'),
-    );
+      );
+    }
   }
   return $permission_parts;
 }

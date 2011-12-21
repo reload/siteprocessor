@@ -388,16 +388,6 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'siteprocessor_config_visual',
   );
 
-  // Exported permission: administer siteprocessor color_css configuration
-  $permissions['administer siteprocessor color_css configuration'] = array(
-    'name' => 'administer siteprocessor color_css configuration',
-    'roles' => array(
-      0 => 'site admin',
-      1 => 'superadmin',
-    ),
-    'module' => 'siteprocessor_config',
-  );
-
   // Exported permission: administer siteprocessor colors
   $permissions['administer siteprocessor colors'] = array(
     'name' => 'administer siteprocessor colors',
