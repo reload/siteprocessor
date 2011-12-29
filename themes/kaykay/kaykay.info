@@ -11,6 +11,8 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 
+stylesheets-conditional[IE 7][all][] = css/ie7.css
+
 regions[header] = Header
 regions[content] = Content
 regions[footer] = Footer
