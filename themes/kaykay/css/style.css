@@ -676,4 +676,7 @@ li.large-item:last-child{
   display:block;
 }
 
-
+.field-name-body img.media-image{
+  margin-top:15px;
+  margin-bottom: 15px;
+}
