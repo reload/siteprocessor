@@ -88,11 +88,10 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Event time -  start date (field_event_time) */
+  $handler->display->display_options['sorts']['field_event_time_value']['id'] = 'field_event_time_value';
+  $handler->display->display_options['sorts']['field_event_time_value']['table'] = 'field_data_field_event_time';
+  $handler->display->display_options['sorts']['field_event_time_value']['field'] = 'field_event_time_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -163,6 +162,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['row_class'] = 'imagetile-item';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list clearfix';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';

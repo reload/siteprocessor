@@ -19,11 +19,11 @@ function siteprocessor_footer_block_view($delta){
   $block=array();
   switch ($delta){
     case 'footer_text':
-      if($content=variable_get('siteprocessor_footer_text','')){
+      if($content=variable_get('siteprocessor_footer_text','') && isset($content['value'])){
         $block['content']=check_markup($content['value'],$content['format']);//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
       }    
       else{
-        $block['content']='This text needs to be configured '.l('right here','admin/config/siteprocessor/footer_text');
+        $block['content']= user_access('administer siteprocessor footer') ? t('This text needs to be configured ').l(t('right here'),'admin/config/siteprocessor/footer_text') : '';
       }
       $block['subject'] ='Footer text';
     break;

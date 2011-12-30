@@ -1,6 +1,7 @@
 name = KayKay 
 description = Theme for Koebenhavns Kommune
 core = 7.x
+version = "7.x-1.0-beta1"
 
 
 
@@ -9,6 +10,8 @@ stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
+
+stylesheets-conditional[IE 7][all][] = css/ie7.css
 
 regions[header] = Header
 regions[content] = Content

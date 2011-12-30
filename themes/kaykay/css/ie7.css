@@ -1,0 +1,12 @@
+.property-bar{
+  height:20px;
+}
+.property-bar .field-name-field-event-time,
+.property-bar .field-name-field-event-category 
+{
+  display: block;
+  float:left;
+}
+.property-bar .field-name-field-event-category {
+  margin-left:10px;
+}
