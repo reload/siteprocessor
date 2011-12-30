@@ -174,4 +174,12 @@ function siteprocessor_install() {
   variable_set('siteprocessor_layout', 'siteprocessor_layout_100_66_33');
 }
 
-
+/**
+ * Implementation of hook_update.
+ * 
+ * Enabled conditional_styles module
+ * 
+ */
+function siteprocessor_update_7001(){
+  module_enable(array('conditional_styles'));
+}
