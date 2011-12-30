@@ -30,7 +30,7 @@ function siteprocessor_config_visual_block_view($delta){
         $block['content']=l(theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri)),'<front>',array('html'=>true));
       }
       else {
-        $block['content']='you can upload the site logo '.l('right here','admin/config/siteprocessor/config_visual/images');;
+        $block['content'] = user_access('administer site processor images') ? t('You can upload the site logo ').l(t('right here'),'admin/config/siteprocessor/config_visual/images') : '';
       }
       break;
     case 'ownerblock':
@@ -40,7 +40,7 @@ function siteprocessor_config_visual_block_view($delta){
         $block['content']=theme('image',array('path'=>$image->uri));
       }
       else {
-        $block['content']='you can upload the owner logo '.l('right here','admin/config/siteprocessor/config_visual/images');
+        $block['content'] = user_access('administer site processor images') ? t('You can upload the owner logo ').l(t('right here'),'admin/config/siteprocessor/config_visual/images') : '';
       }
       break;
   }
