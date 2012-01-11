@@ -18,6 +18,7 @@ package = "Siteprocessor"
 ; Configuration for Facebook like page button
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_appid] = "Facebook Application ID"
 siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_pageurl] = "Facebook Page URL"
+siteprocessor[variable][siteprocessor_facebook][siteprocessor_facebook_language] = "Facebook language"
 
 ; Configuration for Google Analytics
 siteprocessor[variable][googleanalytics][googleanalytics_account] = "Google Analytics Account ID"

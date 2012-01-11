@@ -6,7 +6,7 @@ if (!jQuery.browser.msie || jQuery.browser.version >= 8) {
     }
     js = d.createElement(s); js.id = id;
 
-    js.src = "//connect.facebook.net/da_DK/all.js#xfbml=1&appId=" + Drupal.settings.siteprocessor_facebook_appid;
+    js.src = "//connect.facebook.net/" + Drupal.settings.siteprocessor_facebook_language + "/all.js#xfbml=1&appId=" + Drupal.settings.siteprocessor_facebook_appid;
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 }
