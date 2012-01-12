@@ -10,3 +10,6 @@
 .property-bar .field-name-field-event-category {
   margin-left:10px;
 }
+﻿.region-footer ul.menu li.leaf {
+  list-style: none !important;
+}
