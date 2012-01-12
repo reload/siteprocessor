@@ -8,8 +8,12 @@ function siteprocessor_config_visual_custom_css_form($form,&$form_state) {
     '#default_value'=>variable_get('siteprocessor_config_visual_custom_css', ''),
     '#description' => t('Enter custom CSS code here'),
   );
-
-  return system_settings_form($form);
+   // Submit Button.
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+  return($form);
 }
 
 function siteprocessor_config_visual_colors_form($form,&$form_state) {
