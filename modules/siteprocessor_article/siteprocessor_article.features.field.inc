@@ -263,7 +263,7 @@ function siteprocessor_article_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_image',
       'label' => 'Image',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
         'alt_field' => TRUE,
         'file_directory' => 'field/image',

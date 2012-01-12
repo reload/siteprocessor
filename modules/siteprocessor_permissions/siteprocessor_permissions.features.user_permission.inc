@@ -213,8 +213,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer google analytics'] = array(
     'name' => 'administer google analytics',
     'roles' => array(
-      0 => 'superadmin',
-      1 => 'site admin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'googleanalytics',
   );
@@ -546,6 +546,29 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: create article content
+  $permissions['create article content'] = array(
+    'name' => 'create article content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: create event content
+  $permissions['create event content'] = array(
+    'name' => 'create event content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create mini panels
   $permissions['create mini panels'] = array(
     'name' => 'create mini panels',
@@ -553,6 +576,17 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'panels_mini',
+  );
+
+  // Exported permission: create page content
+  $permissions['create page content'] = array(
+    'name' => 'create page content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: create url aliases
@@ -573,6 +607,71 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'shortcut',
+  );
+
+  // Exported permission: delete any article content
+  $permissions['delete any article content'] = array(
+    'name' => 'delete any article content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any event content
+  $permissions['delete any event content'] = array(
+    'name' => 'delete any event content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any page content
+  $permissions['delete any page content'] = array(
+    'name' => 'delete any page content',
+    'roles' => array(
+      0 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own article content
+  $permissions['delete own article content'] = array(
+    'name' => 'delete own article content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own event content
+  $permissions['delete own event content'] = array(
+    'name' => 'delete own event content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own page content
+  $permissions['delete own page content'] = array(
+    'name' => 'delete own page content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: delete revisions
@@ -617,6 +716,39 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: edit any article content
+  $permissions['edit any article content'] = array(
+    'name' => 'edit any article content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any event content
+  $permissions['edit any event content'] = array(
+    'name' => 'edit any event content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any page content
+  $permissions['edit any page content'] = array(
+    'name' => 'edit any page content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit media
   $permissions['edit media'] = array(
     'name' => 'edit media',
@@ -628,6 +760,17 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'media',
   );
 
+  // Exported permission: edit own article content
+  $permissions['edit own article content'] = array(
+    'name' => 'edit own article content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own comments
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
@@ -635,6 +778,29 @@ function siteprocessor_permissions_user_default_permissions() {
       0 => 'superadmin',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: edit own event content
+  $permissions['edit own event content'] = array(
+    'name' => 'edit own event content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'sponsor',
+      3 => 'superadmin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own page content
+  $permissions['edit own page content'] = array(
+    'name' => 'edit own page content',
+    'roles' => array(
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: edit terms in 1
@@ -716,8 +882,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['opt-in or out of tracking'] = array(
     'name' => 'opt-in or out of tracking',
     'roles' => array(
-      0 => 'superadmin',
-      1 => 'site admin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'googleanalytics',
   );

@@ -19,7 +19,8 @@ function siteprocessor_footer_block_view($delta){
   $block=array();
   switch ($delta){
     case 'footer_text':
-      if($content=variable_get('siteprocessor_footer_text','') && isset($content['value'])){
+      $content=variable_get('siteprocessor_footer_text','');
+      if(is_array($content) && isset($content['value'])){
         $block['content']=check_markup($content['value'],$content['format']);//'Dette projekt er lavet af nogen.... copyright 2011. skriv til <a href="mailto:kommunen@kk.dk">kommunen</a> hvis der er noget.';
       }    
       else{

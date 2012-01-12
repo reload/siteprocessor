@@ -1,5 +1,7 @@
 <?php
 
+include_once('siteprocessor_facebook.features.inc');
+
 /**
  * Implements hook_block_info().
  */
@@ -33,8 +35,11 @@ function siteprocessor_facebook_block_view($delta){
  * Implements hook_init().
  */
 function siteprocessor_facebook_init() {
-  if($appid=variable_get('siteprocessor_facebook_appid', NULL)){
+  $appid=variable_get('siteprocessor_facebook_appid', NULL);
+  $language=variable_get('siteprocessor_facebook_language', NULL);
+  if($appid && $language){
     drupal_add_js(array('siteprocessor_facebook_appid' => $appid), 'setting');
+    drupal_add_js(array('siteprocessor_facebook_language' => $language), 'setting');
     drupal_add_js(drupal_get_path('module', 'siteprocessor_facebook') . '/siteprocessor_facebook.js', array(
       'group' => JS_LIBRARY,
       'every_page'=>true,

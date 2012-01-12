@@ -27,7 +27,7 @@ function siteprocessor_article_date_formats() {
   return array(
     array(
     'type' => 'article_short',
-    'format' => 'j/m G:i',
+    'format' => 'D, d. M. Y',
     ),
     array(
     'type' => 'article_long',

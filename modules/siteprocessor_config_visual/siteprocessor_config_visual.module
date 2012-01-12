@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implements hook_block_info().
  */
@@ -51,6 +52,7 @@ function siteprocessor_config_visual_block_view($delta){
  * Implement a custom form submit handler
  */
 function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
+  _siteprocessor_config_visual_clear_css();
   //Saves or deletes top image (logo)
   if ($form_state['values']['siteprocessor_config_visual_top_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_top_image_fid']);
@@ -183,6 +185,17 @@ function siteprocessor_config_visual_menu() {
 
   return $items;
 }
+/**
+ * Implements hook_flush_caches().
+ */
+function siteprocessor_config_visual_flush_caches(){
+  _siteprocessor_config_visual_clear_css();
+}
+
+function _siteprocessor_config_visual_clear_css(){
+  file_unmanaged_delete('public://siteprocessor_config_visual.css');
+  watchdog('siteprocessor_config_visual', t("CSS file deleted"));
+}
 
 /**
  * Implements hook_init().
@@ -190,32 +203,56 @@ function siteprocessor_config_visual_menu() {
 function siteprocessor_config_visual_init(){
   global $theme_key;
   if(variable_get('theme_default','')==$theme_key){
-    //add background image
-    if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
-      $image = file_load($image_fid);
-      $image_url=file_create_url($image->uri);
-      drupal_add_css("
-        body{
-          background-image:url($image_url);
-          background-position:top center;
-          background-repeat:no-repeat;
-        }
-      ",array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>4000));
+    //if not file exists
+    if(!file_exists(drupal_realpath('public://siteprocessor_config_visual.css'))){
+      $css2add='';
+      $css2add.=siteprocessor_config_visual_background_get_css()."\n";
+      $css2add.=siteprocessor_config_visual_color_get_css()."\n";
+      $css2add.=siteprocessor_config_visual_custom_get_css()."\n";
+      file_save_data($css2add,'public://siteprocessor_config_visual.css',FILE_EXISTS_REPLACE);
+      watchdog('siteprocessor_config_visual', t("CSS file created"));
     }
-    //add custom colors
-    siteprocessor_config_visual_color_set_css();
-
-    //add custom css
-    if($custom_css=variable_get('siteprocessor_config_visual_custom_css',false)){
-      drupal_add_css($custom_css,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>6000));
-    }
+    //add css file
+    drupal_add_css(file_create_url('public://siteprocessor_config_visual.css'),array('type'=>'external','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));  
   }
 }
+
+//get custom css
+function siteprocessor_config_visual_custom_get_css(){
+  return variable_get('siteprocessor_config_visual_custom_css','');
+}
+
+/**
+ * Implement a custom form submit handler
+ */
+function siteprocessor_config_visual_custom_css_form_submit($form, &$form_state) {
+  _siteprocessor_config_visual_clear_css();
+  variable_set('siteprocessor_config_visual_custom_css', $form_state['values']['siteprocessor_config_visual_custom_css']);
+  drupal_set_message(t('The custom CSS was updated.'));
+}
+
+//get custom background
+function siteprocessor_config_visual_background_get_css(){
+  if ($image_fid = variable_get('siteprocessor_config_visual_background_image_fid', FALSE)) {
+    $image = file_load($image_fid);
+    $image_url=file_create_url($image->uri);
+    return "
+      body{
+        background-image:url($image_url);
+        background-position:top center;
+        background-repeat:no-repeat;
+      }
+    ";
+  }
+  else return '';
+}
+
 
 /**
  * Implements a custom form submit handler.
  */
 function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
+  _siteprocessor_config_visual_clear_css();
   $color_keys=siteprocessor_config_visual_colors_get(array('keys_list'=>true));
   $color_list=array();
   foreach($color_keys as $key){
@@ -247,7 +284,7 @@ function MergeArrays($Arr1, $Arr2) {
 /*
  * Sets the custom color CSS by getting custom colors and replacing the tags in the color template css files. Unmatched tags are set to magenta
  */
-function siteprocessor_config_visual_color_set_css(){
+function siteprocessor_config_visual_color_get_css(){
   //FIXME: cache from here (with theme as key)
   if($css_cache=cache_get('siteprocessor_config_visual_color_generated_css','cache')){
     $css2add=$css_cache->data;
@@ -277,7 +314,7 @@ function siteprocessor_config_visual_color_set_css(){
     cache_set('siteprocessor_config_visual_color_generated_css',$css2add,'cache');
   }
   //to here
-  drupal_add_css($css2add,array('type'=>'inline','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));
+  return $css2add;
 }
 
 /*
