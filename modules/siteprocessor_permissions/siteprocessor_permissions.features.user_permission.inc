@@ -336,7 +336,8 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
-      0 => 'superadmin',
+      0 => 'site admin',
+      1 => 'superadmin',
     ),
     'module' => 'user',
   );
