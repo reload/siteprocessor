@@ -462,8 +462,9 @@ function siteprocessor_permissions_user_default_permissions() {
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
     'roles' => array(
-      0 => 'superadmin',
-    ),
+      0 => 'editor',
+      1 => 'site admin',
+      2 => 'superadmin',    ),
     'module' => 'taxonomy',
   );
 
