@@ -40,7 +40,7 @@ function siteprocessor_config_menu() {
     'description' => 'Base website configuration',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('siteprocessor_config_variable_form'),
-    'access arguments' => array('administer site configuration'),
+    'access arguments' => array('administer siteprocessor configuration'),
   );
 
   // Fetch info from modules info files
