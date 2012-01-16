@@ -103,7 +103,7 @@ function siteprocessor_article_field_default_fields() {
       'bundle' => 'article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The body text of the article. Your may edit the summary itself, by clicking "edit summary"',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -155,16 +155,17 @@ function siteprocessor_article_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -205,7 +206,7 @@ function siteprocessor_article_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'article',
       'deleted' => '0',
-      'description' => 'Upload an image to go with this article.',
+      'description' => 'The image of the event. Will be auto-scaled and cropped when necessary',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -265,16 +266,17 @@ function siteprocessor_article_field_default_fields() {
       'label' => 'Image',
       'required' => 1,
       'settings' => array(
-        'alt_field' => TRUE,
+        'alt_field' => 1,
         'file_directory' => 'field/image',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
-        'title_field' => '',
+        'title_field' => 0,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'image',
         'settings' => array(
           'preview_image_style' => 'thumbnail',
@@ -291,7 +293,8 @@ function siteprocessor_article_field_default_fields() {
   t('Body');
   t('Comment');
   t('Image');
-  t('Upload an image to go with this article.');
+  t('The body text of the article. Your may edit the summary itself, by clicking "edit summary"');
+  t('The image of the event. Will be auto-scaled and cropped when necessary');
 
   return $fields;
 }
