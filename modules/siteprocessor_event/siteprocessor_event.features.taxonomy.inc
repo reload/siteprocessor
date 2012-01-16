@@ -12,7 +12,7 @@ function siteprocessor_event_taxonomy_default_vocabularies() {
     'event_category' => array(
       'name' => 'Event category',
       'machine_name' => 'event_category',
-      'description' => '',
+      'description' => 'Category for the event, i.e sports, music etc.',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
@@ -35,7 +35,7 @@ function siteprocessor_event_taxonomy_default_vocabularies() {
     'event_target' => array(
       'name' => 'Event target',
       'machine_name' => 'event_target',
-      'description' => '',
+      'description' => 'Target group for the event, i.e. adults, 0-3 year olds etc.',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
