@@ -42,7 +42,7 @@ function siteprocessor_page_field_default_fields() {
       'bundle' => 'page',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The body text of the page. Your may edit the summary itself, by clicking "edit summary"',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -91,16 +91,17 @@ function siteprocessor_page_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -141,7 +142,7 @@ function siteprocessor_page_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'page',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The image of the event. Will be auto-scaled and cropped when necessary',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -219,6 +220,8 @@ function siteprocessor_page_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
+  t('The body text of the page. Your may edit the summary itself, by clicking "edit summary"');
+  t('The image of the event. Will be auto-scaled and cropped when necessary');
 
   return $fields;
 }

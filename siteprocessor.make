@@ -14,7 +14,7 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.0-rc1"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.0-alpha5"
+projects[date][version] = "2.0-rc1"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.2"
@@ -26,7 +26,7 @@ projects[email][subdir] = "contrib"
 projects[email][version] = "1.0"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta4"
+projects[features][version] = "1.0-beta6"
 
 projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "1.2"
@@ -41,7 +41,7 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "1.1"
 
 projects[i18n][subdir] = "contrib"
-projects[i18n][version] = "1.2"
+projects[i18n][version] = "1.3"
 
 projects[i18nviews][type] = "module"
 projects[i18nviews][subdir] = "contrib"
@@ -56,7 +56,7 @@ projects[location][download][url] = "http://git.drupal.org/project/location.git"
 projects[location][download][revision] = "9d5228364d021e2192662d2d05ef538d20937c5c"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "1.0-rc2"
+projects[media][version] = "1.0-rc3"
 
 projects[menu_block][subdir] = "contrib"
 projects[menu_block][version] = "2.2"
@@ -68,7 +68,7 @@ projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.0-alpha3"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.0-beta4"
+projects[strongarm][version] = "2.0-beta5"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.0"

@@ -42,7 +42,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The body text of the event. Your may edit the summary itself, by clicking "edit summary"',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -97,16 +97,17 @@ function siteprocessor_event_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -134,7 +135,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Contact email address of the event',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -230,7 +231,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The category of the event',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -328,7 +329,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The target of the event',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -416,7 +417,7 @@ function siteprocessor_event_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'event',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The start and end times of the event',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -510,6 +511,7 @@ function siteprocessor_event_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
+          'display_all_day' => 0,
           'increment' => '15',
           'input_format' => 'Y-m-d H:i:s',
           'input_format_custom' => '',
@@ -556,7 +558,7 @@ function siteprocessor_event_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'event',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The image of the event. Will be auto-scaled and cropped when necessary',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -671,7 +673,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Relevant links for the event, i.e. tickets, sponsors etc.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -832,7 +834,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The location of the event, may either be a regular address or a simple set of lat/long coordinates, for places without addresses.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -892,6 +894,7 @@ function siteprocessor_event_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Contact email address of the event');
   t('Email');
   t('Event category');
   t('Event target');
@@ -899,6 +902,13 @@ function siteprocessor_event_field_default_fields() {
   t('Image');
   t('Links');
   t('Location');
+  t('Relevant links for the event, i.e. tickets, sponsors etc.');
+  t('The body text of the event. Your may edit the summary itself, by clicking "edit summary"');
+  t('The category of the event');
+  t('The image of the event. Will be auto-scaled and cropped when necessary');
+  t('The location of the event, may either be a regular address or a simple set of lat/long coordinates, for places without addresses.');
+  t('The start and end times of the event');
+  t('The target of the event');
 
   return $fields;
 }
