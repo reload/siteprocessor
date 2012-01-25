@@ -70,3 +70,13 @@ function siteprocessor_base_entity_info_alter(&$entity_info) {
   );
 }
 
+function siteprocessor_base_preprocess_node(&$vars){
+  //krumo($vars);
+  if($vars['comment']==COMMENT_NODE_OPEN && variable_get('siteprocessor_facebook_appid', FALSE) && variable_get('siteprocessor_facebook_language', FALSE)){
+    $vars['node']->showcomments=true;
+  }
+  else {
+    $vars['node']->showcomments=false;    
+  }
+  
+}

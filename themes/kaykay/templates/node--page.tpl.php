@@ -18,7 +18,7 @@
     ?>
   </div>
 
-  <?php /*FIXME move to module and print $comments*/if($node->comment==COMMENT_NODE_OPEN):?>
+  <?php if($node->showcomments):?>
     <div class="comments-box">
       <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600" data-href="<?php print "http://" .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];?>"></div>

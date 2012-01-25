@@ -48,7 +48,7 @@
       ?>
     </div>
 
-    <?php /*FIXME move to module and print $comments*/if($node->comment==COMMENT_NODE_OPEN):?>
+    <?php if($node->showcomments):?>
       <div class="comments-box">
         <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600" data-href="<?php print "http://" .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];?>"></div>
@@ -131,6 +131,11 @@
     <div class="list-item-content">
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
+        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php endif;?>
+        <?php print render($content['field_event_category']);?>
+        <?php print render($content['field_event_target']);?>
       </div>
     </div>
     <h4><?php print l($title,'node/'.$node->nid); ?></h4>

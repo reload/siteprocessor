@@ -77,7 +77,7 @@ function siteprocessor_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_article_short';
-  $strongarm->value = 'j/m G:i';
+  $strongarm->value = 'D, d. M. Y';
   $export['date_format_article_short'] = $strongarm;
 
   $strongarm = new stdClass;
