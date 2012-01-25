@@ -131,6 +131,11 @@
     <div class="list-item-content">
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
+        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php endif;?>
+        <?php print render($content['field_event_category']);?>
+        <?php print render($content['field_event_target']);?>
       </div>
     </div>
     <h4><?php print l($title,'node/'.$node->nid); ?></h4>
