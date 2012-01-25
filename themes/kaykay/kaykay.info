@@ -2,7 +2,7 @@ name = KayKay
 description = Theme for Koebenhavns Kommune
 core = 7.x
 version = "7.x-1.0-beta3"
-
+package = Siteprocessor
 
 
 stylesheets[all][] = css/reset.css

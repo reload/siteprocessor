@@ -707,17 +707,6 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: delete terms in 3
-  $permissions['delete terms in 3'] = array(
-    'name' => 'delete terms in 3',
-    'roles' => array(
-      0 => 'editor',
-      1 => 'site admin',
-      2 => 'superadmin',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: edit any article content
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
@@ -819,17 +808,6 @@ function siteprocessor_permissions_user_default_permissions() {
   // Exported permission: edit terms in 2
   $permissions['edit terms in 2'] = array(
     'name' => 'edit terms in 2',
-    'roles' => array(
-      0 => 'editor',
-      1 => 'site admin',
-      2 => 'superadmin',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: edit terms in 3
-  $permissions['edit terms in 3'] = array(
-    'name' => 'edit terms in 3',
     'roles' => array(
       0 => 'editor',
       1 => 'site admin',
