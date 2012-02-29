@@ -18,7 +18,7 @@
     ?>
   </div>
 
-  <?php if($node->showcomments):?>
+  <?php if(property_exists($node, 'showcomments') && $node->showcomments):?>
     <div class="comments-box">
       <h2><?php print t('Comments');?></h2>
         <div class="fb-comments" data-num-posts="3" width="600" data-href="<?php print "http://" .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];?>"></div>
