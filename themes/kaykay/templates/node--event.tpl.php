@@ -60,7 +60,7 @@
   <div class="large-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
@@ -82,7 +82,7 @@
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="carousel-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
@@ -103,7 +103,7 @@
 
 <?php elseif($view_mode=='imagetile_item'):?>
   <div class="imagetile-item-wrapper">
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
 
     <?php print render($content['field_image']);?>
     <div class="imagetile-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
@@ -138,6 +138,6 @@
         <?php print render($content['field_event_target']);?>
       </div>
     </div>
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
   </div>
 <?php endif; ?>

@@ -31,7 +31,7 @@
   <div class="large-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print format_date($node->created,'article_short');?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
@@ -51,7 +51,7 @@
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="carousel-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print format_date($node->created,'article_short');?>
         <?php if(isset($node->field_location[$node->language][0]['name'])):?>
@@ -74,6 +74,6 @@
         <?php print format_date($node->created,'article_short');?>
       </div>
     </div>
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
   </div>
 <?php endif; ?>
