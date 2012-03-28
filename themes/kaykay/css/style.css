@@ -316,7 +316,7 @@ li.views-row.imagetile-item{
   margin-right:10px;
 }
 
-.property-bar .field-name-field-event-time {
+.property-bar .field-name-field-event-time, .property-bar .article-created {
   display: inline-block;
 }
 .property-bar .event-location-name{
@@ -342,6 +342,15 @@ li.views-row.imagetile-item{
 }
 
 .property-bar .field-name-field-event-target .field-item:before {
+  content:' - ';
+}
+
+.property-bar .article-author {
+  margin-left:2px;
+  display: inline-block;
+}
+
+.property-bar .article-author:before {
   content:' - ';
 }
 

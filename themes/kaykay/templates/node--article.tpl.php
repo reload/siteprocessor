@@ -31,11 +31,11 @@
   <div class="large-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
-        <?php print format_date($node->created,'article_short');?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="article-author"><?php print $node->author; ?></div>
+        <div class="article-created"><?php print format_date($node->created,'article_short');?></div>
+        <?php if($node->name):?>
+          <div class="article-author"><?php print $node->name; ?></div>
         <?php endif;?>
       </div>
     <?php
@@ -51,11 +51,11 @@
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="carousel-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
-        <?php print format_date($node->created,'article_short');?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="article-author"><?php print $node->author; ?></div>
+        <div class="article-created"><?php print format_date($node->created,'article_short');?></div>
+        <?php if($node->name):?>
+          <div class="article-author"><?php print $node->name; ?></div>
         <?php endif;?>
       </div>
     <?php
@@ -71,9 +71,9 @@
   <div class="list-item-wrapper">
     <div class="list-item-content">
       <div class="property-bar">
-        <?php print format_date($node->created,'article_short');?>
+        <div class="article-created"><?php print format_date($node->created,'article_short');?></div>
       </div>
     </div>
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
   </div>
 <?php endif; ?>

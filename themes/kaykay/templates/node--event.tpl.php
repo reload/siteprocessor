@@ -60,11 +60,11 @@
   <div class="large-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="large-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php if(isset($node->field_location[$language_fields['field_location']][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$language_fields['field_location']][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
@@ -82,11 +82,11 @@
   <div class="carousel-item-wrapper">
     <?php print render($content['field_image']);?>
     <div class="carousel-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
-      <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+      <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php if(isset($node->field_location[$language_fields['field_location']][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$language_fields['field_location']][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
@@ -103,14 +103,14 @@
 
 <?php elseif($view_mode=='imagetile_item'):?>
   <div class="imagetile-item-wrapper">
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
 
     <?php print render($content['field_image']);?>
     <div class="imagetile-item-content <?php if(!isset($content['field_image'])) print "no-image";?>">
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php if(isset($node->field_location[$language_fields['field_location']][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$language_fields['field_location']][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
@@ -131,13 +131,13 @@
     <div class="list-item-content">
       <div class="property-bar">
         <?php print render($content['field_event_time']);?>
-        <?php if(isset($node->field_location[$node->language][0]['name'])):?>
-          <div class="event-location-name"><?php print $node->field_location[$node->language][0]['name']; ?></div>
+        <?php if(isset($node->field_location[$language_fields['field_location']][0]['name'])):?>
+          <div class="event-location-name"><?php print $node->field_location[$language_fields['field_location']][0]['name']; ?></div>
         <?php endif;?>
         <?php print render($content['field_event_category']);?>
         <?php print render($content['field_event_target']);?>
       </div>
     </div>
-    <h4><?php print l($title,'node/'.$node->nid); ?></h4>
+    <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
   </div>
 <?php endif; ?>
