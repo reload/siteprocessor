@@ -1,0 +1,82 @@
+body,
+#page-wrapper {
+  background-color: #FFF !important;
+  background-image: none !important;
+  border: none;
+  box-shadow: none;
+  width: auto;
+}
+
+.toparea-wrapper, #footer, #ui-datepicker-div,
+.view-filters, .pager, .pane-title, .print_hidden
+{
+  display: none;
+}
+
+#main-wrapper {
+  margin: 0 !important;
+}
+
+.map-link {
+  display: none;
+}
+
+.panel-col-maincontent {
+  width: 100% !important;
+}
+.panel-sidebar {
+  display: none;  
+}
+
+.views-field-field-event-time {
+  position: absolute;
+  bottom: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.view-print-search-for-events p, a, span, div  {
+  font-family: 'Gill Sans', Cobel, Tahoma;
+  font-size: 16px;
+}
+.content-wrapper {
+  padding: 0 !important;
+}
+
+.view-print-search-for-events ul { 
+  margin-top: 25px;
+}
+
+.view-print-search-for-events ul li {
+  background-color: #E8E7E2 !important;
+  height: 210px;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 10px;
+}
+
+.view-print-search-for-events ul li .views-field-field-location {
+  width: 20%;
+  height: 210px;
+  position: absolute;
+  top: 10px;
+  padding-left: 20px;
+  right: 10px;
+  border-left: 2px dashed black;
+}
+.views-label-field-location {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.view-print-search-for-events ul li > div {
+  width:70%
+}
+.views-field-title a {
+  color: #6C0046;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
