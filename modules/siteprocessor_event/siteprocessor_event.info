@@ -1,5 +1,6 @@
 core = "7.x"
 dependencies[] = "better_exposed_filters"
+dependencies[] = "calendar"
 dependencies[] = "date"
 dependencies[] = "date_popup"
 dependencies[] = "date_repeat_field"
