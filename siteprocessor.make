@@ -4,8 +4,8 @@ core = 7.x
 projects[drupal][type] = core
 projects[drupal][version] = "7.12"
 
-project[calendar][subdir] = "contrib"
-project[calendar][version] = "3.1"
+projects[calendar][subdir] = "contrib"
+projects[calendar][version] = "3.1"
 
 projects[better_exposed_filters][subdir] = "contrib"
 projects[better_exposed_filters][type] = "module"
