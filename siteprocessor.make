@@ -2,7 +2,10 @@ api = 2
 core = 7.x
 
 projects[drupal][type] = core
-projects[drupal][version] = "7.10"
+projects[drupal][version] = "7.12"
+
+project[calendar][subdir] = "contrib"
+project[calendar][version] = "3.1"
 
 projects[better_exposed_filters][subdir] = "contrib"
 projects[better_exposed_filters][type] = "module"
@@ -14,10 +17,10 @@ projects[conditional_styles][subdir] = "contrib"
 projects[conditional_styles][version] = "2.0"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.0-rc1"
+projects[ctools][version] = "1.0"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.0-rc1"
+projects[date][version] = "2.5"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.2"
@@ -74,7 +77,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0-beta5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.0"
+projects[views][version] = "3.3"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.1"
