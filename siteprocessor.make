@@ -8,10 +8,7 @@ projects[calendar][subdir] = "contrib"
 projects[calendar][version] = "3.1"
 
 projects[better_exposed_filters][subdir] = "contrib"
-projects[better_exposed_filters][type] = "module"
-projects[better_exposed_filters][download][type] = "git"
-projects[better_exposed_filters][download][url] = "http://git.drupal.org/project/better_exposed_filters.git"
-projects[better_exposed_filters][download][revision] = "bafa93446ccc440645b80b11f85d398c3a3de74d"
+projects[better_exposed_filters][version] = "3.0-beta1"
 
 projects[conditional_styles][subdir] = "contrib"
 projects[conditional_styles][version] = "2.0"
