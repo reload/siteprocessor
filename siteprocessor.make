@@ -79,6 +79,9 @@ projects[strongarm][version] = "2.0-beta5"
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.3"
 
+projects[oembed][subdir] = "contrib"
+projects[oembed][version] = "0.1-beta2"
+
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.1"
 
