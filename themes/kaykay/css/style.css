@@ -689,3 +689,8 @@ li.large-item:last-child{
 .oembed, .oembed-content iframe {
   width: 100%;
 }
+
+/* Don't show in listings */
+.view-content .large-item-wrapper .oembed-video {
+  display: none;
+}
