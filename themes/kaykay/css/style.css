@@ -691,6 +691,7 @@ li.large-item:last-child{
 }
 
 /* Don't show in listings */
-.view-content .large-item-wrapper .oembed-video {
+.view-content .views-field-body .oembed,
+.view-content .large-item-wrapper .oembed {
   display: none;
 }
