@@ -265,7 +265,21 @@ function siteprocessor_base_strongarm() {
   $strongarm->value = '1';
   $export['node_admin_theme'] = $strongarm;
 
-  $strongarm = new stdClass;
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'oembedembedly_api_key';
+  $strongarm->value = '81fd8a628d3211e1a33f4040d3dc5c07';
+  $export['oembedembedly_api_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'oembedembedly_default';
+  $strongarm->value = '1';
+  $export['oembedembedly_default'] = $strongarm;
+
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_cache_maximum_age';
