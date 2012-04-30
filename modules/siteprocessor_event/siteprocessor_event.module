@@ -36,3 +36,9 @@ function siteprocessor_event_date_formats() {
   );
 }
 
+function siteprocessor_preprocess_calendar_datebox(&$vars) {
+  drupal_add_js(drupal_get_path('module', 'siteprocessor_event') .'/calendar_filter.js', 'file');
+  global $base_url;
+  $vars['url'] = $base_url . "/" .arg(0). "/" . $vars['date'];
+  $vars['link'] = l($vars['day'], $vars['url']);
+}
