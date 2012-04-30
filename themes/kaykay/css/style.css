@@ -683,3 +683,9 @@ li.large-item:last-child{
   margin-top:15px;
   margin-bottom: 15px;
 }
+
+/* Oembed style */
+
+.oembed, .oembed-content iframe {
+  width: 100%;
+}
