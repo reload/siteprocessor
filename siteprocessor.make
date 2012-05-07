@@ -87,6 +87,9 @@ projects[webtrends][download][type] = "git"
 projects[webtrends][download][url] = "https://github.com/reload/webtrends.git"
 projects[webtrends][download][branch] = "7.x"
 
+projects[webform][subdir] = "contrib"
+projects[webform][version] = "3.17"
+
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
 
