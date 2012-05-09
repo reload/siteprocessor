@@ -1,0 +1,278 @@
+#galleriffic-container #thumbs ul li{
+  float:left;
+  margin-left:4px;
+  margin-right:4px;
+}
+
+#galleriffic-container #thumbs ul {
+  height: 93px;
+  overflow: hidden;
+  padding:10px;
+
+}
+
+#galleriffic-container #thumbs {
+  position: relative;
+}
+
+#galleriffic-container #thumbs a.prev {
+  left:0px;
+}
+
+#galleriffic-container #thumbs a.next{
+  right:0px;
+}
+
+#galleriffic-container #thumbs a.pageLink {
+  background-color: white;
+  background-position: 6px 20px;
+  background-repeat: no-repeat;
+  border-radius: 6px 6px 6px 6px;
+  display: block;
+  height: 60px;
+  opacity: 0.8;
+  position: absolute;
+  top: 18px;
+  width: 20px;
+  border:1px solid #D1D2D3;
+  z-index: 1;
+  
+}
+
+#galleriffic-container #thumbs a.pageLink:hover {
+  opacity:1
+}
+
+#galleriffic-container #thumbs a.pageLink.prev {
+  left: 5px;  
+}
+#galleriffic-container #thumbs a.pageLink.prev:before {
+  content: "«";
+  position: absolute;
+  font-size: 20px;
+  top: 20px;
+  left: 5px;  
+}
+
+#galleriffic-container #thumbs a.pageLink.next {
+  right: 5px;  
+}
+#galleriffic-container #thumbs a.pageLink.next:before {
+  content: "»";
+  position: absolute;
+  font-size: 20px;
+  top: 20px;
+  right: 5px;  
+}
+
+#galleriffic-container #slideshow {
+  position: relative;
+  background-image: url("../img/gallery-shadow-upper.png");
+  background-position: center top;
+  background-repeat: no-repeat;  
+  padding-top: 9px;  
+}
+
+#galleriffic-container #slideshow a,#galleriffic-container #slideshow img,#galleriffic-container #slideshow .image-wrapper{
+  display: block;
+  line-height:0;
+}
+
+#galleriffic-container #slideshow img {
+  width:100%;
+   height:auto;
+   margin:0;
+   padding:0;
+}
+
+#galleriffic-container #slideshow .image-wrapper.previous {
+  position: absolute;
+  left:0;
+  top:9px;
+}
+
+#galleriffic-container #caption .image-caption.previous {
+  position: absolute;
+  /*left:10px;
+  top:10px;  */
+  width:100%;
+}
+
+#galleriffic-container #slideshow .image-wrapper.current {
+  z-index: 1;
+}
+
+#galleriffic-container #caption .image-caption.current {
+  z-index: 1; 
+}
+
+#galleriffic-container #caption {
+  position: relative;
+}
+
+#galleriffic-container #caption h2{
+  margin:0;
+}
+
+#galleriffic-container #thumbs img {
+  border-radius:3px;
+  box-shadow: 0 0 5px black;
+  margin:0;
+  padding:0;
+}
+
+#galleriffic-container #controls-container .photo-index{
+  float:right;
+  font-weight: bold;  
+  padding-top:7px;
+}
+#galleriffic-container #controls .ss-controls{
+  float:left;
+} 
+#galleriffic-container #controls .nav-controls{
+  float:right;
+} 
+#galleriffic-container #controls {
+  float: left;
+  width: 60%;
+}
+
+ 
+#galleriffic-container #controls .nav-controls a{
+  background-repeat: no-repeat;
+  float: left;
+  font-weight: bold;
+  padding-top: 7px;
+  margin-left: 8px;  
+} 
+#galleriffic-container #controls .nav-controls a:hover{
+  color: #000;
+}
+
+#galleriffic-container #controls .nav-controls a.prev{
+  background-position: right 7px;
+} 
+#galleriffic-container #controls .nav-controls a.prev:after{
+  content: "«";
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+#galleriffic-container #controls .nav-controls a.next{
+  background-position: left 7px;
+} 
+#galleriffic-container #controls .nav-controls a.next:before {
+  content: "»";
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+
+
+#galleriffic-container #controls .ss-controls a {
+  background-position: left top;
+  background-repeat: no-repeat;
+  float: left;
+  font-weight: bold;
+  height: 29px;
+  padding-left: 36px;
+  padding-top: 7px;
+}
+
+#galleriffic-container #controls .ss-controls a:hover {
+  color: #000;
+}
+
+#galleriffic-container #controls .ss-controls a.play:before{
+  content: "▶";
+  position: absolute;
+  left: 34px;
+
+} 
+#galleriffic-container #controls .ss-controls a.pause:before{
+  content: "=";
+  -webkit-transform:rotate(90deg);
+  font-size: 18px;
+  position: absolute;
+  left: 34px;
+} 
+
+#galleriffic-container #controls-container {
+ margin: 10px 10px 0 10px;
+}
+
+#galleriffic-container {
+  /*max-width:930px;*/
+  background: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #D1D2D3; /*fixme*/
+  border-radius: 5px 5px 5px 5px;  
+/*  background-image: -webkit-linear-gradient( left, , ); */
+  background: #D6D2C9;
+  background-repeat: repeat-x;
+  background-position:left top;
+  position:relative;
+}
+
+#galleriffic-container #caption {
+  background-image: url("../img/gallery-background.png");
+  background-position: center bottom;
+  background-repeat: repeat-x;    
+}
+
+#galleriffic-container .caption {
+   padding: 10px;
+}
+
+#galleriffic-container #caption h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight:normal;
+  text-align:center;
+}
+
+#galleriffic-container #slideshow-container {
+  position: relative;
+}
+
+#galleriffic-container h1{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align:center;
+}
+
+#galleriffic-container .gallery-description{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#galleriffic-container .caption-description{
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+    
+#galleriffic-container #caption span.image-caption{
+  background-image: url("../img/gallery-shadow-lower.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  display:block;
+
+}    
+
+#galleriffic-container a.togglesize {
+  background-image: url("../img/gallery-maximize-button.png");
+  display: block;
+  height: 14px;
+  margin: 5px;
+  position: absolute;
+  right: 0;
+  text-indent: -900em;
+  top: 0;
+  width: 14px;
+}
+
+#galleriffic-container a.togglesize:hover{
+  background-image: url("../img/gallery-maximize-button-hover.png");
+}
