@@ -44,7 +44,7 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "1.1"
 
 projects[i18n][subdir] = "contrib"
-projects[i18n][version] = "1.3"
+projects[i18n][version] = "1.5"
 
 projects[i18nviews][type] = "module"
 projects[i18nviews][subdir] = "contrib"
