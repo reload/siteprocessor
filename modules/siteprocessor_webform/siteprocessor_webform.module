@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Siteprocessor Webform feature.
+ */
+
+include_once('siteprocessor_webform.features.inc');
