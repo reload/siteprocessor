@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Code for the siteprocessor_gallery feature.
+ */
+
+include_once('siteprocessor_gallery.features.inc');
+
+
+function siteprocessor_gallery_preprocess_node(&$vars){
+  if($vars['type']=='gallery'){
+
+    $gallery_settings=array('siteprocessor_gallery'=>array(
+      'playLinkText'=>t('Play slideshow'),  
+      'pauseLinkText'=>t('Pause slideshow'),  
+      'prevLinkText'=>t('Previous'),  
+      'nextLinkText'=>t('Next'),  
+      'nextPageLinkText'=>t('Next page'),  
+      'prevPageLinkText'=>t('Previous page'),  
+      'ofText'=>t('of'),  
+      'photosText'=>t('photos'),          
+    ));
+    drupal_add_js($gallery_settings,array('type'=>'setting'));
+    drupal_add_css(drupal_get_path('module', 'siteprocessor_gallery') . '/css/siteprocessor_gallery.css');
+    drupal_add_js(drupal_get_path('module', 'siteprocessor_gallery') . '/js/jquery.opacityrollover.js');
+    drupal_add_js(drupal_get_path('module', 'siteprocessor_gallery') . '/js/jquery.history.js');
+    drupal_add_js(drupal_get_path('module', 'siteprocessor_gallery') . '/js/jquery.galleriffic.js');
+    drupal_add_js(drupal_get_path('module', 'siteprocessor_gallery') . '/js/siteprocessor_gallery.js');
+    if(arg(0)=='node' && arg(1)==$vars['nid']){
+      $vars['exclusive_view']=true;
+      $vars['extra_class']='';
+    }
+    else {
+      $vars['extra_class']='embedded';
+    }
+  }
+}

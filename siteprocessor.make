@@ -44,7 +44,7 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "1.1"
 
 projects[i18n][subdir] = "contrib"
-projects[i18n][version] = "1.3"
+projects[i18n][version] = "1.5"
 
 projects[i18nviews][type] = "module"
 projects[i18nviews][subdir] = "contrib"
@@ -89,6 +89,12 @@ projects[webtrends][download][branch] = "7.x"
 
 projects[webform][subdir] = "contrib"
 projects[webform][version] = "3.17"
+
+projects[entity][subdir] = "contrib"
+projects[entity][version] = "1.0-rc2"
+
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta4"
 
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
