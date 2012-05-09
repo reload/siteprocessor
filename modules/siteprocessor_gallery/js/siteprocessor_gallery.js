@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
           fadeSpeed:         'fast',
           exemptionSelector: '.selected'
   });
-  var numThumbs=Math.floor($("#galleriffic-container #thumbs").width()/150);
+  var numThumbs=Math.floor($("#galleriffic-container #thumbs").width()/140);
 
   // Initialize Advanced Galleriffic Gallery
   Drupal.gallery = $('#galleriffic-container #thumbs').galleriffic({
