@@ -154,6 +154,7 @@
 } 
 #galleriffic-container #controls .nav-controls a.prev:after{
   content: "«";
+  margin-left: 3px;
   margin-top: 3px;
   font-size: 16px;
 }
