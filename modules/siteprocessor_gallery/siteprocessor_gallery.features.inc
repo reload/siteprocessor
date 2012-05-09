@@ -28,7 +28,7 @@ function siteprocessor_gallery_image_default_styles() {
   $styles['gallery_thumbnail'] = array(
     'name' => 'gallery_thumbnail',
     'effects' => array(
-      18 => array(
+      1 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -38,7 +38,7 @@ function siteprocessor_gallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '140',
+          'width' => '130',
           'height' => '93',
         ),
         'weight' => '1',
