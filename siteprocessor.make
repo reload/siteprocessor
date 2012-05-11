@@ -45,6 +45,8 @@ projects[variable][version] = "1.1"
 
 projects[i18n][subdir] = "contrib"
 projects[i18n][version] = "1.5"
+projects[i18n][patch][] = "http://drupal.org/files/fetchAll_001.patch"
+
 
 projects[i18nviews][type] = "module"
 projects[i18nviews][subdir] = "contrib"
