@@ -88,26 +88,31 @@
     padding: 20px 10px;
 }
 
-/* Print friendly events listing css */
-
+/* print view */
+.view-print-search-for-events ul li p {
+  margin: 0;
+}
 
 .view-print-search-for-events ul li {
   background-color: #E8E7E2 !important;
   width: 100%;
-  height: 210px;
   margin-bottom: 30px;
   position: relative;
   padding: 10px;
+  min-height: 200px;
 }
 
 .view-print-search-for-events ul li .views-field-field-location {
   width: 20%;
-  height: 210px;
+  height: 100%;
   position: absolute;
-  top: 10px;
+  top: 0px;
   padding-left: 20px;
   right: 10px;
   border-left: 2px dashed black;
+}
+.view-print-search-for-events ul li .views-field-field-location .location {
+  margin-bottom: 10px;
 }
 .view-print-search-for-events .views-label-field-location {
   font-weight: bold;
