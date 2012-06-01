@@ -3,21 +3,21 @@
     <a class="pageLink prev" style="visibility: hidden;" href="#" title="Prev Page"></a>      
     <ul class="thumbs noscript clearfix">
       <?php
-      foreach($elements['field_gallery_images']['#items'] as $key => $value ):
-        $element=$elements['field_gallery_images'][$key]['entity']['field_collection_item'][$value['value']];
-        $image_uri=$element['field_gallery_image']['#items'][0]['uri'];
-        $image_fid=$element['field_gallery_image']['#items'][0]['fid'];
-        $image_title=$element['field_gallery_image']['#items'][0]['title'];
-        $image_description=$element['field_gallery_image_description']['#items'][0]['safe_value'];
-        $image_thumb=theme('image_style', array(
+      foreach ($elements['field_gallery_images']['#items'] as $key => $value):
+        $element = $elements['field_gallery_images'][$key]['entity']['field_collection_item'][$value['value']];
+        $image_uri = $element['field_gallery_image']['#items'][0]['uri'];
+        $image_fid = $element['field_gallery_image']['#items'][0]['fid'];
+        $image_title = $element['field_gallery_image']['#items'][0]['title'];
+        $image_description = isset($element['field_gallery_image_description']['#items'][0]['safe_value']) ? $element['field_gallery_image_description']['#items'][0]['safe_value'] : NULL;
+        $image_thumb = theme('image_style', array(
           'style_name'=>'gallery_thumbnail',
-          'path'=>$image_uri,          
-          'alt'=>$image_title,          
-          'title'=>$image_title,                    
+          'path'=>$image_uri,
+          'alt'=>$image_title,
+          'title'=>$image_title,
         )
-        );
-        $image_full_url=image_style_url('content_top_image', $image_uri);
-        
+      );
+        $image_full_url = image_style_url('content_top_image', $image_uri);
+
 
       ?>
         <li>
