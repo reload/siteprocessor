@@ -523,6 +523,17 @@ li.list-item .property-bar{
   top: 7px;
 }
 
+/* Event listing */
+
+.view-upcoming-events li.list-item .property-bar{
+  left: 0;
+  position:initial;
+  top: 0;
+}
+.view-upcoming-events li.list-item h4 a {
+  margin: 0;
+  padding: 0;
+}
 
 .imagetile-item-wrapper {
   border:1px solid transparent;
