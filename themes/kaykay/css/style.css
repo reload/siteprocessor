@@ -527,7 +527,7 @@ li.list-item .property-bar{
 
 .panel-sidebar .view-upcoming-events li.list-item .property-bar{
   left: 0;
-  position:initial;
+  position:relative;
   top: 0;
 }
 .panel-sidebar .view-upcoming-events li.list-item h4 a {
