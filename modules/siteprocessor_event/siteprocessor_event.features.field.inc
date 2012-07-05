@@ -84,6 +84,13 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => '6',
         ),
+        'print_item' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -116,6 +123,106 @@ function siteprocessor_event_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-event-field_bydel'
+  $fields['node-event-field_bydel'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_bydel',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'bydel',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Hvor i byen er arrangementet?',
+      'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '9',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'large_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'list_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_bydel',
+      'label' => 'Bydel',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '11',
+      ),
+    ),
+  );
+
   // Exported field: 'node-event-field_email'
   $fields['node-event-field_email'] = array(
     'field_config' => array(
@@ -135,7 +242,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Contact email address of the event',
+      'description' => 'Angiv e-mailadresser på arrangementets kontaktperson.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -168,6 +275,12 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => '4',
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -178,7 +291,7 @@ function siteprocessor_event_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_email',
       'label' => 'Email',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -198,7 +311,7 @@ function siteprocessor_event_field_default_fields() {
   $fields['node-event-field_event_category'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '3',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_event_category',
@@ -231,7 +344,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The category of the event',
+      'description' => 'Type af arrangement. Der kan vælges på til tre typer.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -268,6 +381,12 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'taxonomy_term_reference_plain',
           'weight' => '1',
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -277,8 +396,8 @@ function siteprocessor_event_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_event_category',
-      'label' => 'Event category',
-      'required' => 0,
+      'label' => 'Emne',
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -287,7 +406,7 @@ function siteprocessor_event_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -296,7 +415,7 @@ function siteprocessor_event_field_default_fields() {
   $fields['node-event-field_event_target'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_event_target',
@@ -329,7 +448,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The target of the event',
+      'description' => 'Vælg aldersgruppe. Der kan vælges flere aldersgruppe, hvis målgruppen dækker flere. Angiv gerne den præcise aldersgruppe i arrangementets beskrivelse.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -362,6 +481,12 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -371,7 +496,7 @@ function siteprocessor_event_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_event_target',
-      'label' => 'Event target',
+      'label' => 'Aldersgruppe',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -381,7 +506,7 @@ function siteprocessor_event_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -417,7 +542,7 @@ function siteprocessor_event_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'event',
       'deleted' => '0',
-      'description' => 'The start and end times of the event',
+      'description' => 'Angiv start- og sluttidspunkter for arrangementet.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -489,6 +614,20 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'date_default',
           'weight' => '0',
         ),
+        'print_item' => array(
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_repeat_rule' => 'show',
+          ),
+          'type' => 'date_default',
+          'weight' => '1',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -498,8 +637,8 @@ function siteprocessor_event_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_event_time',
-      'label' => 'Event time',
-      'required' => 0,
+      'label' => 'Tidspunkt',
+      'required' => 1,
       'settings' => array(
         'default_value' => 'now',
         'default_value2' => 'strtotime',
@@ -511,7 +650,7 @@ function siteprocessor_event_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'display_all_day' => 0,
+          'display_all_day' => 1,
           'increment' => '15',
           'input_format' => 'Y-m-d H:i:s',
           'input_format_custom' => '',
@@ -558,7 +697,8 @@ function siteprocessor_event_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'event',
       'deleted' => '0',
-      'description' => 'The image of the event. Will be auto-scaled and cropped when necessary',
+      'description' => 'Vedhæft et passende billede til arrangementet. Billeder bliver automatisk tilpasset, hvis det er nødvendigt.
+',
       'display' => array(
         'carousel_item' => array(
           'label' => 'hidden',
@@ -606,6 +746,12 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => '5',
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -618,7 +764,8 @@ function siteprocessor_event_field_default_fields() {
       'label' => 'Image',
       'required' => 1,
       'settings' => array(
-        'alt_field' => 0,
+        'alt_field' => 1,
+        'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -644,7 +791,7 @@ function siteprocessor_event_field_default_fields() {
   $fields['node-event-field_links'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '3',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_links',
@@ -673,7 +820,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Relevant links for the event, i.e. tickets, sponsors etc.',
+      'description' => 'Angiv link til fx arrangørens hjemmeside. Der kan oprettes op til tre links.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -706,6 +853,12 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => '2',
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -715,7 +868,7 @@ function siteprocessor_event_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_links',
-      'label' => 'Links',
+      'label' => 'Link',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
@@ -834,7 +987,7 @@ function siteprocessor_event_field_default_fields() {
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The location of the event, may either be a regular address or a simple set of lat/long coordinates, for places without addresses.',
+      'description' => 'Adresse til stedet, hvor arrangementet foregår.',
       'display' => array(
         'carousel_item' => array(
           'label' => 'above',
@@ -867,6 +1020,13 @@ function siteprocessor_event_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'module' => 'location_cck',
+          'settings' => array(),
+          'type' => 'location_default',
+          'weight' => '2',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -876,8 +1036,8 @@ function siteprocessor_event_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_location',
-      'label' => 'Location',
-      'required' => 0,
+      'label' => 'Adresse',
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -886,29 +1046,230 @@ function siteprocessor_event_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '7',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_price'
+  $fields['node-event-field_price'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_price',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Angiv arrangementets pris.',
+      'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 11,
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'large_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'list_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'print_item' => array(
+          'label' => 'inline',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => 0,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => '4',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_price',
+      'label' => 'Pris',
+      'required' => 1,
+      'settings' => array(
+        'max' => '',
+        'min' => '0',
+        'prefix' => 'Kr',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '13',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_tilmelding'
+  $fields['node-event-field_tilmelding'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_tilmelding',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Nej',
+          1 => 'Ja',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Er tilmelding nødvendig?',
+      'display' => array(
+        'carousel_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '10',
+        ),
+        'imagetile_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'large_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'list_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'print_item' => array(
+          'label' => 'inline',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_tilmelding',
+      'label' => 'Tilmelding',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '12',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Adresse');
+  t('Adresse til stedet, hvor arrangementet foregår.');
+  t('Aldersgruppe');
+  t('Angiv arrangementets pris.');
+  t('Angiv e-mailadresser på arrangementets kontaktperson.');
+  t('Angiv link til fx arrangørens hjemmeside. Der kan oprettes op til tre links.');
+  t('Angiv start- og sluttidspunkter for arrangementet.');
   t('Body');
-  t('Contact email address of the event');
+  t('Bydel');
   t('Email');
-  t('Event category');
-  t('Event target');
-  t('Event time');
+  t('Emne');
+  t('Er tilmelding nødvendig?');
+  t('Hvor i byen er arrangementet?');
   t('Image');
-  t('Links');
-  t('Location');
-  t('Relevant links for the event, i.e. tickets, sponsors etc.');
+  t('Link');
+  t('Pris');
   t('The body text of the event. Your may edit the summary itself, by clicking "edit summary"');
-  t('The category of the event');
-  t('The image of the event. Will be auto-scaled and cropped when necessary');
-  t('The location of the event, may either be a regular address or a simple set of lat/long coordinates, for places without addresses.');
-  t('The start and end times of the event');
-  t('The target of the event');
+  t('Tidspunkt');
+  t('Tilmelding');
+  t('Type af arrangement. Der kan vælges på til tre typer.');
+  t('Vedhæft et passende billede til arrangementet. Billeder bliver automatisk tilpasset, hvis det er nødvendigt.
+');
+  t('Vælg aldersgruppe. Der kan vælges flere aldersgruppe, hvis målgruppen dækker flere. Angiv gerne den præcise aldersgruppe i arrangementets beskrivelse.');
 
   return $fields;
 }

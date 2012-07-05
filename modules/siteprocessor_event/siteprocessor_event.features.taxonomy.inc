@@ -9,10 +9,33 @@
  */
 function siteprocessor_event_taxonomy_default_vocabularies() {
   return array(
+    'bydel' => array(
+      'name' => 'Bydel',
+      'machine_name' => 'bydel',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'event_category' => array(
-      'name' => 'Event category',
+      'name' => 'Emne',
       'machine_name' => 'event_category',
-      'description' => 'Category for the event, i.e sports, music etc.',
+      'description' => 'Emne for arrangementet',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
@@ -33,9 +56,9 @@ function siteprocessor_event_taxonomy_default_vocabularies() {
       ),
     ),
     'event_target' => array(
-      'name' => 'Event target',
+      'name' => 'Aldersgruppe',
       'machine_name' => 'event_target',
-      'description' => 'Target group for the event, i.e. adults, 0-3 year olds etc.',
+      'description' => 'Aldersgrupper',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',

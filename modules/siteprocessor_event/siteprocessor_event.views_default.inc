@@ -353,7 +353,7 @@ function siteprocessor_event_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Filter events';
+  $handler->display->display_options['title'] = 'Filtrer arrangementer';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -405,9 +405,9 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'No results';
+  $handler->display->display_options['empty']['area']['label'] = 'Ingen resultater';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No events found';
+  $handler->display->display_options['empty']['area']['content'] = 'Ingen arrangementer fundet';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
   /* Felt: Indhold: Titel */
@@ -606,7 +606,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Event category';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Kategori for arrangement';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator'] = 'field_event_category_tid_op';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['multiple'] = 1;
@@ -621,7 +621,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_target_tid']['field'] = 'field_event_target_tid';
   $handler->display->display_options['filters']['field_event_target_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator_id'] = 'field_event_target_tid_op';
-  $handler->display->display_options['filters']['field_event_target_tid']['expose']['label'] = 'Event target';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['label'] = 'Målgruppe for arrangement';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator'] = 'field_event_target_tid_op';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['identifier'] = 'field_event_target_tid';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['multiple'] = 1;
@@ -949,13 +949,15 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '6, 10, 20, 60';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 1;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'large_item';
-  $handler->display->display_options['row_options']['links'] = 0;
-  $handler->display->display_options['row_options']['comments'] = 0;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 1;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -966,22 +968,60 @@ function siteprocessor_event_views_default_views() {
 ';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
-  /* Felt: Indhold: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Felt: Rendered as large item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['ui_name'] = 'Rendered as large item';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'large_item';
+  /* Felt: Rendered as print item */
+  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
+  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_1']['ui_name'] = 'Rendered as print item';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'print_item';
   /* Sort criterion: Indhold: Tidspunkt -  start dato (field_event_time) */
   $handler->display->display_options['sorts']['field_event_time_value']['id'] = 'field_event_time_value';
   $handler->display->display_options['sorts']['field_event_time_value']['table'] = 'field_data_field_event_time';
@@ -1143,7 +1183,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'clearfix  list-item';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix list-item';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'list_item';
   $handler->display->display_options['row_options']['links'] = 0;

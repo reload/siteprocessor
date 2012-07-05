@@ -11,7 +11,7 @@
         </div>
       <?php endif; ?>
      <?php print render($content['field_image']);?>
-     <div class="fb-like" data-send="true" data-width="600" data-show-faces="false"></div>  
+     <div class="fb-like" data-send="true" data-width="600" data-show-faces="false"></div>
       <div class="event-properties">
         <?php if(isset($content['field_event_category'])):?>
           <div class="event-property event-category">
@@ -140,4 +140,40 @@
     </div>
     <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
   </div>
+
+<?php elseif($view_mode=='print_item'):?>
+  <div class="print-item-wrapper">
+    <div class="print-item-content">
+      <div class="description">
+        <h4><?php print l($title,'node/'.$node->nid, array('html'=>TRUE)); ?></h4>
+        <?php print render($content['body']);?>
+        <?php print render($content['field_event_time']);?>
+      </div>
+      <div class="properties">
+        <?php
+        // Naughty, I know...
+        if (!empty($content['field_location']['#title'])) {
+          $content['field_location']['#title'] = 'Foregår';
+        }
+        ?>
+        <?php print render($content['field_location']);?>
+        <?php
+        // Should really be fixed by a formatter.
+        if (isset($content['field_price'][0]['#markup'])) {
+          $content['field_price'][0]['#markup'] .= ',-';
+        }
+        ?>
+        <?php print render($content['field_price']);?>
+        <?php print render($content['field_tilmelding']);?>
+      </div>
+    <?php
+      // We hide the comments and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
+    ?>
+    </div>
+
+  </div>
+
 <?php endif; ?>

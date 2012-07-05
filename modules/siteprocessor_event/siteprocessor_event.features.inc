@@ -34,11 +34,11 @@ function siteprocessor_event_views_api() {
 function siteprocessor_event_node_info() {
   $items = array(
     'event' => array(
-      'name' => t('Event'),
+      'name' => t('Arrangement'),
       'base' => 'node_content',
       'description' => t('Use events for content describing events that take place in a given period at a given place'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
