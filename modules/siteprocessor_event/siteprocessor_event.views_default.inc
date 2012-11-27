@@ -353,7 +353,7 @@ function siteprocessor_event_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Filter events';
+  $handler->display->display_options['title'] = 'Filtrer arrangementer';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -405,9 +405,9 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'No results';
+  $handler->display->display_options['empty']['area']['label'] = 'Ingen resultater';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No events found';
+  $handler->display->display_options['empty']['area']['content'] = 'Ingen arrangementer fundet';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
   /* Felt: Indhold: Titel */
@@ -606,7 +606,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Event category';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Kategori for arrangement';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator'] = 'field_event_category_tid_op';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['multiple'] = 1;
@@ -621,7 +621,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['filters']['field_event_target_tid']['field'] = 'field_event_target_tid';
   $handler->display->display_options['filters']['field_event_target_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator_id'] = 'field_event_target_tid_op';
-  $handler->display->display_options['filters']['field_event_target_tid']['expose']['label'] = 'Event target';
+  $handler->display->display_options['filters']['field_event_target_tid']['expose']['label'] = 'Målgruppe for arrangement';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['operator'] = 'field_event_target_tid_op';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['identifier'] = 'field_event_target_tid';
   $handler->display->display_options['filters']['field_event_target_tid']['expose']['multiple'] = 1;
@@ -736,7 +736,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'No results';
+  $handler->display->display_options['empty']['area']['label'] = 'Ingen resultater';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
   $handler->display->display_options['empty']['area']['content'] = 'Der blev desværre ikke fundet nogle arrangementer, der matcher dine valg ovenfor.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
@@ -1129,7 +1129,7 @@ function siteprocessor_event_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Søg';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sorter efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
