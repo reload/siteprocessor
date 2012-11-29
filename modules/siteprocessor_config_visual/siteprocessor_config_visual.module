@@ -22,26 +22,41 @@ function siteprocessor_config_visual_block_info(){
  * Implements hook_block_view().
  */
 function siteprocessor_config_visual_block_view($delta){
-  $block=array();
-  switch ($delta){
+  $block = array();
+  switch ($delta) {
     case 'topblock':
-      $block['subject'] ='';
+      $block['subject'] = '';
+
+      // Insert default site logo, if available.
       if ($image_fid = variable_get('siteprocessor_config_visual_top_image_fid', FALSE)) {
         $image = file_load($image_fid);
-        $block['content']=l(theme('image_style',array('style_name'=>'toplogo_image','path'=>$image->uri)),'<front>',array('html'=>true));
+        $block['content']=l(theme('image_style', array('style_name' => 'toplogo_image', 'path' => $image->uri)), '<front>', array('html' => TRUE));
       }
       else {
-        $block['content'] = user_access('administer site processor images') ? t('You can upload the site logo ').l(t('right here'),'admin/config/siteprocessor/config_visual/images') : '';
+        $block['content'] = user_access('administer site processor images') ? t('You can upload the site logo ') . l(t('right here'), 'admin/config/siteprocessor/config_visual/images') : '';
+      }
+
+      // Check if we're on a node view,
+      // if so and the node has a page logo attached,
+      // then replace the default logo.
+      if (preg_match('/node\/(\d+)/i', $_GET['q'], $match)) {
+        if (isset($match[1])) {
+          $node = node_load($match[1]);
+          if (isset($node->field_page_top_image[LANGUAGE_NONE][0][fid])) {
+            $image = file_load($node->field_page_top_image[LANGUAGE_NONE][0][fid]);
+            $block['content']=l(theme('image_style', array('style_name' => 'toplogo_image', 'path' => $image->uri)), '<front>', array('html' => TRUE));
+          }
+        }
       }
       break;
     case 'ownerblock':
-      $block['subject'] ='';
+      $block['subject'] = '';
       if ($image_fid = variable_get('siteprocessor_config_visual_owner_image_fid', FALSE)) {
         $image = file_load($image_fid);
-        $block['content']=theme('image',array('path'=>$image->uri));
+        $block['content']=theme('image', array('path' => $image->uri));
       }
       else {
-        $block['content'] = user_access('administer site processor images') ? t('You can upload the owner logo ').l(t('right here'),'admin/config/siteprocessor/config_visual/images') : '';
+        $block['content'] = user_access('administer site processor images') ? t('You can upload the owner logo ') . l(t('right here'), 'admin/config/siteprocessor/config_visual/images') : '';
       }
       break;
   }
@@ -147,7 +162,7 @@ function siteprocessor_config_visual_menu() {
     'file' => 'siteprocessor_config_visual.admin.inc',
   );
 
-  
+
   $items['admin/config/siteprocessor/config_visual/images'] = array(
     'title' => 'Images',
     'description' => 'Images',
@@ -180,7 +195,7 @@ function siteprocessor_config_visual_menu() {
     'access arguments' => array('administer site processor custom css'),
     'file' => 'siteprocessor_config_visual.admin.inc',
     'type' => MENU_LOCAL_TASK,
-    'weight' => 10,      
+    'weight' => 10,
   );
 
   return $items;
@@ -213,7 +228,7 @@ function siteprocessor_config_visual_init(){
       watchdog('siteprocessor_config_visual', t("CSS file created"));
     }
     //add css file
-    drupal_add_css(file_create_url('public://siteprocessor_config_visual.css'),array('type'=>'external','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));  
+    drupal_add_css(file_create_url('public://siteprocessor_config_visual.css'),array('type'=>'external','group'=>CSS_THEME,'every_page'=>true,'weight'=>5000));
   }
 }
 
@@ -266,7 +281,7 @@ function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
 
 /**
  * From http://www.php.net/manual/en/function.array-merge-recursive.php
- * 
+ *
  * Merges arrays in many levels
  */
 function MergeArrays($Arr1, $Arr2) {
@@ -348,16 +363,16 @@ function siteprocessor_config_visual_color_groups_get(){
 
 /*
  * Returns a list of color definitions defined in the themes, and merged with the customized colors stored in a variable. Can return various formats depending on args:
- * 
+ *
  * keys_list=>true:
  *   returns a list of color keys
- * 
+ *
  * keys_values_list=>true:
  *   returns a list of color keys and values
- * 
+ *
  * Default:
  *   returns a structure
- * 
+ *
  */
 function siteprocessor_config_visual_colors_get($args=null){
   $theme=variable_get('theme_default','kaykay');
