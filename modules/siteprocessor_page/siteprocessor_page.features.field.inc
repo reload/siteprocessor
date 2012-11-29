@@ -259,13 +259,9 @@ function siteprocessor_page_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => 2,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'imagetile_item' => array(
           'label' => 'above',
