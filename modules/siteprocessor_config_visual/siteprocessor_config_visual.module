@@ -39,14 +39,13 @@ function siteprocessor_config_visual_block_view($delta){
       // Check if we're on a node view,
       // if so and the node has a page logo attached,
       // then replace the default logo.
-      if (preg_match('/node\/(\d+)/i', $_GET['q'], $match)) {
-        if (isset($match[1])) {
-          $node = node_load($match[1]);
+      $path = arg();
+      if ($path[0] == 'node' && isset($path[1]))  {
+          $node = node_load($path[1]);
           if (isset($node->field_page_top_image[LANGUAGE_NONE][0][fid])) {
             $image = file_load($node->field_page_top_image[LANGUAGE_NONE][0][fid]);
             $block['content']=l(theme('image_style', array('style_name' => 'toplogo_image', 'path' => $image->uri)), '<front>', array('html' => TRUE));
           }
-        }
       }
       break;
     case 'ownerblock':
