@@ -17,10 +17,18 @@ var fixTileHeights=function(){
     }
     lastYPos=yPos;
     lastLine.push(this);
-  });  
+  });
 }
 
 jQuery(document).ready(function() {
+  // Load external links in new tab/window.
+  jQuery("a[href^=http]").each(function(){
+      if(this.href.indexOf(location.hostname) == -1) {
+         jQuery(this).attr({
+            target: "_blank"
+         });
+      }
+   })
   jQuery('.panel-col-1-1 li.imagetile-item:nth-child(3n+1)').css('clear','left');
   jQuery('.panel-col-1-1 li.imagetile-item:nth-child(3n+1)').css('margin-right','22px');
   jQuery('.panel-col-1-1 li.imagetile-item:nth-child(3n+2)').css('margin-right','22px');
