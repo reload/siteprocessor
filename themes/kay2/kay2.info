@@ -1,4 +1,4 @@
-name = Version2
+name = Kay2
 description = Basic theme for siteprocessor
 core = 7.x
 engine = phptemplate
