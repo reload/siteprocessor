@@ -1,0 +1,85 @@
+.clearfix { clear: both;}
+ul { list-style-type: none!important; }
+#preview {
+  width: 994px;
+}
+#preview #preview-logo, #preview #preview-site-name {
+  display: inline;
+}
+#preview #preview-top-image {
+  height: 307px;
+}
+#preview #preview-site-name {
+  color: #5b75d7;
+  font-family: "Times new roman";
+  font-size: 46px;
+}
+
+#preview #preview-main-menu-links {
+  border-bottom: 4px solid #ececec;
+  margin: 0;
+  padding: 0;
+}
+#preview #preview-main-menu-links li {
+  display: inline;
+  height: 30px;
+  position: relative;
+}
+
+#preview #preview-main-menu-links li a {
+  color: #eee;
+  display: inline-block;
+  padding: 14px 10px;
+}
+
+#preview #preview-main-menu-links li a:before {
+  content: "";
+  height: 30px;
+  position: absolute;
+}
+#preview #preview-main-menu-links li a.active:after,
+#preview #preview-main-menu-links li a:hover:after {
+  border-bottom: 4px solid #222;
+  content: "";
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#preview #preview-main #preview-left-container {
+  width: 66%;
+  float: left;
+}
+#preview #preview-main #preview-right-container {
+  width: 33%;
+  float: left;
+}
+#preview #preview-main #preview-left-container ul {}
+#preview #preview-main #preview-left-container li { display: block; border-bottom: 2px solid #efefef; padding-bottom: 10px; }
+
+#preview #preview-main #preview-left-container h1 {
+  font-size: 30px;
+  color: #333;
+}
+#preview #preview-main #preview-left-container h2 { 
+  font-size: 22px;
+  margin: 16px 0 10px 0;
+  color: #333;
+}
+#preview #preview-main #preview-left-container .date { color: #aaa; }
+#preview #preview-main #preview-left-container .content > div { float: left; }
+#preview #preview-main #preview-left-container .content .image { width: 30%; }
+#preview #preview-main #preview-left-container .content .image img { border: 8px solid #eee; }
+#preview #preview-main #preview-left-container .content .body { width: 70%; }
+#preview #preview-main #preview-left-container .content .body p { margin : 0;}
+
+#preview #preview-main #preview-right-container > div { width: 100%; }
+#preview #preview-main #preview-right-container .block { margin-bottom: 26px; }
+#preview #preview-main h3 {
+  width: 100%;
+  font-size: 16px;
+  padding: 4px 0 4px 16px;
+  background-color: #222;
+  color: #eee;
+}

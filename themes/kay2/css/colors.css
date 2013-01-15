@@ -1,0 +1,41 @@
+/* Site background color */
+body {
+  /* colors->bg */
+  background-color: #ffffff;
+  /* colors->text */
+  color: #666666;
+}
+
+h1, h2 {
+  /* colors->title */
+  color: #333333;
+}
+h3 {
+  /* colors->mainmenucolor */
+  color: #eeeeee;
+}
+ul { list-style-type: none; }
+/* Main menu links */
+#main-menu   {
+  /* colors->mainmenugbtop, colors->mainmenubgbottom */
+  background-image: -moz-linear-gradient(-90deg, #222222, #999999);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
+}
+#main-menu li a { 
+  /* colors->mainmenucolor */
+  color: #eeeeee;
+}
+#main-menu li a.active {
+  /* colors->mainmenugbtop, colors->mainmenubgbottom */
+  background-image: -moz-linear-gradient(-90deg, #999999, #222222);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#222222));
+  color: #eeeeee;
+}
+
+/* Left container */
+
+/* Right container */
+h3 {
+  background-color: #222222;
+}
+
