@@ -1,0 +1,13 @@
+.panel-100-66-33  .panel-row-split .panel-col-first {
+  width:66%;
+  float:left;
+}
+
+.panel-100-66-33   .panel-row-split .panel-col-last {
+  width:33%;
+  float:left;
+}
+
+.panel-100-66-33   .panel-row-wide .panel-col {
+  width:100%;
+}

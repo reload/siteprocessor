@@ -1,0 +1,141 @@
+name = Version2
+description = Basic theme for siteprocessor
+core = 7.x
+engine = phptemplate
+
+; Stylesheets
+
+; Scripts
+
+; Regions
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+regions[ownerbox] = Owner box
+
+; Panels
+plugins[panels][layouts] = layouts
+
+; Color definitions
+siteprocessor[color_groups][menu]="Menu"
+siteprocessor[color_groups][page]="Page"
+siteprocessor[color_groups][content]="Content"
+siteprocessor[color_groups][views]="Views"
+
+siteprocessor[colors][views][views-filter-background][name]="views-filter-background"
+siteprocessor[colors][views][views-filter-background][value]=EEEEEE
+siteprocessor[colors][views][views-filter-border][name]="views-filter-border"
+siteprocessor[colors][views][views-filter-border][value]=000000
+
+siteprocessor[colors][content][content_summary_text][name]=content_summary_text
+siteprocessor[colors][content][content_summary_text][value]=444444
+
+siteprocessor[colors][page][page_body_text][name]="page_body_text"
+siteprocessor[colors][page][page_body_text][value]=000000
+siteprocessor[colors][page][page_wrapper_border][name]="page_wrapper_border"
+siteprocessor[colors][page][page_wrapper_border][value]=000000
+siteprocessor[colors][page][page_wrapper_background][name]="page_wrapper_background"
+siteprocessor[colors][page][page_wrapper_background][value]=d4e7f3
+siteprocessor[colors][page][page_link][name]="page_link"
+siteprocessor[colors][page][page_link][value]=ce5c00
+siteprocessor[colors][page][page_link_hover][name]="page_link_hover"
+siteprocessor[colors][page][page_link_hover][value]=8c2e0b
+siteprocessor[colors][page][page_content_wrapper_background][name]="page_content_wrapper_background"
+siteprocessor[colors][page][page_content_wrapper_background][value]=ffffff
+siteprocessor[colors][page][page_body_background][name]="page_body_background"
+siteprocessor[colors][page][page_body_background][value]=FFFFCC
+siteprocessor[colors][page][page-pane-separator-border][name]="page-pane-separator-border"
+siteprocessor[colors][page][page-pane-separator-border][value]=999999
+
+siteprocessor[colors][page][page-footer-background][name]="page-footer-background"
+siteprocessor[colors][page][page-footer-background][value]=F5f5F5
+siteprocessor[colors][page][page-footer-item-border][name]="page-footer-item-border"
+siteprocessor[colors][page][page-footer-item-border][value]=CCCCCC
+
+siteprocessor[colors][menu][menu_background_active][name]="Menu background active"
+siteprocessor[colors][menu][menu_background_active][value]=666622
+siteprocessor[colors][menu][menu_background][name]="Menu background"
+siteprocessor[colors][menu][menu_background][value]=FFFF88
+siteprocessor[colors][menu][menu_background_active_hover][name]="menu_background_active_hover"
+siteprocessor[colors][menu][menu_background_active_hover][value]=666622
+siteprocessor[colors][menu][menu_background_hover][name]="menu_background_hover"
+siteprocessor[colors][menu][menu_background_hover][value]=FFFF88
+
+siteprocessor[colors][menu][menu_text][name]="Menu text"
+siteprocessor[colors][menu][menu_text][value]=000000
+siteprocessor[colors][menu][menu_text_active][name]="Menu text active"
+siteprocessor[colors][menu][menu_text_active][value]=FFFFFF
+siteprocessor[colors][menu][menu_text_active_hover][name]="menu_text_active_hover"
+siteprocessor[colors][menu][menu_text_active_hover][value]=FFFFFF
+siteprocessor[colors][menu][menu_text_hover][name]="menu_text_hover"
+siteprocessor[colors][menu][menu_text_hover][value]=000000
+
+siteprocessor[colors][menu][menu_border][name]="menu_border"
+siteprocessor[colors][menu][menu_border][value]=000000
+siteprocessor[colors][menu][menu_border_hover][name]="menu_border_hover"
+siteprocessor[colors][menu][menu_border_hover][value]=000000
+siteprocessor[colors][menu][menu_border_active][name]="menu_border_active"
+siteprocessor[colors][menu][menu_border_active][value]=000000
+siteprocessor[colors][menu][menu_border_active_hover][name]="menu_border_active_hover"
+siteprocessor[colors][menu][menu_border_active_hover][value]=000000
+
+siteprocessor[colors][menu][menu_frontpage_link_text][name]="Menu frontpage link text"
+siteprocessor[colors][menu][menu_frontpage_link_text][value]=000000
+siteprocessor[colors][menu][menu_frontpage_link_border][name]="Menu frontpage link border"
+siteprocessor[colors][menu][menu_frontpage_link_border][value]=000000
+
+siteprocessor[colors][content][content_event_properties_background][name]="content_event_properties_background"
+siteprocessor[colors][content][content_event_properties_background][value]=AAD5FF
+siteprocessor[colors][content][content_event_extras_background][name]="content_event_extras_background"
+siteprocessor[colors][content][content_event_extras_background][value]=FFF0CC
+siteprocessor[colors][content][content_event_category_background][name]="content_event_category_background"
+siteprocessor[colors][content][content_event_category_background][value]=BBAAFF
+siteprocessor[colors][content][content_event_target_background][name]="content_event_target_background"
+siteprocessor[colors][content][content_event_target_background][value]=FFFFAA
+siteprocessor[colors][content][content_event_datetime_background][name]="content_event_datetime_background"
+siteprocessor[colors][content][content_event_datetime_background][value]=BBFFBB
+siteprocessor[colors][content][content_event_location_background][name]="content_event_location_background"
+siteprocessor[colors][content][content_event_location_background][value]=CCEEFF
+siteprocessor[colors][content][content_event_properties_label_text][name]="content_event_properties_label_text"
+siteprocessor[colors][content][content_event_properties_label_text][value]=333333
+
+siteprocessor[colors][content][content_event_property_border][name]="content_event_property_border"
+siteprocessor[colors][content][content_event_property_border][value]=666666
+
+siteprocessor[colors][content][content_property_bar_text][name]="content_property_bar_text"
+siteprocessor[colors][content][content_property_bar_text][value]=444444
+
+siteprocessor[colors][views][views_item_hover_background][name]="views_item_hover_background"
+siteprocessor[colors][views][views_item_hover_background][value]=f0f0f0
+siteprocessor[colors][views][views_item_hover_border][name]="views_item_hover_border"
+siteprocessor[colors][views][views_item_hover_border][value]=dddddd
+
+siteprocessor[colors][views][views_item_separator_border][name]="views_item_separator_border"
+siteprocessor[colors][views][views_item_separator_border][value]=C0C0C0
+
+siteprocessor[colors][views][views_large_item_header_link_text][name]="views_large_item_header_link_text"
+siteprocessor[colors][views][views_large_item_header_link_text][value]=b63300
+siteprocessor[colors][views][views_large_item_header_link_text_hover][name]="views_large_item_header_link_text_hover"
+siteprocessor[colors][views][views_large_item_header_link_text_hover][value]=990000
+
+siteprocessor[colors][views][views_imagetile_item_header_link_text][name]="views_imagetile_item_header_link_text"
+siteprocessor[colors][views][views_imagetile_item_header_link_text][value]=b63300
+siteprocessor[colors][views][views_imagetile_item_header_link_text_hover][name]="views_imagetile_item_header_link_text_hover"
+siteprocessor[colors][views][views_imagetile_item_header_link_text_hover][value]=990000
+
+siteprocessor[colors][views][views_carousel_item_header_link_text][name]="views_carousel_item_header_link_text"
+siteprocessor[colors][views][views_carousel_item_header_link_text][value]=DDDDAA
+siteprocessor[colors][views][views_carousel_item_header_link_text_hover][name]="views_carousel_item_header_link_text_hover"
+siteprocessor[colors][views][views_carousel_item_header_link_text_hover][value]=990000
+siteprocessor[colors][views][views_carousel_item_background][name]="views_carousel_item_background"
+siteprocessor[colors][views][views_carousel_item_background][value]=000000
+siteprocessor[colors][views][views_carousel_item_text][name]="views_carousel_item_text"
+siteprocessor[colors][views][views_carousel_item_text][value]=FFFFFF
+
+siteprocessor[colors][views][views_carousel_item_property_bar_text][name]="views_carousel_item_property_bar_text"
+siteprocessor[colors][views][views_carousel_item_property_bar_text][value]=999999
+
+siteprocessor[color_css][kaykay][]=css/colortemplate.css
+
+siteprocessor[theme_available] = true
+siteprocessor[theme][kaykay] = "Version2 theme"

@@ -1,0 +1,9 @@
+.panel-33-66  .panel-row-split .panel-col-first {
+  width:33%;
+  float:left;
+}
+
+.panel-33-66   .panel-row-split .panel-col-last {
+  width:66%;
+  float:left;
+}
