@@ -4,7 +4,8 @@
     logoChanged: false,
     callback: function(context, settings, form, farb, height, width) {
       // Background
-      $('#preview', form).css('backgroundColor', $('#palette input[name="palette[bg]"]', form).val());
+      $('#preview', form).css('backgroundColor', $('#palette input[name="palette[bodybg]"]', form).val());
+      $('#preview #preview-main', form).css('backgroundColor', $('#palette input[name="palette[bg]"]', form).val());
  
       // Text
       $('#preview #preview-main', form).css('color', $('#palette input[name="palette[text]"]', form).val());

@@ -1,3 +1,7 @@
+body {
+  /* colors->bodybg */
+  background-color: #efefef;
+}
 /* Site background color */
 #page-wrapper {
   /* colors->bg */

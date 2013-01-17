@@ -1,7 +1,12 @@
 .clearfix { clear: both;}
 ul { list-style-type: none!important; }
 #preview {
+  width: 1200px;
+  background-color: #efefef;
+}
+#preview #preview-container {
   width: 994px;
+  margin: 0 auto;
 }
 #preview #preview-logo, #preview #preview-site-name {
   display: inline;
