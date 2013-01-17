@@ -39,7 +39,9 @@ ul { list-style-type: none!important; }
 }
 #preview #preview-main-menu-links li a.active:after,
 #preview #preview-main-menu-links li a:hover:after {
-  border-bottom: 4px solid #222;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #000;
   content: "";
   height: 32px;
   left: 0;
@@ -83,3 +85,8 @@ ul { list-style-type: none!important; }
   background-color: #222;
   color: #eee;
 }
+
+#preview #preview-main .primary ul li a { color: #000000; }
+#preview #preview-main .primary ul li a:hover { color: #111111; }
+#preview #preview-main .secondary ul li a { color: #333333; }
+#preview #preview-main .secondary ul li a:hover { color: #444444; }

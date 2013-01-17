@@ -16,7 +16,10 @@
       $('#preview #preview-main .block h3', form).css('color', $('#palette input[name="palette[mainmenucolor]"]', form).val());
 
       // Links
-      $('#preview #preview-content a', form).css('color', $('#palette input[name="palette[link]"]', form).val());
+      $('#preview #preview-main a', form).css('color', $('#palette input[name="palette[linkcolor]"]', form).val());
+      $('#preview #preview-main a:hover', form).css('color', $('#palette input[name="palette[linkhover]"]', form).val());
+      $('#preview #preview-main .secondary a', form).css('color', $('#palette input[name="palette[secondarylinkcolor]"]', form).val());
+      $('#preview #preview-main .secondary a:hover', form).css('color', $('#palette input[name="palette[secondarylinkhover]"]', form).val());
  
       // Main menu background color
       $('#preview #preview-main-menu-links', form).css('backgroundColor', $('#palette input[name="palette[mainmenubg]"]', form).val());
@@ -35,7 +38,6 @@
 
       $('#preview #preview-main-menu-links li a.active', form).attr('style', "background-color: " + gradient_end + "; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(" + gradient_end + "), to(" + gradient_start + ")); background-image: -moz-linear-gradient(-90deg, " + gradient_end + ", " + gradient_start + ");");
 
-      $('#preview #preview-main-menu-links li a.active:after', form).css('border-bottom-color', gradient_start);
     }
   };
 })(jQuery);
