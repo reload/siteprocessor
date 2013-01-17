@@ -1,12 +1,19 @@
 /* Site background color */
-body {
+#page-wrapper {
   /* colors->bg */
   background-color: #ffffff;
   /* colors->text */
   color: #666666;
 }
-
-h1, h2 {
+a {
+  /* colors->linkcolor */
+  color: #000000;
+}
+a:hover {
+  /* colors->linkhover */
+  color: #111111;
+}
+h1, h2, h2 a {
   /* colors->title */
   color: #333333;
 }
@@ -16,26 +23,34 @@ h3 {
 }
 ul { list-style-type: none; }
 /* Main menu links */
-#main-menu   {
+.primary-links   {
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #222222, #999999);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
 }
-#main-menu li a { 
+.primary-links li a { 
   /* colors->mainmenucolor */
   color: #eeeeee;
 }
-#main-menu li a.active {
+.primary-links li a.active {
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #999999, #222222);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#222222));
   color: #eeeeee;
 }
+.primary-links li a:hover:after {
+  border-bottom-color: #222222;
+}
+.primary ul li a { color: #000000; }
+.primary ul li a:hover { color: #111111; }
+.secondary ul li a { color: #333333; }
+.secondary ul li a:hover { color: #444444; }
 
-/* Left container */
+/* Double row container */
 
-/* Right container */
-h3 {
+/* Single row container */
+.panel-col-1-3 h2.pane-title {
+  color: #eeeeee;
   background-color: #222222;
 }
 
