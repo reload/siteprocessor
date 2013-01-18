@@ -68,7 +68,7 @@
 ?>
 <div id="fb-root"></div>
 <div class="page container">
-  <div class="branding">
+  <div class="branding clearfix">
     <div class="ownerbox">
       <?php print render($page['ownerbox']);?>
     </div>
@@ -77,12 +77,12 @@
   </div>
 
   <?php if(!empty($messages)): ?>
-    <div class="console">
+    <div class="console clearfix">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
 
-  <div class="content">
+  <div class="content clearfix">
     <?php if ($tabs): ?>
       <div class="tabs">
         <?php print render($tabs); ?>
@@ -102,7 +102,7 @@
     <?php print $feed_icons; ?>
   </div>
 
-  <div class="closure">
+  <div class="closure clearfix">
     <?php print render($page['footer']); ?>
   </div>
 </div>

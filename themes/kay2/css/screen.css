@@ -3,6 +3,24 @@
   font-size: 12px;
 }
 
+/* Header image fix */
+.block-siteprocessor-config-visual a img {
+  float: left;
+}
+
+/* Content padding */
+.panel-100-66-33 .main {
+  padding-left: 15px;
+}
+
+.panel-33-66 .main {
+  padding-right: 15px;
+}
+
+.panel-100 {
+  padding: 15px 0;
+}
+
 /* Main menu */
 .primary-links {
   border-bottom: 4px solid #ececec;
@@ -91,4 +109,32 @@
 .region.span4 .panel-pane h2 {
   font-size: 16px;
   padding: 4px 0 4px 16px;
+}
+
+/*
+ * Closure
+ */
+.closure .region-footer {
+  padding: 15px;
+  overflow: hidden;
+}
+.closure .region-footer .block-siteprocessor-footer {
+  float: left;
+}
+.closure .region-footer .block-siteprocessor-footer p {
+  margin: 0;
+}
+.closure .region-footer .block-siteprocessor-footer p br {
+  display: none;
+}
+.closure #block-menu-menu-footer-menu {
+  float: right;
+}
+.closure #block-menu-menu-footer-menu ul {
+  margin: 0;
+}
+.closure #block-menu-menu-footer-menu ul li {
+  padding: 0;
+  list-style: none none;
+  float: left;
 }
