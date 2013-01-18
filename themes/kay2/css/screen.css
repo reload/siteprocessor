@@ -1,18 +1,17 @@
 .page {
   font-family: verdana;
   font-size: 12px;
-  /* Main menu */
-  /* double column width */
-  /* single column views */
 }
-.page .primary-links {
+
+/* Main menu */
+.primary-links {
   border-bottom: 4px solid #ececec;
   display: block;
   margin: 0;
   padding: 0;
   font-size: 0;
 }
-.page .primary-links li {
+.primary-links li {
   display: inline-block;
   height: 30px;
   position: relative;
@@ -20,22 +19,22 @@
   border-right-style: solid;
   border-right-width: 1px;
 }
-.page .primary-links li.first {
+.primary-links li.first {
   margin-left: 20px;
 }
-.page .primary-links li a {
+.primary-links li a {
   font-family: arial;
   font-size: 14px;
   display: inline-block;
   padding: 14px 10px;
   text-decoration: none;
 }
-.page .primary-links li a:before {
+.primary-links li a:before {
   content: "";
   height: 30px;
   position: absolute;
 }
-.page .primary-links li a .active:after, .page .primary-links li a:hover:after {
+.primary-links li a .active:after, .primary-links li a:hover:after {
   border-bottom-style: solid;
   border-bottom-width: 4px;
   content: "";
@@ -45,47 +44,51 @@
   top: 0;
   width: 100%;
 }
-.page .region.span8 h1 {
+
+/* double column width */
+.region.span8 h1 {
   font-size: 36px;
   font-family: Georgia;
   font-weight: normal;
   margin-bottom: 0;
 }
-.page .region.span8 .view-latest-articles h2,
-.page .region.span8 .view-upcoming-events h2 {
+.region.span8 .view-latest-articles h2,
+.region.span8 .view-upcoming-events h2 {
   font-size: 22px;
   margin: 16px 0 10px 0;
 }
-.page .region.span8 .view-latest-articles li,
-.page .region.span8 .view-upcoming-events li {
+.region.span8 .view-latest-articles li,
+.region.span8 .view-upcoming-events li {
   display: block;
   border-bottom: 2px solid #efefef;
   padding-bottom: 10px;
 }
-.page .region.span8 .view-latest-articles li .content > div,
-.page .region.span8 .view-upcoming-events li .content > div {
+.region.span8 .view-latest-articles li .content > div,
+.region.span8 .view-upcoming-events li .content > div {
   float: left;
 }
-.page .region.span8 .view-latest-articles li .content .field-type-image,
-.page .region.span8 .view-upcoming-events li .content .field-type-image {
+.region.span8 .view-latest-articles li .content .field-type-image,
+.region.span8 .view-upcoming-events li .content .field-type-image {
   width: 30%;
 }
-.page .region.span8 .view-latest-articles li .content .field-type-image img,
-.page .region.span8 .view-upcoming-events li .content .field-type-image img {
+.region.span8 .view-latest-articles li .content .field-type-image img,
+.region.span8 .view-upcoming-events li .content .field-type-image img {
   border: 8px solid #eeeeee;
 }
-.page .region.span8 .view-latest-articles li .content .field-type-text-with-summary,
-.page .region.span8 .view-upcoming-events li .content .field-type-text-with-summary {
+.region.span8 .view-latest-articles li .content .field-type-text-with-summary,
+.region.span8 .view-upcoming-events li .content .field-type-text-with-summary {
   width: 70%;
 }
-.page .region.span8 .view-latest-articles li .content .field-type-text-with-summary p,
-.page .region.span8 .view-upcoming-events li .content .field-type-text-with-summary p {
+.region.span8 .view-latest-articles li .content .field-type-text-with-summary p,
+.region.span8 .view-upcoming-events li .content .field-type-text-with-summary p {
   margin: 0;
 }
-.page .region.span4 .panel-pane {
+
+/* single column views */
+.region.span4 .panel-pane {
   margin-bottom: 26px;
 }
-.page .region.span4 .panel-pane h2 {
+.region.span4 .panel-pane h2 {
   font-size: 16px;
   padding: 4px 0 4px 16px;
 }
