@@ -29,7 +29,7 @@ $info = array(
         'linkhover' => '#111111',
         'secondarylinkcolor' => '#333333',
         'secondarylinkhover' => '#444444',
-        'title' => '#333333',
+        'title' => '#555555',
       ),
     ),
     'blue' => array(
