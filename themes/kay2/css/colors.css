@@ -32,6 +32,9 @@ ul { list-style-type: none; }
   background-image: -moz-linear-gradient(-90deg, #222222, #999999);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
 }
+.primary-links li {
+  border-right-color: #222222;
+}
 .primary-links li a { 
   /* colors->mainmenucolor */
   color: #eeeeee;

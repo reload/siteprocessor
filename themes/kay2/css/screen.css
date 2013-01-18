@@ -10,14 +10,22 @@
   display: block;
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 #page-wrapper .primary-links li {
-  display: inline;
+  display: inline-block;
   height: 30px;
   position: relative;
-  padding: 0;
+  padding: 0 0 10px 0;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+#page-wrapper .primary-links li.first {
+  margin-left: 20px;
 }
 #page-wrapper .primary-links li a {
+  font-family: arial;
+  font-size: 14px;
   display: inline-block;
   padding: 14px 10px;
   text-decoration: none;
@@ -31,7 +39,7 @@
   border-bottom-style: solid;
   border-bottom-width: 4px;
   content: "";
-  height: 32px;
+  height: 40px;
   left: 0;
   position: absolute;
   top: 0;
