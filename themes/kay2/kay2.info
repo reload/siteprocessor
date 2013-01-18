@@ -5,6 +5,7 @@ engine = phptemplate
 
 ; Stylesheets
 stylesheets[all][] = css/screen.css
+stylesheets[all][] = css/node.css
 stylesheets[all][] = css/ie.css
 stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
