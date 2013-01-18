@@ -45,47 +45,47 @@
   top: 0;
   width: 100%;
 }
-.page .panel-col-2-3 h1 {
+.page .region.span8 h1 {
   font-size: 36px;
   font-family: Georgia;
   font-weight: normal;
   margin-bottom: 0;
 }
-.page .panel-col-2-3 .view-latest-articles h2,
-.page .panel-col-2-3 .view-upcoming-events h2 {
+.page .region.span8 .view-latest-articles h2,
+.page .region.span8 .view-upcoming-events h2 {
   font-size: 22px;
   margin: 16px 0 10px 0;
 }
-.page .panel-col-2-3 .view-latest-articles li,
-.page .panel-col-2-3 .view-upcoming-events li {
+.page .region.span8 .view-latest-articles li,
+.page .region.span8 .view-upcoming-events li {
   display: block;
   border-bottom: 2px solid #efefef;
   padding-bottom: 10px;
 }
-.page .panel-col-2-3 .view-latest-articles li .content > div,
-.page .panel-col-2-3 .view-upcoming-events li .content > div {
+.page .region.span8 .view-latest-articles li .content > div,
+.page .region.span8 .view-upcoming-events li .content > div {
   float: left;
 }
-.page .panel-col-2-3 .view-latest-articles li .content .field-type-image,
-.page .panel-col-2-3 .view-upcoming-events li .content .field-type-image {
+.page .region.span8 .view-latest-articles li .content .field-type-image,
+.page .region.span8 .view-upcoming-events li .content .field-type-image {
   width: 30%;
 }
-.page .panel-col-2-3 .view-latest-articles li .content .field-type-image img,
-.page .panel-col-2-3 .view-upcoming-events li .content .field-type-image img {
+.page .region.span8 .view-latest-articles li .content .field-type-image img,
+.page .region.span8 .view-upcoming-events li .content .field-type-image img {
   border: 8px solid #eeeeee;
 }
-.page .panel-col-2-3 .view-latest-articles li .content .field-type-text-with-summary,
-.page .panel-col-2-3 .view-upcoming-events li .content .field-type-text-with-summary {
+.page .region.span8 .view-latest-articles li .content .field-type-text-with-summary,
+.page .region.span8 .view-upcoming-events li .content .field-type-text-with-summary {
   width: 70%;
 }
-.page .panel-col-2-3 .view-latest-articles li .content .field-type-text-with-summary p,
-.page .panel-col-2-3 .view-upcoming-events li .content .field-type-text-with-summary p {
+.page .region.span8 .view-latest-articles li .content .field-type-text-with-summary p,
+.page .region.span8 .view-upcoming-events li .content .field-type-text-with-summary p {
   margin: 0;
 }
-.page .panel-col-1-3 .panel-pane {
+.page .region.span4 .panel-pane {
   margin-bottom: 26px;
 }
-.page .panel-col-1-3 .panel-pane h2 {
+.page .region.span4 .panel-pane h2 {
   font-size: 16px;
   padding: 4px 0 4px 16px;
 }
