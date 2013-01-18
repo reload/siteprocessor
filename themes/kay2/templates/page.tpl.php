@@ -66,34 +66,43 @@
  * @see template_process()
  */
 ?>
-  <div id="fb-root"></div>
-  <div id="ownerbox"><?php print render($page['ownerbox']);?></div>
-  <div id="page-wrapper"><div id="page">
+<div id="fb-root"></div>
+<div class="page container">
+  <div class="branding">
+    <div class="ownerbox">
+      <?php print render($page['ownerbox']);?>
+    </div>
 
-    <div id="header"><div class="section clearfix">
-      <?php print render($page['header']); ?>
-    </div></div> <!-- /.section, /#header -->
+    <?php print render($page['header']); ?>
+  </div>
 
+  <?php if(!empty($messages)): ?>
+    <div class="console">
+      <?php print $messages; ?>
+    </div>
+  <?php endif; ?>
 
-    <?php print $messages; ?>
+  <div class="content">
+    <?php if ($tabs): ?>
+      <div class="tabs">
+        <?php print render($tabs); ?>
+      </div>
+    <?php endif; ?>
 
-    <div id="main-wrapper"><div id="main" class="clearfix">
+    <?php print render($page['help']); ?>
 
-      <div id="content" class="column"><div class="section">
-        <a id="main-content"></a>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-        <?php print render($page['content']); ?>
-        <?php print $feed_icons; ?>
-      </div></div> <!-- /.section, /#content -->
+    <?php if ($action_links): ?>
+      <ul class="action-links">
+        <?php print render($action_links); ?>
+      </ul>
+    <?php endif; ?>
 
+    <?php print render($page['content']); ?>
 
-    </div></div> <!-- /#main, /#main-wrapper -->
+    <?php print $feed_icons; ?>
+  </div>
 
-    <div id="footer"><div class="section clearfix">
-      <?php print render($page['footer']); ?>
-    </div></div> <!-- /.section, /#footer -->
-
-  </div></div> <!-- /#page, /#page-wrapper -->
-
+  <div class="closure">
+    <?php print render($page['footer']); ?>
+  </div>
+</div>

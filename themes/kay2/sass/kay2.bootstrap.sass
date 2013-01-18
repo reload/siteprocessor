@@ -1,0 +1,17 @@
+/* Customize width */
+$gridColumns: 12
+$gridColumnWidth: 60px
+$gridGutterWidth: 25px
+$gridColumnWidth1200: $gridColumnWidth
+$gridGutterWidth1200: $gridGutterWidth
+$gridRowWidth1200: $gridColumns * $gridColumnWidth1200 + $gridGutterWidth1200 * ($gridColumns - 1) !default
+
+@import compass_twitter_bootstrap/mixins
+@import compass_twitter_bootstrap/variables
+@import compass_twitter_bootstrap/scaffolding
+@import compass_twitter_bootstrap/grid
+@import compass_twitter_bootstrap/layouts
+@import compass_twitter_bootstrap_responsive
+
+img
+  max-width: 100%

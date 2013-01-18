@@ -3,7 +3,7 @@ body {
   background-color: #efefef;
 }
 /* Site background color */
-#page-wrapper {
+.page {
   /* colors->bg */
   background-color: #ffffff;
   /* colors->text */
