@@ -114,6 +114,29 @@
 .region.span4 .panel-pane h2 {
   font-size: 16px;
   padding: 4px 0 4px 16px;
+  margin: 0;
+  border-bottom: 10px solid whitesmoke;
+}
+.region.span4 .panel-pane .pane-content {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 10px solid whitesmoke;
+}
+.region.span4 .panel-pane .pane-content .view-content {
+  border-top: 1px solid white;
+}
+.region.span4 .panel-pane .pane-content .view-content > .item-list > ul {
+  margin: 0;
+}
+.region.span4 .panel-pane .pane-content .view-content > .item-list > ul > li {
+  padding: 10px;
+  overflow: hidden;
+  background: whitesmoke;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1px;
+}
+.region.span4 .panel-pane .pane-content .view-content > .item-list > ul > li h2 {
+  padding: 0;
+  border: 0;
 }
 
 /*
