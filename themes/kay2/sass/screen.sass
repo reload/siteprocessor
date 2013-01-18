@@ -8,17 +8,28 @@
     img
       float: left
 
+/*View content li override */
+.view-content
+  & > .item-list
+    & > ul
+      & > li
+        margin: 0
+
 /* Content padding */
 .panel-100-66-33
   .main
-    padding-left: 15px
+    .inner
+      padding-left: 15px
 
 .panel-33-66
   .main
-    padding-right: 15px
+    .inner
+      padding-right: 15px
 
 .panel-100
-  padding: 15px 0
+  .main
+    .inner
+      padding: 15px 0
 
 /* Main menu */
 .primary-links
@@ -100,6 +111,36 @@
     h2
       font-size: 16px
       padding: 4px 0 4px 16px
+      margin: 0
+      border-bottom: 10px solid #F5F5F5
+
+    .panel-col
+      .pane-content
+        border-top: 1px solid #E0E0E0
+        border-bottom: 10px solid #F5F5F5
+
+        .view-content
+          border-top: 1px solid #FFF
+          & > .item-list
+            & > ul
+              margin: 0
+
+              & > li
+                padding: 10px
+                overflow: hidden
+                background: #F5F5F5
+                border-bottom: 1px solid #E0E0E0
+                margin-bottom: 1px
+
+                h2
+                  padding: 0
+                  border: 0
+      .pager
+        margin: 0
+        background: #F5F5F5
+        padding: 10px 0
+        border-bottom: 1px solid #E0E0E0
+        margin-bottom: 1px
 
 /**
  * Closure
