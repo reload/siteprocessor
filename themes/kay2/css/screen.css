@@ -115,7 +115,12 @@
  * Closure
  */
 .closure .region-footer {
-  padding: 15px;
+  border-top: 1px solid #dedede;
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
+  font-size: 10px;
+  color: #bbbbbb;
+  padding: 2px 15px;
   overflow: hidden;
 }
 .closure .region-footer .block-siteprocessor-footer {

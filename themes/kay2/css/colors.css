@@ -61,3 +61,7 @@ ul { list-style-type: none; }
   background-color: #222222;
 }
 
+/* footer */
+.region-footer {
+  border-bottom-color: #999999;
+}
