@@ -2,75 +2,84 @@
   font-family: verdana
   font-size: 12px
 
-  /* Main menu */
-  .primary-links
-    border-bottom: 4px solid #ececec
-    display: block
-    margin: 0
-    padding: 0
-    font-size: 0
-    li
+/* Main menu */
+.primary-links
+  border-bottom: 4px solid #ececec
+  display: block
+  margin: 0
+  padding: 0
+  font-size: 0
+  li
+    display: inline-block
+    height: 30px
+    position: relative
+    padding: 0 0 10px 0
+    border-right-style: solid
+    border-right-width: 1px
+    &.first
+      margin-left: 20px
+    a
+      font-family: arial
+      font-size: 14px
       display: inline-block
-      height: 30px
-      position: relative
-      padding: 0 0 10px 0
-      border-right-style: solid
-      border-right-width: 1px
-      &.first
-        margin-left: 20px
-      a
-        font-family: arial
-        font-size: 14px
-        display: inline-block
-        padding: 14px 10px
-        text-decoration: none
-        &:before
-          content: ""
-          height: 30px
-          position: absolute
-        .active:after,
-        &:hover:after
-          border-bottom-style: solid
-          border-bottom-width: 4px
-          content: ""
-          height: 40px
-          left: 0
-          position: absolute
-          top: 0
-          width: 100%
+      padding: 14px 10px
+      text-decoration: none
+      &:before
+        content: ""
+        height: 30px
+        position: absolute
+      .active:after,
+      &:hover:after
+        border-bottom-style: solid
+        border-bottom-width: 4px
+        content: ""
+        height: 40px
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
 
-  /* double column width */
-  .region.span8
-    h1
-      font-size: 36px
-      font-family: Georgia
-      font-weight: normal
-      margin-bottom: 0
-    .view-latest-articles,
-    .view-upcoming-events
-      h2
-        font-size: 22px
-        margin: 16px 0 10px 0
-      li
-        display: block
-        border-bottom: 2px solid #efefef
-        padding-bottom: 10px
-        .content > div
+/* double column width */
+.region.span8
+  h1
+    font-size: 36px
+    font-family: Georgia
+    font-weight: normal
+    margin-bottom: 0
+
+  .view-latest-articles,
+  .view-upcoming-events
+    h2
+      font-size: 22px
+      margin: 16px 0 10px 0
+
+    li
+      display: block
+      border-bottom: 2px solid #efefef
+      padding-bottom: 10px
+
+      .content
+        & > div
           float: left
-        .content
-          .field-type-image
-            width: 30%
-            img
-              border: 8px solid #eee
-          .field-type-text-with-summary
-            width: 70% 
-            p
-              margin: 0
-  /* single column views */
-  .region.span4
-    .panel-pane
-      margin-bottom: 26px
-      h2
-        font-size: 16px
-        padding: 4px 0 4px 16px
+
+        .field-type-image
+          width: 30%
+
+          img
+            border: 8px solid #eee
+
+        .field-type-text-with-summary
+          width: 70% 
+
+          p
+            margin: 0
+
+/* single column views */
+.region.span4
+  .panel-pane
+    margin-bottom: 26px
+
+    h2
+      font-size: 16px
+      padding: 4px 0 4px 16px
 
