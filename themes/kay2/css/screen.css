@@ -1,4 +1,6 @@
 #page-wrapper {
+  font-family: verdana;
+  font-size: 12px;
   margin: 0 auto;
   width: 990px;
   /* Main menu */
@@ -46,7 +48,10 @@
   width: 100%;
 }
 #page-wrapper .panel-col-2-3 h1 {
-  font-size: 30px;
+  font-size: 36px;
+  font-family: Georgia;
+  font-weight: normal;
+  margin-bottom: 0;
 }
 #page-wrapper .panel-col-2-3 .view-latest-articles h2,
 #page-wrapper .panel-col-2-3 .view-upcoming-events h2 {
