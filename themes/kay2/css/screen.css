@@ -8,16 +8,21 @@
   float: left;
 }
 
+/*View content li override */
+.view-content > .item-list > ul > li {
+  margin: 0;
+}
+
 /* Content padding */
-.panel-100-66-33 .main {
+.panel-100-66-33 .main .inner {
   padding-left: 15px;
 }
 
-.panel-33-66 .main {
+.panel-33-66 .main .inner {
   padding-right: 15px;
 }
 
-.panel-100 {
+.panel-100 .main .inner {
   padding: 15px 0;
 }
 

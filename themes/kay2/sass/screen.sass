@@ -8,17 +8,28 @@
     img
       float: left
 
+/*View content li override */
+.view-content
+  & > .item-list
+    & > ul
+      & > li
+        margin: 0
+
 /* Content padding */
 .panel-100-66-33
   .main
-    padding-left: 15px
+    .inner
+      padding-left: 15px
 
 .panel-33-66
   .main
-    padding-right: 15px
+    .inner
+      padding-right: 15px
 
 .panel-100
-  padding: 15px 0
+  .main
+    .inner
+      padding: 15px 0
 
 /* Main menu */
 .primary-links
