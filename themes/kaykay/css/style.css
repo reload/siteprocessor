@@ -36,6 +36,8 @@ hr{
   margin-bottom: 15px;
   margin-top: 15px;
 }
+.caption p { color: #aaa; }
+.field-type-text-with-summary .caption p { margin-top: -20px; }
 
 .dummy {
   background-color:#FFF;

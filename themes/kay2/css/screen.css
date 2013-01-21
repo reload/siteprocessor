@@ -3,6 +3,26 @@
   font-size: 12px;
 }
 
+.ownerbox {
+  position: fixed;
+  top: 500px;
+  right: 0;
+  z-index: 0;
+}
+
+.logo {
+  border-bottom: 10px solid #cccccc;
+  padding-bottom: 10px;
+}
+.logo img {
+  vertical-align: text-bottom;
+  height: auto;
+}
+.logo span {
+  font-size: 40px;
+  font-family: Georgia;
+}
+
 /* Header image fix */
 .block-siteprocessor-config-visual a img {
   float: left;
@@ -49,7 +69,7 @@
   font-family: arial;
   font-size: 14px;
   display: inline-block;
-  padding: 14px 10px;
+  padding: 12px 10px;
   text-decoration: none;
 }
 .primary-links li a:before {
@@ -73,7 +93,7 @@
   font-size: 36px;
   font-family: Georgia;
   font-weight: normal;
-  margin-bottom: 0;
+  margin-bottom: 6px;
 }
 .region.span8 .view-latest-articles h2,
 .region.span8 .view-upcoming-events h2 {

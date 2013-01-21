@@ -7,6 +7,9 @@
   float: left;
   margin-right: 10px;
 }
+.page-node .pane-node-view .field-name-body p {
+  margin: 0 0 1em 0;
+}
 .page-node .pane-node-view .comments-box {
   margin-top: 20px;
   border-top: 1px solid #cccccc;
