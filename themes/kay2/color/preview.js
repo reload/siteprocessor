@@ -7,7 +7,7 @@
       $('#preview', form).css('backgroundColor', $('#palette input[name="palette[bodybg]"]', form).val());
       $('#preview #preview-main', form).css('background-color', $('#palette input[name="palette[bg]"]', form).val());
       $('#preview-right-container .styled ul > li', form).css('background-color', $('#palette input[name="palette[sideblockbg]"]').val());
-      $('#preview-right-container .styled .content, #preview-right-container .block h2', form).css('border-bottom-color', $('#palette input[name="palette[sideblockbg]"]').val());
+      $('#preview-right-container .styled .content, #preview-right-container .styled h2', form).css('border-bottom-color', $('#palette input[name="palette[sideblockbg]"]').val());
       $('#preview-right-container .styled .content').css('border-top-color', $('#palette input[name="palette[sideblockbgshade]"]').val());
       $('#preview-right-container .styled ul > li').css('border-bottom-color', $('#palette input[name="palette[sideblockbgshade]"]').val());
 
