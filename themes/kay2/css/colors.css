@@ -17,7 +17,7 @@ a:hover {
   /* colors->linkhover */
   color: #111111;
 }
-h1, h2, h2 a {
+.site-name, h1, h2, h2 a {
   /* colors->title */
   color: #555555;
 }
@@ -25,6 +25,7 @@ h3 {
   /* colors->mainmenucolor */
   color: #eeeeee;
 }
+.logo { border-bottom-color: #efefef; }
 ul { list-style-type: none; }
 /* Main menu links */
 .primary-links   {

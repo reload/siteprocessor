@@ -3,6 +3,19 @@
   font-size: 12px;
 }
 
+.logo {
+  border-bottom: 10px solid #cccccc;
+  padding-bottom: 10px;
+}
+.logo img {
+  vertical-align: text-bottom;
+  height: auto;
+}
+.logo span {
+  font-size: 40px;
+  font-family: Georgia;
+}
+
 /* Header image fix */
 .block-siteprocessor-config-visual a img {
   float: left;

@@ -69,9 +69,22 @@
 <div id="fb-root"></div>
 <div class="page container">
   <div class="branding clearfix">
-    <div class="ownerbox">
-      <?php print render($page['ownerbox']);?>
-    </div>
+    <?php if ($logo || $site_name): ?>
+      <div class="logo clearfix">
+        <?php if ($logo): ?>
+          <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+        <?php endif; ?>
+        <?php if ($site_name): ?>
+          <span class="site-name"><?php echo $site_name; ?></span>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($ownerbox): ?>
+      <div class="ownerbox">
+        <?php print render($page['ownerbox']);?>
+      </div>
+    <?php endif; ?>
 
     <?php print render($page['header']); ?>
   </div>
