@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * All color hex values must be lowercase
+ */
 $info = array(
   'fields' => array(
     'bodybg' => t('Body container background'),
@@ -12,6 +14,11 @@ $info = array(
     'linkhover' => t('Main link hover color'),
     'secondarylinkcolor' => t('Secondary link color'),
     'secondarylinkhover' => t('Secondary link hover color'),
+    'sideblockbg' => t('Sidebar block background color'),
+    'sideblockbgshade' => t('Sidebar block background shade'),
+    'sidemenubg' => t('Sidebar menu background color'),
+    'sidemenubgshade' => t('Sidebar menu background shade'),
+    'sidemenubghover' => t('Sidebar menu link hover color'),
     'title' => t('Title'),
   ),
 
@@ -29,7 +36,12 @@ $info = array(
         'linkhover' => '#111111',
         'secondarylinkcolor' => '#333333',
         'secondarylinkhover' => '#444444',
+        'sideblockbg' => '#f5f5f5',
+        'sideblockbgshade' => '#e0e0e0',
         'title' => '#555555',
+        'sidemenubg' => '#dddddd',
+        'sidemenubgshade' => '#cccccc',
+        'sidemenubghover' => '#cccccd',
       ),
     ),
     'blue' => array(

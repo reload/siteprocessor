@@ -87,21 +87,18 @@
       border-bottom: 2px solid #efefef
       padding-bottom: 10px
 
-      .content
-        & > div
-          float: left
+      .field-type-image
+        float: left
+        width: 30%
 
-        .field-type-image
-          width: 30%
+        img
+          border: 8px solid #eee
 
-          img
-            border: 8px solid #eee
+      .field-type-text-with-summary
+        width: 70%
 
-        .field-type-text-with-summary
-          width: 70%
-
-          p
-            margin: 0
+        p
+          margin: 0
 
 /* single column views */
 .region.span4
@@ -114,33 +111,62 @@
       margin: 0
       border-bottom: 10px solid #F5F5F5
 
-    .panel-col
-      .pane-content
-        border-top: 1px solid #E0E0E0
-        border-bottom: 10px solid #F5F5F5
+    .pane-content
+      border-top: 1px solid #E0E0E0
+      border-bottom: 10px solid #F5F5F5
 
-        .view-content
-          border-top: 1px solid #FFF
-          & > .item-list
-            & > ul
-              margin: 0
+      ul
+        border-top: 1px solid #FFF
+        margin: 0
+        padding: 0
 
-              & > li
-                padding: 10px
-                overflow: hidden
-                background: #F5F5F5
-                border-bottom: 1px solid #E0E0E0
-                margin-bottom: 1px
+        & > li
+          padding: 10px
+          overflow: hidden
+          background-color: #F5F5F5
+          border-bottom: 1px solid #E0E0E0
+          margin: 0 0 1px 0
 
-                h2
-                  padding: 0
-                  border: 0
+          h2
+            padding: 0
+            border: 0
       .pager
         margin: 0
         background: #F5F5F5
         padding: 10px 0
         border-bottom: 1px solid #E0E0E0
         margin-bottom: 1px
+
+        li
+          background: none
+          border: none
+
+  .pane-system-main-menu
+    h2
+      border-bottom-color: #cddee6
+    .pane-content
+      border-top-color: #adc9d5
+      border-bottom-color: #cddee6
+
+      ul.menu
+        & > li
+          background-color: #cddee6
+          border-bottom-color: #adc9d5
+          padding: 0
+
+          &:hover
+            background-color: #adc9d5
+
+          a
+            display: block
+            padding: 10px
+            font-weight: bold
+
+  .pane-right-column 
+    & > .pane-content
+      border: none
+      margin: 0
+      padding: 0
 
 /**
  * Closure

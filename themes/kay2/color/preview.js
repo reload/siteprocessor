@@ -5,16 +5,27 @@
     callback: function(context, settings, form, farb, height, width) {
       // Background
       $('#preview', form).css('backgroundColor', $('#palette input[name="palette[bodybg]"]', form).val());
-      $('#preview #preview-main', form).css('backgroundColor', $('#palette input[name="palette[bg]"]', form).val());
- 
+      $('#preview #preview-main', form).css('background-color', $('#palette input[name="palette[bg]"]', form).val());
+      $('#preview-right-container .styled ul > li', form).css('background-color', $('#palette input[name="palette[sideblockbg]"]').val());
+      $('#preview-right-container .styled .content, #preview-right-container .block h2', form).css('border-bottom-color', $('#palette input[name="palette[sideblockbg]"]').val());
+      $('#preview-right-container .styled .content').css('border-top-color', $('#palette input[name="palette[sideblockbgshade]"]').val());
+      $('#preview-right-container .styled ul > li').css('border-bottom-color', $('#palette input[name="palette[sideblockbgshade]"]').val());
+
+      // Side menu
+      $('#preview-right-container .sidemenu ul > li').css('background-color', $('#palette input[name="palette[sidemenubg]"]').val());
+      $('#preview-right-container .sidemenu ul > li').css('border-bottom-color', $('#palette input[name="palette[sidemenubgshade]"]').val());
+      $('#preview-right-container .sidemenu ul > li.hovered').css('background-color', $('#palette input[name="palette[sidemenubghover]"]').val());
+      $('#preview-right-container .sidemenu .content, #preview-right-container .sidemenu h2').css('border-bottom-color', $('#palette input[name="palette[sidemenubg]"]').val());
+      $('#preview-right-container .sidemenu .content').css('border-top-color', $('#palette input[name="palette[sidemenubgshade]"]').val());
+
       // Text
       $('#preview #preview-main', form).css('color', $('#palette input[name="palette[text]"]', form).val());
  
       // Titles
       $('#preview #preview-main h1, #preview #preview-main h2', form).css('color', $('#palette input[name="palette[title]"]', form).val());
 
-      $('#preview #preview-main .block h3', form).css('background-color', $('#palette input[name="palette[mainmenubgtop]"]', form).val());
-      $('#preview #preview-main .block h3', form).css('color', $('#palette input[name="palette[mainmenucolor]"]', form).val());
+      $('#preview #preview-right-container .block h2', form).css('background-color', $('#palette input[name="palette[mainmenubgtop]"]', form).val());
+      $('#preview #preview-right-container .block h2', form).css('color', $('#palette input[name="palette[mainmenucolor]"]', form).val());
 
       // Links
       $('#preview #preview-main a', form).css('color', $('#palette input[name="palette[linkcolor]"]', form).val());

@@ -1,3 +1,6 @@
+/**
+ * All color hex values must be lowercase
+ */
 body {
   /* colors->bodybg */
   background-color: #efefef;
@@ -59,6 +62,44 @@ ul { list-style-type: none; }
 .region.span4 h2.pane-title {
   color: #eeeeee;
   background-color: #222222;
+}
+
+.region.span4 .panel-pane h2,
+.region.span4 .panel-pane .pane-content {
+  border-bottom-color: #f5f5f5;
+}
+
+.region.span4 .panel-pane .pane-content ul > li ,
+.region.span4 .panel-pane .pane-content .pager {
+  background-color: #f5f5f5;
+}
+
+.region.span4 .panel-pane .pane-content {
+  border-top-color: #e0e0e0;
+}
+
+.region.span4 .panel-pane .pane-content ul > li,
+.region.span4 .panel-pane .pane-content .pager {
+  border-bottom-color: #e0e0e0;
+}
+
+/**
+ * Side menu
+ */
+.region.span4 .pane-system-main-menu h2 {
+  border-bottom-color: #dddddd;
+}
+.region.span4 .pane-system-main-menu .pane-content {
+  border-top-color: #cccccc;
+  border-bottom-color: #dddddd;
+}
+.region.span4 .pane-system-main-menu .pane-content ul.menu > li {
+  background-color: #dddddd;
+  border-bottom-color: #cccccc;
+  padding: 0;
+}
+.region.span4 .pane-system-main-menu .pane-content ul.menu > li:hover {
+  background-color: #cccccc;
 }
 
 /* footer */
