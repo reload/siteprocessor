@@ -60,6 +60,7 @@ ul { list-style-type: none!important; }
 }
 #preview #preview-main #preview-right-container {
   width: 33%;
+  margin-left: 1%;
   float: left;
 }
 #preview #preview-main #preview-left-container ul {}
@@ -83,8 +84,7 @@ ul { list-style-type: none!important; }
 
 #preview #preview-main #preview-right-container > div { width: 100%; }
 #preview #preview-main #preview-right-container .block { margin-bottom: 26px; }
-#preview #preview-main h3 {
-  width: 100%;
+#preview #preview-main #preview-right-container h2 {
   font-size: 16px;
   padding: 4px 0 4px 16px;
   background-color: #222;
@@ -95,3 +95,78 @@ ul { list-style-type: none!important; }
 #preview #preview-main .primary ul li a:hover { color: #111111; }
 #preview #preview-main .secondary ul li a { color: #333333; }
 #preview #preview-main .secondary ul li a:hover { color: #444444; }
+
+/* single column views */
+#preview-right-container .block {
+  margin-bottom: 26px;
+}
+#preview-right-container .block h2 {
+  font-size: 16px;
+  padding: 4px 0 4px 16px;
+  margin: 0;
+  border-bottom: 10px solid #f5f5f5;
+}
+#preview-right-container .block .content {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 10px solid #f5f5f5;
+}
+
+#preview-right-container .block .content ul {
+  margin: 1px 0 0 0;
+}
+#preview-right-container .block ul > li {
+  padding: 10px;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1px;
+}
+#preview-right-container .block .content ul > li h2 {
+  padding: 0;
+  border: 0;
+}
+
+#preview-right-container .styled h2 {
+  border-bottom-color: #f5f5f5;
+}
+
+#preview-right-container .styled .content {
+  border-top-color: #e0e0e0;
+  border-bottom-color: #f5f5f5;
+}
+
+#preview-right-container .styled ul > li {
+  background: #f5f5f5;
+}
+
+/**
+ * Side menu
+ */
+#preview-right-container .sidemenu h2 {
+  border-bottom-color: #cccccc;
+}
+#preview-right-container .sidemenu .content {
+  border-top-color: #cccccc;
+  border-bottom-color: #cccccc;
+}
+#preview-right-container .sidemenu .content ul.secondary-menu > li {
+  background-color: #dddddd;
+  border-bottom-color: #cccccc;
+  padding: 0;
+}
+
+#preview-right-container .sidemenu .content ul.secondary-menu > li.hovered {
+  background-color: #cccccd;
+}
+
+#preview-right-container .sidemenu .content ul.secondary-menu > li a {
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* footer */
+.region-footer {
+  border-bottom-color: #999999;
+}
