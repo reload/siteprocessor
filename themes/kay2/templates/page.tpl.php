@@ -80,11 +80,9 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($ownerbox): ?>
       <div class="ownerbox">
         <?php print render($page['ownerbox']);?>
       </div>
-    <?php endif; ?>
 
     <?php print render($page['header']); ?>
   </div>
