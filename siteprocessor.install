@@ -183,3 +183,17 @@ function siteprocessor_install() {
 function siteprocessor_update_7001(){
   module_enable(array('conditional_styles'));
 }
+
+/**
+ * Enable jcaption jquery module.
+ */
+function siteprocessor_update_7002() {
+  module_enable(array('jcaption'));
+}
+
+/**
+ * Enable mollom module.
+ */
+function siteprocessor_update_7003() {
+  module_enable(array('mollom'));
+}

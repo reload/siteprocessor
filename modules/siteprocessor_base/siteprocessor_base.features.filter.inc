@@ -18,6 +18,14 @@ function siteprocessor_base_filter_default_formats() {
     'status' => '1',
     'weight' => '1',
     'filters' => array(
+      'oembed_legacy' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(
+          'maxwidth' => '',
+          'maxheight' => '',
+        ),
+      ),
       'filter_autop' => array(
         'weight' => '1',
         'status' => '1',
@@ -32,14 +40,6 @@ function siteprocessor_base_filter_default_formats() {
         'weight' => '10',
         'status' => '1',
         'settings' => array(),
-      ),
-      'oembed_legacy' => array(
-        'weight' => '10',
-        'status' => '1',
-        'settings' => array(
-          'maxwidth' => '',
-          'maxheight' => '',
-        ),
       ),
     ),
   );

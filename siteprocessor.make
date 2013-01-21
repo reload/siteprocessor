@@ -34,8 +34,14 @@ projects[features][version] = "1.0-beta6"
 projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "1.2"
 
+projects[jcaption][subdir] = "contrib"
+projects[jcaption][version] = "1.3"
+
 projects[jquery_colorpicker][subdir] = "contrib"
 projects[jquery_colorpicker][version] = "1.0-beta3"
+
+projects[mollom][subdir] = "contrib"
+projects[mollom][version] = "2.3"
 
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.0"
