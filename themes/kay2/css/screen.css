@@ -10,6 +10,31 @@
   z-index: 0;
 }
 
+.property-bar {
+  font-size: 10px;
+  color: #aaaaaa;
+  line-height: 1.2em;
+}
+.property-bar > div {
+  display: inline-block;
+  display: inline-block;
+}
+.property-bar > div .field-items > div {
+  display: inline-block;
+}
+.property-bar > div > div .field-item:before {
+  content: " - ";
+}
+
+.span8 .property-bar .field-name-field-event-time {
+  display: inline-block;
+  content: "";
+}
+.span8 .property-bar .event-location-name:before,
+.span8 .property-bar .article-author:before {
+  content: " - ";
+}
+
 .logo {
   border-bottom: 10px solid #cccccc;
   padding-bottom: 10px;
@@ -112,11 +137,18 @@
   font-size: 22px;
   margin: 16px 0 10px 0;
 }
+.region.span8 .view-latest-articles h4,
+.region.span8 .view-upcoming-events h4,
+.region.span8 .view-search-for-events h4 {
+  font-size: 18px;
+  margin: 18px 0 2px 0;
+}
 .region.span8 .view-latest-articles .view-content li,
 .region.span8 .view-upcoming-events .view-content li,
 .region.span8 .view-search-for-events .view-content li {
-  display: block;
   border-bottom: 2px solid #efefef;
+  display: block;
+  overflow: hidden;
   padding-bottom: 10px;
 }
 .region.span8 .view-latest-articles .view-content li .field-type-image,
@@ -137,6 +169,9 @@
 }
 
 /* single column views */
+.region.span4 {
+  padding-top: 6px;
+}
 .region.span4 .panel-pane {
   margin-bottom: 26px;
 }
@@ -178,23 +213,6 @@
 .region.span4 .panel-pane .pane-content ul > li h4 {
   margin: 0;
   font-weight: normal;
-}
-.region.span4 .panel-pane .pane-content .property-bar {
-  font-size: 10px;
-  color: #aaaaaa;
-  line-height: 1.2em;
-}
-.region.span4 .panel-pane .pane-content .view-upcoming-events .event-location-name {
-  display: inline-block;
-}
-.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category {
-  display: inline-block;
-}
-.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category .field-items > div {
-  display: inline-block;
-}
-.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category .field-item:before {
-  content: " - ";
 }
 .region.span4 .panel-pane .pane-content .pager {
   margin: 0;

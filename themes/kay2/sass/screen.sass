@@ -8,6 +8,26 @@
   right: 0
   z-index: 0
 
+.property-bar
+  font-size: 10px
+  color: #aaa
+  line-height: 1.2em
+  &>div
+    display: inline-block
+    display: inline-block
+    .field-items > div
+      display: inline-block
+    &>div .field-item
+      &:before
+        content: ' - '
+
+.span8 .property-bar
+  .field-name-field-event-time
+    display: inline-block
+    content: ''
+  .event-location-name:before,
+  .article-author:before
+    content: ' - '
 .logo
   border-bottom: 10px solid #ccc
   padding-bottom: 10px
@@ -112,11 +132,14 @@
     h2
       font-size: 22px
       margin: 16px 0 10px 0
-
+    h4
+      font-size: 18px
+      margin: 18px 0 2px 0
     .view-content
       li
-        display: block
         border-bottom: 2px solid #efefef
+        display: block
+        overflow: hidden
         padding-bottom: 10px
 
         .field-type-image
@@ -132,6 +155,7 @@
 
 /* single column views */
 .region.span4
+  padding-top: 6px
   .panel-pane
     margin-bottom: 26px
 
@@ -174,21 +198,6 @@
             margin: 0
             font-weight: normal
 
-      .property-bar
-        font-size: 10px
-        color: #aaa
-        line-height: 1.2em
-
-      .view-upcoming-events
-        .event-location-name
-          display: inline-block
-        .field-name-field-event-category
-          display: inline-block
-          .field-items > div
-            display: inline-block
-          .field-item
-            &:before
-              content: ' - '
       .pager
         margin: 0
         background: #F5F5F5
