@@ -73,57 +73,75 @@
       padding: 15px 0
 
 /* Main menu */
-.primary-links,
-.pane-system-main-menu .menu
+.pane-page-primary-links,
+
   border-bottom: 4px solid #ececec
-  display: block
-  margin: 0
-  padding: 0
-  font-size: 0
-  li
-    display: inline-block
-    height: 30px
-    position: relative
-    padding: 0 0 10px 0
-    border-right-style: solid
-    border-right-width: 1px
-    &:hover > ul
-      display: block
-    ul
-      display: none
-      position: absolute
-      z-index: 99999
-      top: 40px
-      left: -1px
-      li
-        &.first
-          margin-left: 0
-        float: none
-        border-right: none
+
+  .primary-links
+    display: block
+    margin: 0
+    padding: 0
+    font-size: 0
+
+    li
+      display: inline-block
+      height: 30px
+      position: relative
+      padding: 0 0 10px 0
+      border-right-style: solid
+      border-right-width: 1px
+      
+      &:hover > ul
         display: block
-        padding-right: 50px
+
+      ul
+        display: none
+        position: absolute
+        z-index: 99999
+        top: 40px
+        left: -1px
+
+        li
+          &.first
+            margin-left: 0
+            float: none
+            border-right: none
+            display: block
+            padding-right: 50px
+
+      a
+        font-family: arial
+        font-size: 14px
+        display: inline-block
+        height: 30px
+        position: relative
+        padding: 0 0 10px 0
+        border-right-style: solid
+        border-right-width: 1px
       &.first
         margin-left: 20px
-    a
-      font-family: arial
-      font-size: 14px
-      display: inline-block
-      padding: 12px 10px
-      text-decoration: none
-      &:before
-        content: ""
-        height: 30px
-        position: absolute
-      .active:after,
-      &:hover:after
-        border-bottom-style: solid
-        border-bottom-width: 4px
-        content: ""
-        height: 40px
-        left: 0
-        position: absolute
-        top: 0
-        width: 100%
+      a
+        font-family: arial
+        font-size: 14px
+        display: inline-block
+        padding: 12px 10px 0
+        text-decoration: none
+
+        &:before
+          content: ""
+          height: 30px
+          position: absolute
+
+        .active:after,
+        &:hover:after
+          border-bottom-style: solid
+          border-bottom-width: 4px
+          content: ""
+          height: 40px
+          left: 0
+          position: absolute
+          top: 0
+          width: 100%
 
 /* double column width */
 .region.span8
@@ -286,3 +304,116 @@
         padding: 0
         list-style: none none
         float: left
+
+/**
+ * Responsiveness
+ */
+.pane-page-primary-links
+  ul
+    display: block
+
+    li
+      display: inline-block
+
+.toggleMenu
+  display: none
+  cursor: pointer
+
+  &.active
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+
+@media (min-width: 768px) and (max-width: 979px)
+  .ownerbox
+    position: static
+
+  .span8
+    .inner
+      padding-right: 15px
+
+  .span8,
+  .span4,
+    width: 724px
+    
+  .span4.right
+    .inner > .pane-separator
+      height: 10px
+
+
+    .inner > .panel-pane
+      width: 50%
+      float: left
+      overflow: hidde
+    
+      &:nth-child(odd)
+        clear: left
+
+@media (max-width: 769px)
+  .ownerbox
+    position: static
+
+  .pane-page-primary-links
+    position: relative
+
+    .pane-content
+      margin-left: 94px
+      border-left: 1px solid rgba(0, 0, 0, 0.2)
+      height: 100%
+
+      .inner
+        border-left: 1px solid rgba(255, 255, 255, 0.2)
+        overflow: hidden
+        min-height: 25px
+
+    .toggleMenu
+      position: absolute
+      display: block
+      height: 25px
+      top: 1px
+      left: 30px
+      border: none
+      background: transparent
+      color: #FFF
+      font-weight: bold
+      font-size: 12px
+      text-transform: uppercase
+
+    ul.links
+      display: none
+
+      & > li
+        display: block
+        overflow: hidden
+
+        &.first
+          margin-left: 0
+
+
+        & > a
+          font-weight: bold
+          font-size: 20px
+          display: block
+
+          &.active:after,
+          &:hover:after
+            content: none
+
+@media (max-width: 400px)
+  .pane-page-primary-links
+    text-align: center
+    ul.links
+      & > li
+        margin-left: 0
+
+    .toggleMenu
+      position: static
+      width: 100%
+      display: inline-block
+
+    .pane-content
+      border: none
+      margin: 0
+      text-align: left
+
+      .inner
+        border: none
+        min-height: 0

@@ -12,6 +12,8 @@ stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 
 ; Scripts
+scripts[] = js/jrespond.js
+scripts[] = js/kay2.custom.js
 
 ; Regions
 regions[header] = Header
