@@ -31,25 +31,34 @@ h3 {
 .logo { border-bottom-color: #efefef; }
 ul { list-style-type: none; }
 /* Main menu links */
+<<<<<<< HEAD
 .pane-page-primary-links   {
+=======
+.primary-links,
+.pane-system-main-menu .menu   {
+>>>>>>> d0d713d0f5b38bb286d15b3585921be440be4521
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #222222, #999999);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
 }
-.primary-links li {
+.primary-links li,
+.pane-system-main-menu .menu li {
   border-right-color: #222222;
 }
-.primary-links li a { 
+.primary-links li a,
+.pane-system-main-menu .menu li a {
   /* colors->mainmenucolor */
   color: #eeeeee;
 }
-.primary-links li a.active {
+.primary-links > li a.active,
+.pane-system-main-menu .menu li a.active {
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #999999, #222222);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#222222));
   color: #eeeeee;
 }
-.primary-links li a:hover:after {
+.primary-links li a:hover:after,
+.pane-system-main-menu .menu li a:hover:after {
   border-bottom-color: #222222;
 }
 .primary ul li a { color: #000000; }

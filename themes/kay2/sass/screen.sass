@@ -8,6 +8,26 @@
   right: 0
   z-index: 0
 
+.property-bar
+  font-size: 10px
+  color: #aaa
+  line-height: 1.2em
+  &>div
+    display: inline-block
+    display: inline-block
+    .field-items > div
+      display: inline-block
+    &>div .field-item
+      &:before
+        content: ' - '
+
+.span8 .property-bar
+  .field-name-field-event-time
+    display: inline-block
+    content: ''
+  .event-location-name:before,
+  .article-author:before
+    content: ' - '
 .logo
   border-bottom: 10px solid #ccc
   padding-bottom: 10px
@@ -19,6 +39,9 @@
   span
     font-size: 40px
     font-family: Georgia
+  a
+    &:hover
+      text-decoration: none
 
 /* Header image fix */
 .block-siteprocessor-config-visual
@@ -50,13 +73,16 @@
       padding: 15px 0
 
 /* Main menu */
-.pane-page-primary-links
+.pane-page-primary-links,
+.pane-system-main-menu
   border-bottom: 4px solid #ececec
+  .menu,
   .primary-links
     display: block
     margin: 0
     padding: 0
     font-size: 0
+
     li
       display: inline-block
       height: 30px
@@ -64,6 +90,34 @@
       padding: 0 0 10px 0
       border-right-style: solid
       border-right-width: 1px
+      
+      &:hover > ul
+        display: block
+
+      ul
+        display: none
+        position: absolute
+        z-index: 99999
+        top: 40px
+        left: -1px
+
+        li
+          &.first
+            margin-left: 0
+            float: none
+            border-right: none
+            display: block
+            padding-right: 50px
+
+      a
+        font-family: arial
+        font-size: 14px
+        display: inline-block
+        height: 30px
+        position: relative
+        padding: 0 0 10px 0
+        border-right-style: solid
+        border-right-width: 1px
       &.first
         margin-left: 20px
       a
@@ -72,10 +126,12 @@
         display: inline-block
         padding: 12px 10px
         text-decoration: none
+
         &:before
           content: ""
           height: 30px
           position: absolute
+
         .active:after,
         &:hover:after
           border-bottom-style: solid
@@ -89,38 +145,51 @@
 
 /* double column width */
 .region.span8
-  h1
-    font-size: 36px
+  h1,
+  .pane-search-result h2
     font-family: Georgia
+    font-size: 36px
     font-weight: normal
+    line-height: 1em
     margin-bottom: 6px
 
+  .pane-search-result
+    ol
+      padding: 0
+    li
+      &:hover
+        background-color: #ededed
+
   .view-latest-articles,
-  .view-upcoming-events
+  .view-upcoming-events,
+  .view-search-for-events
     h2
       font-size: 22px
       margin: 16px 0 10px 0
+    h4
+      font-size: 18px
+      margin: 18px 0 2px 0
+    .view-content
+      li
+        border-bottom: 2px solid #efefef
+        display: block
+        overflow: hidden
+        padding-bottom: 10px
 
-    li
-      display: block
-      border-bottom: 2px solid #efefef
-      padding-bottom: 10px
+        .field-type-image
+          float: left
+          width: 30%
 
-      .field-type-image
-        float: left
-        width: 30%
+          img
+            border: 8px solid #eee
 
-        img
-          border: 8px solid #eee
-
-      .field-type-text-with-summary
-        width: 70%
-
-        p
-          margin: 0
+        .field-type-text-with-summary
+          p
+            margin: 0
 
 /* single column views */
 .region.span4
+  padding-top: 6px
   .panel-pane
     margin-bottom: 26px
 
@@ -128,7 +197,14 @@
       font-size: 16px
       padding: 4px 0 4px 16px
       margin: 0
-      border-bottom: 10px solid #F5F5F5
+
+    &.pane-search-form
+      input[type="text"]
+        width: 75%
+        font-size: 12px
+
+      .pane-content
+        padding: 10px
 
     .pane-content
       border-top: 1px solid #E0E0E0
@@ -140,15 +216,22 @@
         padding: 0
 
         & > li
-          padding: 10px
+          padding: 6px 10px
           overflow: hidden
           background-color: #F5F5F5
           border-bottom: 1px solid #E0E0E0
           margin: 0 0 1px 0
+          & > div > div
+            line-height: 1em
 
           h2
             padding: 0
             border: 0
+
+          h4
+            margin: 0
+            font-weight: normal
+
       .pager
         margin: 0
         background: #F5F5F5
@@ -178,10 +261,13 @@
 
           a
             display: block
-            padding: 10px
+            padding: 5px 10px
             font-weight: bold
+            font-size: 14px
+            &:hover
+              text-decoration: none
 
-  .pane-right-column 
+  .pane-right-column
     & > .pane-content
       border: none
       margin: 0
