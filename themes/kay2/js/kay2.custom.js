@@ -41,7 +41,8 @@ jQuery(function($){
         },
         exit: function() {
           $('.toggleMenu').remove();
-          $('ul', $container).unwrap().show();
+          $('ul', $container).unwrap().removeAttr('style');
+          $('ul li', $container).removeAttr('style');
         }
       });
     }

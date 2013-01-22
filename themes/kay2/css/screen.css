@@ -354,6 +354,13 @@
 /*
  * Responsiveness
  */
+.pane-page-primary-links ul {
+  display: block;
+}
+.pane-page-primary-links ul li {
+  display: inline-block;
+}
+
 .toggleMenu {
   display: none;
   cursor: pointer;
