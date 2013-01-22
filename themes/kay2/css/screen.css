@@ -130,11 +130,6 @@
 .region.span8 .view-search-for-events .view-content li .field-type-image img {
   border: 8px solid #eeeeee;
 }
-.region.span8 .view-latest-articles .view-content li .field-type-text-with-summary,
-.region.span8 .view-upcoming-events .view-content li .field-type-text-with-summary,
-.region.span8 .view-search-for-events .view-content li .field-type-text-with-summary {
-  width: 70%;
-}
 .region.span8 .view-latest-articles .view-content li .field-type-text-with-summary p,
 .region.span8 .view-upcoming-events .view-content li .field-type-text-with-summary p,
 .region.span8 .view-search-for-events .view-content li .field-type-text-with-summary p {
