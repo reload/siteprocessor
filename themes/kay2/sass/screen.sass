@@ -73,7 +73,8 @@
       padding: 15px 0
 
 /* Main menu */
-.primary-links
+.primary-links,
+.pane-system-main-menu .menu
   border-bottom: 4px solid #ececec
   display: block
   margin: 0
@@ -86,8 +87,23 @@
     padding: 0 0 10px 0
     border-right-style: solid
     border-right-width: 1px
-    &.first
-      margin-left: 20px
+    &:hover > ul
+      display: block
+    ul
+      display: none
+      position: absolute
+      z-index: 99999
+      top: 40px
+      left: -1px
+      li
+        &.first
+          margin-left: 0
+        float: none
+        border-right: none
+        display: block
+        padding-right: 50px
+      &.first
+        margin-left: 20px
     a
       font-family: arial
       font-size: 14px
