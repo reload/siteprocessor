@@ -93,9 +93,10 @@
 .region.span8
   h1,
   .pane-search-result h2
-    font-size: 36px
     font-family: Georgia
+    font-size: 36px
     font-weight: normal
+    line-height: 1em
     margin-bottom: 6px
 
   .pane-search-result
@@ -104,30 +105,32 @@
     li
       &:hover
         background-color: #ededed
-    
+
   .view-latest-articles,
-  .view-upcoming-events
+  .view-upcoming-events,
+  .view-search-for-events
     h2
       font-size: 22px
       margin: 16px 0 10px 0
 
-    li
-      display: block
-      border-bottom: 2px solid #efefef
-      padding-bottom: 10px
+    .view-content
+      li
+        display: block
+        border-bottom: 2px solid #efefef
+        padding-bottom: 10px
 
-      .field-type-image
-        float: left
-        width: 30%
+        .field-type-image
+          float: left
+          width: 30%
 
-        img
-          border: 8px solid #eee
+          img
+            border: 8px solid #eee
 
-      .field-type-text-with-summary
-        width: 70%
+        .field-type-text-with-summary
+          width: 70%
 
-        p
-          margin: 0
+          p
+            margin: 0
 
 /* single column views */
 .region.span4
@@ -138,6 +141,14 @@
       font-size: 16px
       padding: 4px 0 4px 16px
       margin: 0
+
+    &.pane-search-form
+      input[type="text"]
+        width: 75%
+        font-size: 12px
+
+      .pane-content
+        padding: 10px
 
     .pane-content
       border-top: 1px solid #E0E0E0
@@ -165,12 +176,12 @@
             margin: 0
             font-weight: normal
 
-      .view-upcoming-events
-        .list-item-content
-          font-size: 10px
-          color: #aaa
-          line-height: 1.2em
+      .property-bar
+        font-size: 10px
+        color: #aaa
+        line-height: 1.2em
 
+      .view-upcoming-events
         .event-location-name
           display: inline-block
         .field-name-field-event-category
@@ -215,7 +226,7 @@
             &:hover
               text-decoration: none
 
-  .pane-right-column 
+  .pane-right-column
     & > .pane-content
       border: none
       margin: 0
