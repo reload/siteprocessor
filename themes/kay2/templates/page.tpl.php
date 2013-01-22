@@ -72,10 +72,10 @@
     <?php if ($logo || $site_name): ?>
       <div class="logo clearfix">
         <?php if ($logo): ?>
-          <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+          <a href="/"><img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" /></a>
         <?php endif; ?>
         <?php if ($site_name): ?>
-          <span class="site-name"><?php echo $site_name; ?></span>
+          <a href="/"><span class="site-name"><?php echo $site_name; ?></span></a>
         <?php endif; ?>
       </div>
     <?php endif; ?>
