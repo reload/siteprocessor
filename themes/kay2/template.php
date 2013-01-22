@@ -1,4 +1,9 @@
 <?php
+function kay2_panels_default_style_render_region($vars) {
+  $output = '';
+  $output .= implode('', $vars['panes']);
+  return $output;
+}
 
 /**
  * Implementation of template_preprocess_node()
@@ -34,5 +39,28 @@ function kay2_process_page(&$variables) {
   // Hook into color.module.
   if (module_exists('color')) {
     _color_page_alter($variables);
+  }
+}
+
+/**
+ * Implementation of template_preprocess_html
+ */
+function kay2_preprocess_html(&$variables){
+  $element = array();
+  
+  // Set device zoom
+  $element[] = array (
+    '#tag' => 'meta',
+    '#attributes' => array (
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes',
+    ),
+  );
+  $i = 0;
+
+  // Loop through the elements and add them to head
+  foreach ($element as $row) {
+    $i ++;
+    drupal_add_html_head($row, 'unicorn-' . $i);
   }
 }

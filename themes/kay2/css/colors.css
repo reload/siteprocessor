@@ -31,7 +31,7 @@ h3 {
 .logo { border-bottom-color: #efefef; }
 ul { list-style-type: none; }
 /* Main menu links */
-.primary-links   {
+.pane-page-primary-links   {
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #222222, #999999);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
