@@ -22,6 +22,9 @@
   font-size: 40px;
   font-family: Georgia;
 }
+.logo a:hover {
+  text-decoration: none;
+}
 
 /* Header image fix */
 .block-siteprocessor-config-visual a img {
@@ -89,11 +92,18 @@
 }
 
 /* double column width */
-.region.span8 h1 {
+.region.span8 h1,
+.region.span8 .pane-search-result h2 {
   font-size: 36px;
   font-family: Georgia;
   font-weight: normal;
   margin-bottom: 6px;
+}
+.region.span8 .pane-search-result ol {
+  padding: 0;
+}
+.region.span8 .pane-search-result li:hover {
+  background-color: #ededed;
 }
 .region.span8 .view-latest-articles h2,
 .region.span8 .view-upcoming-events h2 {
@@ -132,7 +142,6 @@
   font-size: 16px;
   padding: 4px 0 4px 16px;
   margin: 0;
-  border-bottom: 10px solid whitesmoke;
 }
 .region.span4 .panel-pane .pane-content {
   border-top: 1px solid #e0e0e0;
@@ -144,15 +153,39 @@
   padding: 0;
 }
 .region.span4 .panel-pane .pane-content ul > li {
-  padding: 10px;
+  padding: 6px 10px;
   overflow: hidden;
   background-color: whitesmoke;
   border-bottom: 1px solid #e0e0e0;
   margin: 0 0 1px 0;
 }
+.region.span4 .panel-pane .pane-content ul > li > div > div {
+  line-height: 1em;
+}
 .region.span4 .panel-pane .pane-content ul > li h2 {
   padding: 0;
   border: 0;
+}
+.region.span4 .panel-pane .pane-content ul > li h4 {
+  margin: 0;
+  font-weight: normal;
+}
+.region.span4 .panel-pane .pane-content .view-upcoming-events .list-item-content {
+  font-size: 10px;
+  color: #aaaaaa;
+  line-height: 1.2em;
+}
+.region.span4 .panel-pane .pane-content .view-upcoming-events .event-location-name {
+  display: inline-block;
+}
+.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category {
+  display: inline-block;
+}
+.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category .field-items > div {
+  display: inline-block;
+}
+.region.span4 .panel-pane .pane-content .view-upcoming-events .field-name-field-event-category .field-item:before {
+  content: " - ";
 }
 .region.span4 .panel-pane .pane-content .pager {
   margin: 0;
@@ -182,8 +215,12 @@
 }
 .region.span4 .pane-system-main-menu .pane-content ul.menu > li a {
   display: block;
-  padding: 10px;
+  padding: 5px 10px;
   font-weight: bold;
+  font-size: 14px;
+}
+.region.span4 .pane-system-main-menu .pane-content ul.menu > li a:hover {
+  text-decoration: none;
 }
 .region.span4 .pane-right-column > .pane-content {
   border: none;

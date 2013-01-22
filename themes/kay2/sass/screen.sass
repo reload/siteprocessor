@@ -19,6 +19,9 @@
   span
     font-size: 40px
     font-family: Georgia
+  a
+    &:hover
+      text-decoration: none
 
 /* Header image fix */
 .block-siteprocessor-config-visual
@@ -88,12 +91,20 @@
 
 /* double column width */
 .region.span8
-  h1
+  h1,
+  .pane-search-result h2
     font-size: 36px
     font-family: Georgia
     font-weight: normal
     margin-bottom: 6px
 
+  .pane-search-result
+    ol
+      padding: 0
+    li
+      &:hover
+        background-color: #ededed
+    
   .view-latest-articles,
   .view-upcoming-events
     h2
@@ -127,7 +138,6 @@
       font-size: 16px
       padding: 4px 0 4px 16px
       margin: 0
-      border-bottom: 10px solid #F5F5F5
 
     .pane-content
       border-top: 1px solid #E0E0E0
@@ -139,15 +149,37 @@
         padding: 0
 
         & > li
-          padding: 10px
+          padding: 6px 10px
           overflow: hidden
           background-color: #F5F5F5
           border-bottom: 1px solid #E0E0E0
           margin: 0 0 1px 0
+          & > div > div
+            line-height: 1em
 
           h2
             padding: 0
             border: 0
+
+          h4
+            margin: 0
+            font-weight: normal
+
+      .view-upcoming-events
+        .list-item-content
+          font-size: 10px
+          color: #aaa
+          line-height: 1.2em
+
+        .event-location-name
+          display: inline-block
+        .field-name-field-event-category
+          display: inline-block
+          .field-items > div
+            display: inline-block
+          .field-item
+            &:before
+              content: ' - '
       .pager
         margin: 0
         background: #F5F5F5
@@ -177,8 +209,11 @@
 
           a
             display: block
-            padding: 10px
+            padding: 5px 10px
             font-weight: bold
+            font-size: 14px
+            &:hover
+              text-decoration: none
 
   .pane-right-column 
     & > .pane-content
