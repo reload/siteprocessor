@@ -1,3 +1,4 @@
+// Set jRespond breakpoints
 var jRes = jRespond([
     {
         label: 'handheld',
@@ -16,14 +17,20 @@ var jRes = jRespond([
 
 jQuery(function($){
   jQuery.fn.extend({
+    // Add dropdown function
     ddMenu: function() {
+      // Set varialbes
       var $container = $('.pane-content', this);
       var $menu = $container.children();
       var $button = $('<button class="toggleMenu" />');
+      // Init jRespond
       jRes.addFunc({
         breakpoint: 'handheld',
+        // jRespond media query scope enter
         enter: function() {
+          // Create toggle button
           $menu.wrap('<div class="inner" />');
+          // Insert button and add functionality
           $button.text('Menu').click(function(){
             
             if (!$button.hasClass('active')) {
@@ -40,6 +47,7 @@ jQuery(function($){
             });
           }).insertBefore($container);
         },
+        // jRespond media query scope exit
         exit: function() {
           $('.toggleMenu').remove();
           $container.removeAttr('style');
@@ -49,5 +57,6 @@ jQuery(function($){
       });
     }
   });
+  // Attach function
   $('.pane-page-primary-links, .pane-system-main-menu').ddMenu();
 });
