@@ -18,22 +18,23 @@ jQuery(function($){
   jQuery.fn.extend({
     ddMenu: function() {
       var $container = $('.pane-content', this);
+      var $menu = $container.children();
       var $button = $('<button class="toggleMenu" />');
       jRes.addFunc({
         breakpoint: 'handheld',
         enter: function() {
-          $container.wrapInner('<div class="inner" />');
+          $menu.wrap('<div class="inner" />');
           $button.text('Menu').click(function(){
             
             if (!$button.hasClass('active')) {
-              $('ul li', $container).hide().fadeIn(600);
+              $menu.children().hide().fadeIn(400);
             }
 
             else {
-              $('ul li', $container).fadeOut(400);
+              $menu.children().fadeOut(200);
             }
 
-            $('ul', $container).slideToggle(500, function(){
+            $($menu).slideToggle(300, function(){
               $button.toggleClass('active');
               $container.toggleClass('open');
             });
@@ -41,12 +42,12 @@ jQuery(function($){
         },
         exit: function() {
           $('.toggleMenu').remove();
-          $('ul', $container).unwrap().removeAttr('style');
-          $('ul li', $container).removeAttr('style');
+          $container.removeAttr('style');
+          $menu.unwrap().removeAttr('style');
+          $menu.children().removeAttr('style');
         }
       });
     }
   });
-
-  $('.pane-page-primary-links').ddMenu();
+  $('.pane-page-primary-links, .pane-system-main-menu').ddMenu();
 });
