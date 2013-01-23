@@ -7,8 +7,15 @@ img,
 embed,
 object,
 video,
-iframe
+iframe,
+.fb-comments,
+.fb-comments *
   height: auto
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style]
+  width: 100% !important
 
 .page
   font-family: verdana
@@ -352,9 +359,16 @@ iframe
       border: 1px solid rgba(0, 0, 0, 0.2)
 
   table
+    overflow: hidden
+    max-width: 100%
     tr
       td
         vertical-align: top
+        width: 50%
+
+        h4
+          a
+            word-break: break-word
 
 /**
  * Responsiveness
@@ -492,6 +506,12 @@ iframe
               font-size: 16px
 
 @media (max-width: 400px)
+  .logo span,
+  .region.span8 h1
+    font-size: 25px
+    line-height: 28px
+    vertical-align: top
+
   .pane-system-main-menu,
   .pane-page-primary-links
     text-align: center
