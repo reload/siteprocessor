@@ -1,6 +1,14 @@
 /*
  * General
  */
+img,
+embed,
+object,
+video,
+iframe {
+  max-width: 100%;
+}
+
 .page {
   font-family: verdana;
   font-size: 12px;
@@ -82,7 +90,7 @@
 .pane-page-primary-links {
   margin-bottom: 4px;
   position: relative;
-  z-index: 1000;
+  z-index: 100;
 }
 .pane-system-main-menu:after,
 .pane-page-primary-links:after {
@@ -398,6 +406,10 @@
 
   .region.top .inner {
     min-height: 40px;
+  }
+
+  .region.main .inner {
+    padding: 0 15px;
   }
 
   .pane-system-main-menu,
