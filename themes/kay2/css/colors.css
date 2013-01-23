@@ -78,7 +78,8 @@ ul { list-style-type: none; }
 }
 
 .region.span4 .panel-pane .pane-content ul > li ,
-.region.span4 .panel-pane .pane-content .pager {
+.region.span4 .panel-pane .pane-content .pager,
+.view-search-for-events .views-exposed-form {
   background-color: #f5f5f5;
 }
 

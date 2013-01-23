@@ -8,7 +8,7 @@ embed,
 object,
 video,
 iframe
-  max-width: 100%
+  height: auto
 
 .page
   font-family: verdana
@@ -209,7 +209,9 @@ iframe
 
         .field-type-image
           float: left
-          width: 30%
+          max-width: 30%
+          overflow: hidden
+          margin-right: 15px
 
           img
             border: 8px solid #eee
@@ -337,6 +339,24 @@ iframe
         float: left
 
 /**
+ * Events search
+ */
+.view-search-for-events
+  .views-exposed-form
+    margin-bottom: 20px
+    padding: 10px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+
+    select,
+    insert
+      border: 1px solid rgba(0, 0, 0, 0.2)
+
+  table
+    tr
+      td
+        vertical-align: top
+
+/**
  * Responsiveness
  */
 .pane-page-primary-links
@@ -384,6 +404,7 @@ iframe
   
   .region.top
     .inner
+      position: relative
       min-height: 40px
 
   .region.main
