@@ -440,7 +440,7 @@ iframe,
 }
 @media (max-width: 769px) {
   .ownerbox {
-    position: static;
+    display: none;
   }
 
   .region.top .inner {
