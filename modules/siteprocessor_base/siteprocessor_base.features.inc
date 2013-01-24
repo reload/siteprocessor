@@ -120,6 +120,29 @@ function siteprocessor_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: node_image
+  $styles['node_image'] = array(
+    'name' => 'node_image',
+    'effects' => array(
+      1 => array(
+        'label' => 'Skalér',
+        'help' => 'Skalering bevarer billedets højde-bredde-forhold. Hvis kun den ene dimension angives vil den anden blive beregnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '250',
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported image style: toplogo_image
   $styles['toplogo_image'] = array(
     'name' => 'toplogo_image',
