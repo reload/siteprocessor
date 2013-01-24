@@ -55,6 +55,11 @@ ul { list-style-type: none; }
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#222222));
   color: #eeeeee;
 }
+
+.pane-system-main-menu .menu li li a:hover:not(.active) {
+  background: #222222;
+}
+
 .primary-links li a:hover:after,
 .pane-system-main-menu .menu li a:hover:after {
   border-bottom-color: #222222;
