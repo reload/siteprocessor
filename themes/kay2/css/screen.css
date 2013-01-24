@@ -598,4 +598,11 @@ iframe,
     border: none;
     min-height: 0;
   }
+
+  .page-node .pane-node-view .node .field-type-image {
+    text-align: center;
+  }
+  .page-node .pane-node-view .node .field-type-image img {
+    float: none;
+  }
 }
