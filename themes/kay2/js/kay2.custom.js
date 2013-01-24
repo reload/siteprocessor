@@ -1,3 +1,4 @@
+// Set jRespond breakpoints
 var jRes = jRespond([
     {
         label: 'handheld',
@@ -16,37 +17,46 @@ var jRes = jRespond([
 
 jQuery(function($){
   jQuery.fn.extend({
+    // Add dropdown function
     ddMenu: function() {
+      // Set varialbes
       var $container = $('.pane-content', this);
+      var $menu = $container.children();
       var $button = $('<button class="toggleMenu" />');
+      // Init jRespond
       jRes.addFunc({
         breakpoint: 'handheld',
+        // jRespond media query scope enter
         enter: function() {
-          $container.wrapInner('<div class="inner" />');
+          // Create toggle button
+          $menu.wrap('<div class="inner" />');
+          // Insert button and add functionality
           $button.text('Menu').click(function(){
             
             if (!$button.hasClass('active')) {
-              $('ul li', $container).hide().fadeIn(600);
+              $menu.children().hide().fadeIn(400);
             }
 
             else {
-              $('ul li', $container).fadeOut(400);
+              $menu.children().fadeOut(200);
             }
 
-            $('ul', $container).slideToggle(500, function(){
+            $($menu).slideToggle(300, function(){
               $button.toggleClass('active');
               $container.toggleClass('open');
             });
           }).insertBefore($container);
         },
+        // jRespond media query scope exit
         exit: function() {
           $('.toggleMenu').remove();
-          $('ul', $container).unwrap().removeAttr('style');
-          $('ul li', $container).removeAttr('style');
+          $container.removeAttr('style');
+          $menu.unwrap().removeAttr('style');
+          $menu.children().removeAttr('style');
         }
       });
     }
   });
-
-  $('.pane-page-primary-links').ddMenu();
+  // Attach function
+  $('.pane-page-primary-links, .pane-system-main-menu').ddMenu();
 });
