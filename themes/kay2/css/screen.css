@@ -367,17 +367,21 @@ iframe,
 }
 
 /*
- * Events search
+ * Filter form
  */
-.view-search-for-events .views-exposed-form {
+.view-filters {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.view-search-for-events .views-exposed-form select,
-.view-search-for-events .views-exposed-form insert {
+.view-filters select,
+.view-filters insert {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+/*
+ * Event search
+ */
 .view-search-for-events table {
   overflow: hidden;
   max-width: 100%;
@@ -501,11 +505,15 @@ iframe,
   .pane-page-primary-links ul.menu:first-of-type li a {
     border-right: none;
   }
-  .pane-system-main-menu ul.links:first-of-type li a.active,
+  .pane-system-main-menu ul.links:first-of-type li a.active, .pane-system-main-menu ul.links:first-of-type li a:hover,
   .pane-system-main-menu ul.menu:first-of-type li a.active,
+  .pane-system-main-menu ul.menu:first-of-type li a:hover,
   .pane-page-primary-links ul.links:first-of-type li a.active,
-  .pane-page-primary-links ul.menu:first-of-type li a.active {
-    background: none;
+  .pane-page-primary-links ul.links:first-of-type li a:hover,
+  .pane-page-primary-links ul.menu:first-of-type li a.active,
+  .pane-page-primary-links ul.menu:first-of-type li a:hover {
+    background: none !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   }
   .pane-system-main-menu ul.links:first-of-type > li,
   .pane-system-main-menu ul.menu:first-of-type > li,

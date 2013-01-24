@@ -84,7 +84,8 @@ ul { list-style-type: none; }
 
 .region.span4 .panel-pane .pane-content ul > li ,
 .region.span4 .panel-pane .pane-content .pager,
-.view-search-for-events .views-exposed-form {
+.region.span4 .pane-search-form .pane-content,
+.view-filters {
   background-color: #f5f5f5;
 }
 

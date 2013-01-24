@@ -230,6 +230,7 @@ iframe,
 /* single column views */
 .region.span4
   padding-top: 6px
+
   .panel-pane
     margin-bottom: 26px
 
@@ -346,18 +347,21 @@ iframe,
         float: left
 
 /**
- * Events search
+ * Filter form
  */
-.view-search-for-events
-  .views-exposed-form
-    margin-bottom: 20px
-    padding: 10px
+.view-filters
+  margin-bottom: 20px
+  padding: 10px
+  border: 1px solid rgba(0, 0, 0, 0.2)
+
+  select,
+  insert
     border: 1px solid rgba(0, 0, 0, 0.2)
 
-    select,
-    insert
-      border: 1px solid rgba(0, 0, 0, 0.2)
-
+/**
+ * Event search
+ */
+.view-search-for-events
   table
     overflow: hidden
     max-width: 100%
@@ -467,8 +471,10 @@ iframe,
         a
           border-right: none
 
-          &.active
-            background: none
+          &.active,
+          &:hover
+            background: none !important
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
 
       & > li
         display: block
