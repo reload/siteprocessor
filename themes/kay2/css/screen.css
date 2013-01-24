@@ -86,11 +86,17 @@ iframe,
 }
 
 .panel-33-66 .main .inner {
+  padding-right: 0;
+}
+.panel-33-66 .main li {
   padding-right: 15px;
 }
 
 .panel-100 .main .inner {
-  padding: 15px 0;
+  padding: 0;
+}
+.panel-100 .main .inner .view-content li {
+  padding: 0 15px;
 }
 
 /* Main menu */

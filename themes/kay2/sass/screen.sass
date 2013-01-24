@@ -89,12 +89,17 @@ iframe,
 .panel-33-66
   .main
     .inner
+      padding-right: 0
+    li
       padding-right: 15px
 
 .panel-100
   .main
     .inner
-      padding: 15px 0
+      padding: 0
+      .view-content
+        li
+          padding: 0 15px
 
 /* Main menu */
 .pane-system-main-menu,
@@ -102,7 +107,7 @@ iframe,
   margin-bottom: 4px
   position: relative
   z-index: 100
-  
+
   &:after
     content: ''
     width: 100%
@@ -110,7 +115,7 @@ iframe,
     position: absolute
     left: 0
     bottom: -4px
-    background: inline-image('menushadow.png') repeat-x bottom  
+    background: inline-image('menushadow.png') repeat-x bottom
 
   ul:only-child
     display: block
@@ -402,7 +407,7 @@ iframe,
   .span8,
   .span4,
     width: 724px
-    
+
   .span4.right
     .inner > .pane-separator
       height: 10px
@@ -412,14 +417,14 @@ iframe,
       width: 50%
       float: left
       overflow: hidde
-    
+
       &:nth-child(odd)
         clear: left
 
 @media (max-width: 769px)
   .ownerbox
     display: none
-  
+
   .region.top
     .inner
       position: relative
