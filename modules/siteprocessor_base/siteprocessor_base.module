@@ -34,6 +34,15 @@ function siteprocessor_base_block_view($delta){
 }
 
 /**
+ * Alter color module theme settings form.
+ * Make colorpicker fieldgroup collapsible.
+ */
+function siteprocessor_base_form_system_theme_settings_alter(&$form, &$form_state, $form_id) {
+  $form['color']['#collapsible'] = TRUE;
+  $form['color']['#collapsed'] = TRUE;
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * Hide views exposed filters for taxonomy terms
