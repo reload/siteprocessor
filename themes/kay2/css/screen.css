@@ -386,21 +386,6 @@ iframe,
 }
 
 /*
- * Event search
- */
-.view-search-for-events table {
-  overflow: hidden;
-  max-width: 100%;
-}
-.view-search-for-events table tr td {
-  vertical-align: top;
-  width: 50%;
-}
-.view-search-for-events table tr td h4 a {
-  word-break: break-word;
-}
-
-/*
  * Responsiveness
  */
 .pane-page-primary-links ul {
