@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-  <head profile="<?php print $rdf->profile; ?>">
+  <head profile="<?php print isset($rdf) ? $rdf->profile : ''; ?>">
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
