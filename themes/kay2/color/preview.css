@@ -1,8 +1,14 @@
 .clearfix { clear: both;}
 ul { list-style-type: none!important; }
 #preview {
-  width: 1200px;
+  width: 1100px;
   background-color: #efefef;
+  zoom: 75%;
+  float: right !important;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  overflow: auto;
 }
 #preview #preview-container {
   width: 994px;
@@ -170,3 +176,21 @@ ul { list-style-type: none!important; }
 .region-footer {
   border-bottom-color: #999999;
 }
+
+/* Altering the admin color settings page. */
+#color_scheme_form {
+  overflow: hidden;
+}
+  #color_scheme_form .color-form {
+    max-width: 100%;
+  }
+    #color_scheme_form .color-form > h2 {
+      display: none;
+    }
+  #color_scheme_form #palette {
+    float: left;
+  }
+  #color_scheme_form #placeholder {
+    position: relative;
+    left: 0;
+  }
