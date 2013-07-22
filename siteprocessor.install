@@ -7,7 +7,7 @@
  */
 function siteprocessor_install() {
 
-  $default_theme = 'kaykay';
+  $default_theme = 'kay2';
 
   $values = array(
     array(
@@ -165,9 +165,20 @@ function siteprocessor_install() {
   drupal_write_record('wysiwyg', $wysiwyg);
   wysiwyg_profile_cache_clear();
 
+  // Enable custom search panel page.
+  variable_set('page_manager_search_disabled_node', 0);
+
+  // Disable user search.
+  variable_set('search_active_modules', array(
+    'node' => 'node',
+    'user' => 0,
+  ));
+  // And set default search to node.
+  variable_set('search_default_module', 'node');
+
   // Enable default frontend and admin theme
-  theme_enable(array('kaykay', 'seven'));
-  variable_set('theme_default', 'kaykay');
+  theme_enable(array($default_theme, 'seven'));
+  variable_set('theme_default', $default_theme);
   variable_set('admin_theme', 'seven');
 
   // Set default layout

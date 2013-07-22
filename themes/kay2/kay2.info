@@ -1,0 +1,28 @@
+name = Kay2
+description = Basic theme for siteprocessor
+core = 7.x
+engine = phptemplate
+
+; Stylesheets
+stylesheets[all][] = css/kay2.bootstrap.css
+stylesheets[all][] = css/screen.css
+stylesheets[all][] = css/node.css
+stylesheets[all][] = css/ie.css
+stylesheets[all][] = css/colors.css
+stylesheets[print][] = css/print.css
+
+; Scripts
+scripts[] = js/jrespond.js
+scripts[] = js/kay2.custom.js
+
+; Regions
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+regions[ownerbox] = Owner box
+
+; Panels
+plugins[panels][layouts] = layouts
+
+siteprocessor[theme_available] = true
+siteprocessor[theme][kaykay] = "Version2 theme"

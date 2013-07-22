@@ -2,7 +2,7 @@ api = 2
 core = 7.x
 
 projects[drupal][type] = core
-projects[drupal][version] = "7.14"
+projects[drupal][version] = "7.22"
 
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = "3.1"

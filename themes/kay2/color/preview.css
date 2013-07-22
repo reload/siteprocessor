@@ -1,0 +1,204 @@
+.clearfix { clear: both;}
+ul { list-style-type: none!important; }
+#preview {
+  width: 1100px;
+  background-color: #efefef;
+  zoom: 75%;
+  -moz-transform: scale(0.75);
+  float: right !important;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  overflow: auto;
+}
+@-moz-document url-prefix() {
+  #preview {
+    top: -150px;
+    right: -150px;
+  }
+}
+#preview #preview-container {
+  width: 994px;
+  margin: 0 auto;
+}
+#preview #preview-logo, #preview #preview-site-name {
+  display: inline;
+}
+#preview #preview-top-image {
+  height: 307px;
+}
+#preview #preview-site-name {
+  color: #5b75d7;
+  font-family: "Times new roman";
+  font-size: 46px;
+}
+
+#preview #preview-main-menu-links {
+  border-bottom: 4px solid #ececec;
+  margin: 0;
+  padding: 0;
+}
+#preview #preview-main-menu-links li {
+  display: inline;
+  height: 30px;
+  position: relative;
+}
+
+#preview #preview-main-menu-links li a {
+  color: #eee;
+  display: inline-block;
+  padding: 14px 10px;
+}
+
+#preview #preview-main-menu-links li a:before {
+  content: "";
+  height: 30px;
+  position: absolute;
+}
+#preview #preview-main-menu-links li a.active:after,
+#preview #preview-main-menu-links li a:hover:after {
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #000;
+  content: "";
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#preview #preview-main #preview-left-container {
+  width: 66%;
+  float: left;
+}
+#preview #preview-main #preview-right-container {
+  width: 33%;
+  margin-left: 1%;
+  float: left;
+}
+#preview #preview-main #preview-left-container ul {}
+#preview #preview-main #preview-left-container li { display: block; border-bottom: 2px solid #efefef; padding-bottom: 10px; }
+
+#preview #preview-main #preview-left-container h1 {
+  font-size: 30px;
+  color: #333;
+}
+#preview #preview-main #preview-left-container h2 { 
+  font-size: 22px;
+  margin: 16px 0 10px 0;
+  color: #333;
+}
+#preview #preview-main #preview-left-container .date { color: #aaa; }
+#preview #preview-main #preview-left-container .content > div { float: left; }
+#preview #preview-main #preview-left-container .content .image { width: 30%; }
+#preview #preview-main #preview-left-container .content .image img { border: 8px solid #eee; }
+#preview #preview-main #preview-left-container .content .body { width: 70%; }
+#preview #preview-main #preview-left-container .content .body p { margin : 0;}
+
+#preview #preview-main #preview-right-container > div { width: 100%; }
+#preview #preview-main #preview-right-container .block { margin-bottom: 26px; }
+#preview #preview-main #preview-right-container h2 {
+  font-size: 16px;
+  padding: 4px 0 4px 16px;
+  background-color: #222;
+  color: #eee;
+}
+
+#preview #preview-main .primary ul li a { color: #000000; }
+#preview #preview-main .primary ul li a:hover { color: #111111; }
+#preview #preview-main .secondary ul li a { color: #333333; }
+#preview #preview-main .secondary ul li a:hover { color: #444444; }
+
+/* single column views */
+#preview-right-container .block {
+  margin-bottom: 26px;
+}
+#preview-right-container .block h2 {
+  font-size: 16px;
+  padding: 4px 0 4px 16px;
+  margin: 0;
+  border-bottom: 10px solid #f5f5f5;
+}
+#preview-right-container .block .content {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 10px solid #f5f5f5;
+}
+
+#preview-right-container .block .content ul {
+  margin: 1px 0 0 0;
+}
+#preview-right-container .block ul > li {
+  padding: 10px;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1px;
+}
+#preview-right-container .block .content ul > li h2 {
+  padding: 0;
+  border: 0;
+}
+
+#preview-right-container .styled h2 {
+  border-bottom-color: #f5f5f5;
+}
+
+#preview-right-container .styled .content {
+  border-top-color: #e0e0e0;
+  border-bottom-color: #f5f5f5;
+}
+
+#preview-right-container .styled ul > li {
+  background: #f5f5f5;
+}
+
+/**
+ * Side menu
+ */
+#preview-right-container .sidemenu h2 {
+  border-bottom-color: #cccccc;
+}
+#preview-right-container .sidemenu .content {
+  border-top-color: #cccccc;
+  border-bottom-color: #cccccc;
+}
+#preview-right-container .sidemenu .content ul.secondary-menu > li {
+  background-color: #dddddd;
+  border-bottom-color: #cccccc;
+  padding: 0;
+}
+
+#preview-right-container .sidemenu .content ul.secondary-menu > li.hovered {
+  background-color: #cccccd;
+}
+
+#preview-right-container .sidemenu .content ul.secondary-menu > li a {
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* footer */
+.region-footer {
+  border-bottom-color: #999999;
+}
+
+/* Altering the admin color settings page. */
+#color_scheme_form {
+  overflow: hidden;
+  min-width: 1113px;
+}
+  #color_scheme_form .color-form {
+    max-width: 100%;
+  }
+    #color_scheme_form .color-form > h2 {
+      display: none;
+    }
+  #color_scheme_form #palette {
+    float: left;
+  }
+  #color_scheme_form #placeholder {
+    position: relative;
+    left: 0;
+  }

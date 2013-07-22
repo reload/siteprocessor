@@ -142,6 +142,12 @@ function siteprocessor_article_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -250,6 +256,12 @@ function siteprocessor_article_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'print_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'image',
@@ -352,6 +364,12 @@ function siteprocessor_article_field_default_fields() {
           'weight' => 0,
         ),
         'list_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'print_item' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

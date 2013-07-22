@@ -1,0 +1,17 @@
+.page-node .pane-node-view .property-bar {
+  color: #aaaaaa;
+  font-size: 10px;
+  line-height: 2em;
+}
+.page-node .pane-node-view .field-type-image img {
+  border: 4px solid #eeeeee;
+  float: left;
+  margin-right: 10px;
+}
+.page-node .pane-node-view .field-name-body p {
+  margin: 0 0 1em 0;
+}
+.page-node .pane-node-view .comments-box {
+  border-top: 1px solid #cccccc;
+  margin-top: 20px;
+}

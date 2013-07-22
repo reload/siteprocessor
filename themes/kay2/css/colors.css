@@ -1,0 +1,123 @@
+/**
+ * All color hex values must be lowercase
+ */
+body {
+  /* colors->bodybg */
+  background-color: #efefef;
+}
+/* Site background color */
+.page {
+  /* colors->bg */
+  background-color: #ffffff;
+  /* colors->text */
+  color: #666666;
+}
+a {
+  /* colors->linkcolor */
+  color: #000000;
+}
+a:hover {
+  /* colors->linkhover */
+  color: #111111;
+}
+.site-name, h1, h2, h2 a {
+  /* colors->title */
+  color: #555555;
+}
+h3 {
+  /* colors->mainmenucolor */
+  color: #eeeeee;
+}
+.logo { border-bottom-color: #efefef; }
+ul { list-style-type: none; }
+/* Main menu links */
+.pane-page-primary-links,
+.pane-system-main-menu {
+  /* colors->mainmenugbtop, colors->mainmenubgbottom */
+  background-image: -moz-linear-gradient(-90deg, #222222, #999999);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
+}
+
+.pane-system-main-menu ul li:hover ul {
+  background-color: #999999;
+  border-bottom-color: #222222;
+}
+
+.primary-links li a,
+.pane-system-main-menu .menu li a {
+  /* colors->mainmenucolor */
+  color: #eeeeee;
+}
+.primary-links > li a.active,
+.pane-system-main-menu .menu li a.active {
+  /* colors->mainmenugbtop, colors->mainmenubgbottom */
+  background-image: -moz-linear-gradient(-90deg, #999999, #222222);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#222222));
+  color: #eeeeee;
+}
+
+.pane-system-main-menu .menu li li a:hover:not(.active) {
+  background: #222222;
+}
+
+.primary-links li a:hover:after,
+.pane-system-main-menu .menu li a:hover:after {
+  border-bottom-color: #222222;
+}
+.primary ul li a { color: #000000; }
+.primary ul li a:hover { color: #111111; }
+.secondary ul li a { color: #333333; }
+.secondary ul li a:hover { color: #444444; }
+
+/* Double row container */
+
+/* Single row container */
+.region.span4 h2.pane-title {
+  color: #eeeeee;
+  background-color: #222222;
+}
+
+.region.span4 .panel-pane h2,
+.region.span4 .panel-pane .pane-content {
+  border-bottom-color: #f5f5f5;
+}
+
+.region.span4 .panel-pane .pane-content ul > li ,
+.region.span4 .panel-pane .pane-content .pager,
+.region.span4 .pane-search-form .pane-content,
+.view-filters {
+  background-color: #f5f5f5;
+}
+
+.region.span4 .panel-pane .pane-content {
+  border-top-color: #e0e0e0;
+}
+
+.region.span4 .panel-pane .pane-content ul > li,
+.region.span4 .panel-pane .pane-content .pager {
+  border-bottom-color: #e0e0e0;
+}
+
+/**
+ * Side menu
+ */
+.region.span4 .pane-system-main-menu h2 {
+  border-bottom-color: #dddddd;
+}
+.region.span4 .pane-system-main-menu .pane-content {
+  border-top-color: #cccccc;
+  border-bottom-color: #dddddd;
+}
+.region.span4 .pane-system-main-menu .pane-content ul.menu > li {
+  background-color: #dddddd;
+  border-bottom-color: #cccccc;
+  padding: 0;
+}
+.region.span4 .pane-system-main-menu .pane-content ul.menu > li:hover {
+  background-color: #cccccc;
+}
+
+/* footer */
+.region-footer {
+  border-bottom-color: #999999;
+}

@@ -10,8 +10,8 @@
           <?php print $submitted; ?>
         </div>
       <?php endif; ?>
-     <?php print render($content['field_image']);?>
      <div class="fb-like" data-send="true" data-width="600" data-show-faces="false"></div>
+     <?php print render($content['field_image']);?>
       <div class="event-properties">
         <?php if(isset($content['field_event_category'])):?>
           <div class="event-property event-category">

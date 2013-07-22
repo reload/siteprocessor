@@ -34,6 +34,15 @@ function siteprocessor_base_block_view($delta){
 }
 
 /**
+ * Alter color module theme settings form.
+ * Make colorpicker fieldgroup collapsible.
+ */
+function siteprocessor_base_form_system_theme_settings_alter(&$form, &$form_state, $form_id) {
+  $form['color']['#collapsible'] = TRUE;
+  $form['color']['#collapsed'] = TRUE;
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * Hide views exposed filters for taxonomy terms
@@ -68,6 +77,10 @@ function siteprocessor_base_entity_info_alter(&$entity_info) {
     'label' => t('Carousel item'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['print_item'] = array(
+    'label' => t('Print item'),
+    'custom settings' => TRUE,
+  );
 }
 
 function siteprocessor_base_preprocess_node(&$vars){
@@ -76,7 +89,7 @@ function siteprocessor_base_preprocess_node(&$vars){
     $vars['node']->showcomments=true;
   }
   else {
-    $vars['node']->showcomments=false;    
+    $vars['node']->showcomments=false;
   }
-  
+
 }

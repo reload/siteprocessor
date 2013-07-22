@@ -89,11 +89,16 @@
 }
 
 /* print view */
-.view-print-search-for-events ul li p {
+.print-item-content {
+  /* Hide from normal view.*/
+  display: none;
+}
+
+.print-item-content .description p {
   margin: 0;
 }
 
-.view-print-search-for-events ul li {
+.print-item-content {
   background-color: #E8E7E2 !important;
   width: 100%;
   margin-bottom: 30px;
@@ -102,7 +107,7 @@
   min-height: 200px;
 }
 
-.view-print-search-for-events ul li .views-field-field-location {
+.print-item-content .properties {
   width: 20%;
   height: 100%;
   position: absolute;
@@ -111,17 +116,21 @@
   right: 10px;
   border-left: 2px dashed black;
 }
-.view-print-search-for-events ul li .views-field-field-location .location {
+
+
+.print-item-content .field-name-field-location {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
-.view-print-search-for-events .views-label-field-location {
+.view-search-for-events-by-calendar .views-label-field-location {
   font-weight: bold;
 }
 
-.view-print-search-for-events ul li > div {
+.print-item-content .description {
   width:70%
 }
-.view-print-search-for-events .views-field-title a {
+
+.print-item-content h4 a {
   color: #6C0046;
   font-weight: bold;
   text-transform: uppercase;

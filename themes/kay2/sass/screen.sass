@@ -1,0 +1,541 @@
+/**
+ * General
+ */
+img,
+embed,
+object,
+video,
+iframe,
+.fb-comments,
+.fb-comments *
+  height: auto
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style]
+  width: 100% !important
+
+.page
+  font-family: verdana
+  font-size: 12px
+
+.ownerbox
+  position: fixed
+  top: 500px
+  right: 0
+  z-index: 0
+
+.property-bar
+  font-size: 10px
+  color: #aaa
+  line-height: 1.2em
+
+  & > div
+    display: inline-block
+    display: inline-block
+
+    .field-items > div
+      display: inline-block
+
+    & > div .field-item
+      &:before
+        content: ' - '
+
+.span8 .property-bar
+  .field-name-field-event-time
+    display: inline-block
+    content: ''
+
+  .event-location-name:before,
+  .article-author:before
+    content: ' - '
+
+.logo
+  border-bottom: 10px solid #ccc
+  padding-bottom: 10px
+
+  img
+    vertical-align: text-bottom
+    height: auto
+
+  span
+    font-size: 40px
+    font-family: Georgia
+  a
+    &:hover
+      text-decoration: none
+
+/* Header image fix */
+.block-siteprocessor-config-visual
+  a
+    img
+      float: left
+
+/*View content li override */
+.view-content
+  & > .item-list
+    & > ul
+      & > li
+        margin: 0
+
+/* Content padding */
+.panel-100-66-33
+  .main
+    .inner
+      padding-left: 15px
+
+.panel-33-66
+  .main
+    .inner
+      padding-right: 0
+    li
+      padding-right: 15px
+
+.panel-100
+  .main
+    .inner
+      padding: 0
+      .view-content
+        li
+          padding: 0 15px
+
+/* Main menu */
+.pane-system-main-menu,
+.pane-page-primary-links
+  margin-bottom: 4px
+  position: relative
+  z-index: 100
+
+  &:after
+    content: ''
+    width: 100%
+    height: 4px
+    position: absolute
+    left: 0
+    bottom: -4px
+    background: inline-image('menushadow.png') repeat-x bottom
+
+  ul:only-child
+    display: block
+    margin: 0
+    padding: 0
+    font-size: 0
+
+    & > li
+      display: inline-block
+      height: 30px
+      position: relative
+      padding: 0 0 10px 0
+      border-right: 1px solid rgba(255, 255, 255, 0.2)
+
+      & > a
+        border-right: 1px solid rgba(0, 0, 0, 0.2)
+
+        &:before
+          content: ""
+          height: 30px
+          position: absolute
+
+        .active:after,
+        &:hover:after
+          border-bottom-style: solid
+          border-bottom-width: 4px
+          content: ""
+          height: 40px
+          left: 0
+          position: absolute
+          z-index: 90
+          top: 0
+          width: 100%
+
+      &:hover > ul
+        display: block
+        border-bottom-style:  solid
+        border-bottom-width: 4px
+
+      & > ul
+        display: none
+        position: absolute
+        z-index: 99999
+        top: 40px
+        left: 0
+        min-width: 100%
+        margin: 0
+        padding: 0
+
+        li
+          &.first
+            margin-left: 0
+
+          float: none
+          border-right: none
+          display: block
+
+          & > a
+            white-space: nowrap
+
+        &.first
+          margin-left: 20px
+
+      a
+        font-family: arial
+        font-size: 14px
+        display: block
+        padding: 10px
+        text-decoration: none
+
+/* double column width */
+.region.span8
+  h1,
+  .pane-search-result h2
+    font-family: Georgia
+    font-size: 36px
+    font-weight: normal
+    line-height: 1em
+    margin-bottom: 6px
+
+  .pane-search-result
+    ol
+      padding: 0
+    li
+      &:hover
+        background-color: #ededed
+
+  .view-latest-articles,
+  .view-upcoming-events,
+  .view-search-for-events
+    h2
+      font-size: 22px
+      margin: 16px 0 10px 0
+    h4
+      font-size: 18px
+      margin: 18px 0 2px 0
+    .view-content
+      li
+        border-bottom: 2px solid #efefef
+        display: block
+        overflow: hidden
+        padding-bottom: 10px
+
+        .field-type-image
+          float: left
+          max-width: 30%
+          overflow: hidden
+          margin-right: 15px
+
+          img
+            border: 8px solid #eee
+
+        .field-type-text-with-summary
+          p
+            margin: 0
+
+/* single column views */
+.region.span4
+  padding-top: 6px
+
+  .panel-pane
+    margin-bottom: 26px
+
+    h2
+      font-size: 16px
+      padding: 4px 0 4px 16px
+      margin: 0
+
+    &.pane-search-form
+      input[type="text"]
+        width: 75%
+        font-size: 12px
+
+      .pane-content
+        padding: 10px
+
+    .pane-content
+      border-top: 1px solid #E0E0E0
+      border-bottom: 10px solid #F5F5F5
+
+      ul
+        border-top: 1px solid #FFF
+        margin: 0
+        padding: 0
+
+        & > li
+          padding: 6px 10px
+          overflow: hidden
+          background-color: #F5F5F5
+          border-bottom: 1px solid #E0E0E0
+          margin: 0 0 1px 0
+          & > div > div
+            line-height: 1em
+
+          h2
+            padding: 0
+            border: 0
+
+          h4
+            margin: 0
+            font-weight: normal
+
+      .pager
+        margin: 0
+        background: #F5F5F5
+        padding: 10px 0
+        border-bottom: 1px solid #E0E0E0
+        margin-bottom: 1px
+
+        li
+          background: none
+          border: none
+
+  .pane-system-main-menu
+    h2
+      border-bottom-color: #cddee6
+    .pane-content
+      border-top-color: #adc9d5
+      border-bottom-color: #cddee6
+
+      ul.menu
+        & > li
+          background-color: #cddee6
+          border-bottom-color: #adc9d5
+          padding: 0
+
+          &:hover
+            background-color: #adc9d5
+
+          a
+            display: block
+            padding: 5px 10px
+            font-weight: bold
+            font-size: 14px
+            &:hover
+              text-decoration: none
+
+  .pane-right-column
+    & > .pane-content
+      border: none
+      margin: 0
+      padding: 0
+
+/**
+ * Closure
+ */
+.closure
+  .region-footer
+    border-top: 1px solid #dedede
+    border-bottom-style: solid
+    border-bottom-width: 10px
+    font-size: 10px
+    color: #bbb
+    padding: 2px 15px
+    overflow: hidden
+
+    .block-siteprocessor-footer
+      float: left
+
+      p
+        margin: 0
+        br
+          display: none
+
+  #block-menu-menu-footer-menu
+    float: right
+
+    ul
+      margin: 0
+
+      li
+        padding: 0
+        list-style: none none
+        float: left
+
+/**
+ * Filter form
+ */
+.view-filters
+  margin-bottom: 20px
+  padding: 10px
+  border: 1px solid rgba(0, 0, 0, 0.2)
+
+  select,
+  insert
+    border: 1px solid rgba(0, 0, 0, 0.2)
+
+/**
+ * Responsiveness
+ */
+.pane-page-primary-links
+  ul
+    display: block
+
+    li
+      display: inline-block
+
+.toggleMenu
+  display: none
+  cursor: pointer
+
+  &.active
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+
+@media (min-width: 768px) and (max-width: 979px)
+  body
+    padding: 0
+  .ownerbox
+    display: none
+
+  .span8
+    .inner
+      padding-right: 15px
+
+  .span8,
+  .span4,
+    width: 724px
+
+  .span4.right
+    .inner > .pane-separator
+      height: 10px
+
+
+    .inner > .panel-pane .pane-content .panel-pane
+      width: 50%
+      float: left
+      overflow: hidde
+
+      &:nth-child(odd)
+        clear: left
+
+@media (max-width: 769px)
+  body
+    padding: 0
+  .ownerbox
+    display: none
+
+  .region.top
+    .inner
+      position: relative
+      min-height: 40px
+
+  .region.main
+    .inner
+      padding: 0 8px
+
+  .pane-system-main-menu,
+  .pane-page-primary-links
+    position: absolute
+    min-height: 40px
+    width: 100%
+
+    .pane-content
+      margin-left: 94px
+      border-left: 1px solid rgba(0, 0, 0, 0.2)
+      height: 100%
+
+      .inner
+        border-left: 1px solid rgba(255, 255, 255, 0.2)
+        overflow: hidden
+        min-height: 40px
+
+    .toggleMenu
+      position: absolute
+      display: block
+      height: 40px
+      top: 1px
+      left: 30px
+      border: none
+      background: transparent
+      color: #FFF
+      font-weight: bold
+      font-size: 12px
+      text-transform: uppercase
+
+    ul.links:first-of-type,
+    ul.menu:first-of-type
+      display: none
+
+      li
+        height: auto
+        width: auto
+        border-right: none
+        display: block
+
+        a
+          border-right: none
+
+          &.active,
+          &:hover
+            background: none !important
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+
+      & > li
+        display: block
+        overflow: hidden
+
+        &:hover
+          & > ul
+            background: none
+            border: none
+
+        &.first
+          margin-left: 0
+
+
+        & > a
+          font-weight: bold
+          font-size: 20px
+          display: block
+
+          &.active:after,
+          &:hover:after
+            content: none
+
+      li.expanded
+        ul.menu
+          position: static
+          display: block
+          margin: 0 0 0 10px
+
+          li
+            padding: 0
+            display: block
+
+            a
+              font-size: 16px
+
+@media (max-width: 400px)
+  body
+    padding: 0
+  .logo span,
+  .region.span8 h1
+    font-size: 25px
+    line-height: 28px
+    vertical-align: top
+
+  .pane-system-main-menu,
+  .pane-page-primary-links
+    text-align: center
+    ul.links
+      & > li
+        margin-left: 0
+
+    .toggleMenu
+      position: static
+      width: 100%
+      display: inline-block
+
+    .pane-content
+      border: none
+      margin: 0
+      text-align: left
+
+      .inner
+        border: none
+        min-height: 0
+
+  .page-node
+    .pane-node-view
+      .node
+        .field-type-image
+          text-align: center
+          img
+            float: none
