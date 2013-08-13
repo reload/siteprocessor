@@ -66,8 +66,7 @@ function siteprocessor_config_visual_block_view($delta){
  * Implement a custom form submit handler
  */
 function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
-  _siteprocessor_config_visual_clear_css();
-  //Saves or deletes top image (logo)
+  // Saves or deletes top image (logo).
   if ($form_state['values']['siteprocessor_config_visual_top_image_fid'] != 0) {
     $file = file_load($form_state['values']['siteprocessor_config_visual_top_image_fid']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -272,7 +271,6 @@ function siteprocessor_config_visual_background_get_css(){
  * Implements a custom form submit handler.
  */
 function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
-  _siteprocessor_config_visual_clear_css();
   $color_keys=siteprocessor_config_visual_colors_get(array('keys_list'=>true));
   $color_list=array();
   foreach($color_keys as $key){
