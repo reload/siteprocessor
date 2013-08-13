@@ -157,7 +157,7 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '990',
+          'width' => '995',
           'height' => '',
           'upscale' => 1,
         ),
