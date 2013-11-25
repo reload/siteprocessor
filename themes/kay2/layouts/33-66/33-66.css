@@ -1,0 +1,11 @@
+/** ADMIN CSS DEFINITIONS **/
+.page-admin .panel-33-66 .right{
+  float: left;
+  margin-left: 0;
+  width: 33%;
+}
+.page-admin .panel-33-66 .main {
+  float: left;
+  margin-left: 0;
+  width: 67%;
+}
