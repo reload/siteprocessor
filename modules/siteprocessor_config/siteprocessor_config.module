@@ -137,8 +137,8 @@ function siteprocessor_config_variable_form($form_state) {
     }
     $form[$module] = array(
       '#type' => 'fieldset',
-      '#title' => t($module),
-      '#collapsed' => FALSE,
+      '#title' => str_replace('_', ' ', t($module)),
+      '#collapsed' => TRUE,
       '#collapsible' => TRUE,
     );
     foreach ($module_key as $variable => $part) {
@@ -148,8 +148,14 @@ function siteprocessor_config_variable_form($form_state) {
         '#title' => $part,
         '#default_value' => variable_get($variable, NULL),
       );
+
+      // Collapse the configuration block if it's not configured.
+      if (variable_get($variable, FALSE)) {
+        $form[$module]['#collapsed'] = FALSE;
+      }
     }
   }
+
   if ($form) {
     return system_settings_form($form);
   }

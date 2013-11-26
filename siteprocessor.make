@@ -41,7 +41,7 @@ projects[jquery_colorpicker][subdir] = "contrib"
 projects[jquery_colorpicker][version] = "1.0-beta3"
 
 projects[mollom][subdir] = "contrib"
-projects[mollom][version] = "2.3"
+projects[mollom][version] = "2.8"
 
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.0"
