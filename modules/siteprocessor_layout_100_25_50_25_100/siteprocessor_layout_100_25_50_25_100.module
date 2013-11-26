@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the siteprocessor_layout_100_25_50_25_100 feature.
+ */
+
+include_once('siteprocessor_layout_100_25_50_25_100.features.inc');

@@ -1,0 +1,38 @@
+.panel-100-25-50-25-100 .left {
+  float: left;
+  width: 248px;
+}
+.panel-100-25-50-25-100 .middle {
+  float: left;
+  margin-left: 0;
+  width: 499px;
+}
+.panel-100-25-50-25-100 .right {
+  float: left;
+  margin-left: 0;
+  width: 248px;
+}
+.panel-100-25-50-25-100 .bottom {
+  clear: both;
+  width: 970px;
+}
+
+/** ADMIN CSS DEFINITIONS **/
+.page-admin .panel-100-25-50-25-100 .left {
+  float: left;
+  width: 25%;
+}
+.page-admin .panel-100-25-50-25-100 .middle {
+  float: left;
+  margin-left: 0;
+  width: 50%;
+}
+.page-admin .panel-100-25-50-25-100 .right {
+  float: left;
+  margin-left: 0;
+  width: 25%;
+}
+.page-admin .panel-100-25-50-25-100 .bottom {
+  clear: both;
+  width: 100%;
+}
