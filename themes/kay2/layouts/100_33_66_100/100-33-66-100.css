@@ -1,0 +1,25 @@
+.panel-100-33-66-100 .left {
+  float: left;
+  width: 315px;
+}
+.panel-100-33-66-100 .main {
+  float: left;
+  width: 655px;
+}
+.panel-100-33-66-100 .bottom {
+  clear: both;
+  width: 970px;
+}
+/** Admin CSS **/
+.page-admin .panel-100-33-66-100 .left {
+  float: left;
+  width: 33%;
+}
+.page-admin .panel-100-33-66-100 .main {
+  float: left;
+  width: 67%;
+}
+.page-admin .panel-100-33-66-100 .bottom {
+  clear: both;
+  width: 100%;
+}
