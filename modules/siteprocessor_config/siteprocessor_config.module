@@ -105,7 +105,6 @@ function siteprocessor_config_form_user_profile_form_alter(&$form, &$form_state)
   }
 }
 
-
 /**
  * Custom form submit handler for user profile form.
  * Only used if site havent been setup.

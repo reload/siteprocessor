@@ -7,6 +7,15 @@
 include_once('siteprocessor_base.features.inc');
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function siteprocessor_base_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
  * Implements hook_block_info().
  */
 function siteprocessor_base_block_info(){

@@ -32,3 +32,6 @@ siteprocessor[variable][mollom][mollom_public_key] = "Public Key"
 siteprocessor[variable][webtrends][webtrends_dcs_id] = "The site identification key."
 siteprocessor[variable][webtrends][webtrends_domain] = "The hostname of the tracked site."
 
+; Configuration for Twitter share box.
+siteprocessor[variable][siteprocessor_config][siteprocessor_config_twitter] = "Share on twitter box (Enter 1 for enable, and empty for disable)"
+
