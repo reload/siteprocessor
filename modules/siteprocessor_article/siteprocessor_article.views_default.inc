@@ -102,6 +102,20 @@ function siteprocessor_article_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+
+  /* Display: Articles RSS Feed */
+  $handler = $view->new_display('feed', 'Articles RSS Feed', 'articles_feed');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['path'] = 'feed/articles';
+  $handler->display->display_options['displays'] = array(
+    'panel_pane_3' => 'panel_pane_3',
+    'default' => 0,
+    'block' => 0,
+    'panel_pane_1' => 0,
+    'panel_pane_2' => 0,
+  );
   $export['latest_articles'] = $view;
 
   return $export;
