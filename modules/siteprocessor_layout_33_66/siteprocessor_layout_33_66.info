@@ -1,7 +1,7 @@
 name = "Siteprocessor Layout 33%, 66%"
 description = "Two columns (33% and 66%)"
 core = "7.x"
-package = "Siteprocessor"
+package = "Siteprocessor Layouts"
 php = "5.2.4"
 version = "7.x-1.0-beta3"
 project = "siteprocessor_layout_33_66"
