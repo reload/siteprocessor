@@ -1,0 +1,10 @@
+.panel-pane.pane-blog-latest-blogposts .pane-content h2 {
+  padding-left: 0;
+}
+.panel-pane.pane-blog-latest-blogposts .pane-content div.feed-icon {
+  padding: 0 10px;
+}
+.panel-pane.pane-blog-latest-blogposts .pane-content .views-row {
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 10px;
+}

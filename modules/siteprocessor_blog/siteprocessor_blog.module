@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Siteprocessor Blog feature.
+ */
+
+include_once('siteprocessor_blog.features.inc');

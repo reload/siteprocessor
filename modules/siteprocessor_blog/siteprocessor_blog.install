@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function siteprocessor_blog_install() {
+  db_insert('mollom_form')
+    ->fields(array(
+      'form_id' => 'comment_node_blog_form',
+      'entity' => 'comment',
+      'bundle' => 'comment_node_blog',
+      'mode' => 2,
+      'checks' => serialize(array('spam', 'profanity')),
+      'unsure' => 'moderate',
+      'enabled_fields' => serialize(array('comment_body')),
+      'module' => 'comment',
+    ))
+    ->execute();
+}
+
+/**
+ * Implements hook_uninstall()
+ */
+function siteprocessor_blog_uninstall() {
+  db_delete('mollom_form')
+    ->condition('form_id', 'comment_node_blog_form')
+    ->execute();
+}
