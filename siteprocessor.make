@@ -23,7 +23,7 @@ projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.2"
 
 projects[diff][subdir] = "contrib"
-projects[diff][version] = "2.0"
+projects[diff][version] = "3.2"
 
 projects[email][subdir] = "contrib"
 projects[email][version] = "1.0"
