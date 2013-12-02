@@ -60,11 +60,8 @@ projects[i18nviews][download][type] = "git"
 projects[i18nviews][download][url] = "http://git.drupal.org/project/i18nviews.git"
 projects[i18nviews][download][revision] = "26bd52c4664b0fec8155273f0c0f3ab8a5a2ef66"
 
-projects[location][type] = "module"
 projects[location][subdir] = "contrib"
-projects[location][download][type] = "git"
-projects[location][download][url] = "http://git.drupal.org/project/location.git"
-projects[location][download][revision] = "9d5228364d021e2192662d2d05ef538d20937c5c"
+projects[location][version] = "3.1"
 
 projects[media][subdir] = "contrib"
 projects[media][version] = "1.0-rc3"
