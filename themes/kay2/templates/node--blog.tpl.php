@@ -3,7 +3,7 @@ hide($content['comments']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="clearfix content"<?php print $content_attributes; ?>>
-    <h1><?php print $title; ?></h1>
+    <h1><?php print l($title, 'node/' . $node->nid); ?></h1>
     <?php if(isset($content['body']) && $content['body']['#items'][0]['summary']): ?>
       <div class="summary"><?php print render($content['body']['#items'][0]['summary']); ?></div>
     <?php endif; ?>
