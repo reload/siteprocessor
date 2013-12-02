@@ -26,7 +26,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = "3.2"
 
 projects[email][subdir] = "contrib"
-projects[email][version] = "1.0"
+projects[email][version] = "1.2"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "1.0-beta6"
