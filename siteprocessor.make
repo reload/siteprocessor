@@ -32,7 +32,7 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "1.0-beta6"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "1.2"
+projects[google_analytics][version] = "1.4"
 
 projects[jcaption][subdir] = "contrib"
 projects[jcaption][version] = "1.3"
