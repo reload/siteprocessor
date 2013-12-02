@@ -36,6 +36,8 @@ ul { list-style-type: none; }
   /* colors->mainmenugbtop, colors->mainmenubgbottom */
   background-image: -moz-linear-gradient(-90deg, #222222, #999999);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#999999));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#222222',EndColorStr='#999999');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#222222',EndColorStr='#999999')";
 }
 
 .pane-system-main-menu ul li:hover ul {
