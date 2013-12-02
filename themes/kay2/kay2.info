@@ -9,6 +9,8 @@ stylesheets[all][] = css/screen.css
 stylesheets[all][] = css/node.css
 stylesheets[all][] = css/blog.css
 stylesheets[all][] = css/colors.css
+stylesheets-conditional[IE][all][] = css/ie.css
+stylesheets-conditional[IE 8][all][] = css/ie8.css
 stylesheets[print][] = css/print.css
 
 ; Scripts

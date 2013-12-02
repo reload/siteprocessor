@@ -11,7 +11,7 @@ projects[better_exposed_filters][subdir] = "contrib"
 projects[better_exposed_filters][version] = "3.0-beta3"
 
 projects[conditional_styles][subdir] = "contrib"
-projects[conditional_styles][version] = "2.0"
+projects[conditional_styles][version] = "2.2"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
