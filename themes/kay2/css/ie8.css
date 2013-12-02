@@ -1,12 +1,28 @@
-ul.menu {
+.pane-system-main-menu {
+  position: relative;
+}
+.pane-system-main-menu ul.menu {
   padding: 0;
   margin: 0;
 }
-ul.menu li {
+.pane-system-main-menu ul.menu li {
   float: left;
   list-style: none;
-  border-right: 1px solid #323232;
+  border-right: 1px solid #999999;
   padding: 10px;
+}
+.pane-system-main-menu ul.menu li:hover ul {
+  position: absolute;
+  display: block;
+}
+.pane-system-main-menu ul.menu ul.menu {
+  display: none;
+  left: 0;
+  top: 40px;
+}
+.pane-system-main-menu ul.menu ul.menu li {
+  height: 20px;
+  line-height: 20px;
 }
 
 .field-type-image {

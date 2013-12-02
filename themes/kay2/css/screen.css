@@ -104,7 +104,6 @@ iframe,
 .pane-page-primary-links {
   margin-bottom: 4px;
   position: relative;
-  z-index: 100;
 }
 .pane-system-main-menu:after,
 .pane-page-primary-links:after {
