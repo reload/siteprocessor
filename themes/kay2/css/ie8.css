@@ -1,0 +1,18 @@
+ul.menu {
+  padding: 0;
+  margin: 0;
+}
+ul.menu li {
+  float: left;
+  list-style: none;
+  border-right: 1px solid #323232;
+  padding: 10px;
+}
+
+.field-type-image {
+  width: 200px;
+  height: auto;
+}
+.field-type-image img {
+  width: auto;
+}
