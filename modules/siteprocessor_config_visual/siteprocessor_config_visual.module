@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Implements hook_block_info().
  */
@@ -132,10 +130,6 @@ function siteprocessor_config_visual_images_form_submit($form, &$form_state) {
  */
 function siteprocessor_config_visual_permission() {
   return array(
-    'administer siteprocessor colors'=>array(
-      'title'=>t('administer siteprocessor colors'),
-      'description'=>t('administer siteprocessor colors'),
-    ),
     'administer site processor images'=>array(
       'title'=>t('administer site processor images'),
       'description'=>t('administer site processor images'),
@@ -171,17 +165,6 @@ function siteprocessor_config_visual_menu() {
     'file' => 'siteprocessor_config_visual.admin.inc',
     'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => -10,
-  );
-  $items['admin/config/siteprocessor/config_visual/colors'] = array(
-    'title' => 'Colors',
-    'description' => 'Adjust colors',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('siteprocessor_config_visual_colors_form'),
-    'access callback' => 'user_access',
-    'access arguments' => array('administer siteprocessor colors'),
-    'file' => 'siteprocessor_config_visual.admin.inc',
-    'type' => MENU_LOCAL_TASK,
-    'weight' => 0,
   );
 
   $items['admin/config/siteprocessor/config_visual/custom_css'] = array(
@@ -230,7 +213,6 @@ function siteprocessor_config_visual_init() {
 function _siteprocessor_config_visual_generate() {
   $css2add='';
   $css2add.=siteprocessor_config_visual_background_get_css()."\n";
-  $css2add.=siteprocessor_config_visual_color_get_css()."\n";
   $css2add.=siteprocessor_config_visual_custom_get_css()."\n";
   file_save_data($css2add,'public://siteprocessor_config_visual.css',FILE_EXISTS_REPLACE);
   // The file just changed, make sure its effectuated.
@@ -265,174 +247,3 @@ function siteprocessor_config_visual_background_get_css(){
   }
   else return '';
 }
-
-
-/**
- * Implements a custom form submit handler.
- */
-function siteprocessor_config_visual_colors_form_submit($form, &$form_state) {
-  $color_keys=siteprocessor_config_visual_colors_get(array('keys_list'=>true));
-  $color_list=array();
-  foreach($color_keys as $key){
-    if(isset($form_state['values'][$key])) {
-      $color_list[$key]=$form_state['values'][$key];
-    }
-  }
-  siteprocessor_config_visual_colors_set($color_list);
-  drupal_set_message(t('Colors have been saved'), 'status');
-}
-
-/**
- * From http://www.php.net/manual/en/function.array-merge-recursive.php
- *
- * Merges arrays in many levels
- */
-function MergeArrays($Arr1, $Arr2) {
-  foreach($Arr2 as $key => $Value) {
-    if(array_key_exists($key, $Arr1) && is_array($Value)) {
-      $Arr1[$key] = MergeArrays($Arr1[$key], $Arr2[$key]);
-    }
-    else {
-      $Arr1[$key] = $Value;
-    }
-  }
-  return $Arr1;
-}
-
-/*
- * Sets the custom color CSS by getting custom colors and replacing the tags in the color template css files. Unmatched tags are set to magenta
- */
-function siteprocessor_config_visual_color_get_css(){
-  //FIXME: cache from here (with theme as key)
-  if($css_cache=cache_get('siteprocessor_config_visual_color_generated_css','cache')){
-    $css2add=$css_cache->data;
-  }
-  else{
-    global $theme_key;
-    $info_arr=siteprocessor_config_visual_parse_theme_info($theme_key);
-    //skip if not supported by active theme
-    if(!isset($info_arr['siteprocessor']['colors'])) return;
-
-    $colors=siteprocessor_config_visual_colors_get(array('keys_values_list'=>true));
-
-    $css2add='';
-    foreach($info_arr['siteprocessor']['color_css'] as $theme=>$files){
-      foreach($files as $file){
-        $filename=drupal_get_path('theme',$theme).'/'.$file;
-        if(file_exists($filename)) {
-          $file_content=file_get_contents($filename);
-          foreach($colors as $key=>$color){
-            $file_content=str_replace("[[$key]]","#$color",$file_content);
-          }
-          $file_content=preg_replace('/(\[\[[A-Za-z0-9_-]+\]\])/','magenta',$file_content);
-          $css2add.=$file_content;
-        }
-      }
-    }
-    cache_set('siteprocessor_config_visual_color_generated_css',$css2add,'cache');
-  }
-  //to here
-  return $css2add;
-}
-
-/*
- * Returns parsed info from the chosen theme and all its subthemes
- */
-
-function siteprocessor_config_visual_parse_theme_info($theme){
-  $infofile=drupal_get_path('theme', $theme).'/'.$theme.'.info';
-  $file_arr=drupal_parse_info_file($infofile);
-  //check for basetheme
-  if(isset($file_arr['base theme'])){
-    $base_arr=siteprocessor_config_visual_parse_theme_info($file_arr['base theme']);
-    //merge from basetheme info
-    $file_arr=MergeArrays($base_arr,$file_arr);
-  }
-
-  //FIXME: register order of inherited themes
-  $file_arr['siteprocessor']['theme_order'][]=$theme;
-  return $file_arr;
-}
-
-/*
- * Returns a list of color groups defined in the themes, as a key=>value array
- */
-function siteprocessor_config_visual_color_groups_get(){
-  $theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);
-  $color_groups=$info_arr['siteprocessor']['color_groups'];
-  return $color_groups;
-}
-
-/*
- * Returns a list of color definitions defined in the themes, and merged with the customized colors stored in a variable. Can return various formats depending on args:
- *
- * keys_list=>true:
- *   returns a list of color keys
- *
- * keys_values_list=>true:
- *   returns a list of color keys and values
- *
- * Default:
- *   returns a structure
- *
- */
-function siteprocessor_config_visual_colors_get($args=null){
-  $theme=variable_get('theme_default','kaykay');
-  $info_arr=siteprocessor_config_visual_parse_theme_info($theme);;
-  //skip if not supported by active theme
-  if(!isset($info_arr['siteprocessor']['colors'])) return array();
-  $colors=$info_arr['siteprocessor']['colors'];
-
-  //returns list of keys
-  if($args){
-    if(isset($args['keys_list'])){
-      $keys=array();
-      foreach($colors as $group){
-        foreach($group as $key=>$item){
-          $keys[]=$key;
-        }
-      }
-      return $keys;
-    }
-  }
-
-  //getting customized colors
-  $colors_var=variable_get('siteprocessor_config_visual_colors', array());
-  if(!is_array($colors_var)){
-    $colors_var=array();
-  }
-  foreach($colors as $gkey=>$group){
-    foreach($group as $key=>$item){
-      if(isset($colors_var[$key])){
-        $colors[$gkey][$key]['value']=$colors_var[$key];
-      }
-    }
-  }
-
-  //returns list of keys and values
-  if($args){
-    if(isset($args['keys_values_list'])){
-      $list=array();
-      foreach($colors as $group){
-        foreach($group as $key=>$item){
-          $list[$key]=$item['value'];
-        }
-      }
-      return $list;
-    }
-  }
-
-  //returns entire structure
-  return $colors;
-}
-
-
-/*
- * Saves the custom colors in a variable
- */
-function siteprocessor_config_visual_colors_set($color_list){
-  variable_set('siteprocessor_config_visual_colors',$color_list);
-  cache_clear_all('siteprocessor_config_visual_color_generated_css', 'cache');
-}
-
