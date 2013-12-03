@@ -71,7 +71,7 @@ projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = "2.0-beta1"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.2"
+projects[panels][version] = "3.3"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
