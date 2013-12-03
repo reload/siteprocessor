@@ -65,7 +65,7 @@ projects[media][subdir] = "contrib"
 projects[media][version] = "1.3"
 
 projects[menu_block][subdir] = "contrib"
-projects[menu_block][version] = "2.2"
+projects[menu_block][version] = "2.3"
 
 projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = "2.0-beta1"
