@@ -986,9 +986,9 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'panels',
   );
 
-  // Exported permission: 'use text format full_html'.
-  $permissions['use text format full_html'] = array(
-    'name' => 'use text format full_html',
+  // Exported permission: 'use text format html'.
+  $permissions['use text format html'] = array(
+    'name' => 'use text format html',
     'roles' => array(
       'editor' => 'editor',
       'site admin' => 'site admin',

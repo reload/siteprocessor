@@ -10,34 +10,36 @@
 function siteprocessor_base_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Full HTML.
-  $formats['full_html'] = array(
-    'format' => 'full_html',
-    'name' => 'Full HTML',
+  // Exported format: HTML.
+  $formats['html'] = array(
+    'format' => 'html',
+    'name' => 'HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => 1,
+    'weight' => 0,
     'filters' => array(
       'oembed_legacy' => array(
-        'weight' => 0,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(
           'maxwidth' => '',
           'maxheight' => '',
         ),
       ),
-      'filter_autop' => array(
-        'weight' => 1,
+      'media_filter' => array(
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
+      ),
+      'filter_url' => array(
+        'weight' => -45,
+        'status' => 1,
+        'settings' => array(
+          'filter_url_length' => 72,
+        ),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'media_filter' => array(
-        'weight' => 10,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),

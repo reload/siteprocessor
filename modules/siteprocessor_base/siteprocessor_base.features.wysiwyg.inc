@@ -10,9 +10,9 @@
 function siteprocessor_base_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: full_html
-  $profiles['full_html'] = array(
-    'format' => 'full_html',
+  // Exported profile: html
+  $profiles['html'] = array(
+    'format' => 'html',
     'editor' => 'ckeditor',
     'settings' => array(
       'default' => 1,
@@ -24,10 +24,6 @@ function siteprocessor_base_wysiwyg_default_profiles() {
         'default' => array(
           'Bold' => 1,
           'Italic' => 1,
-          'Underline' => 1,
-          'Undo' => 1,
-          'Redo' => 1,
-          'Link' => 1,
         ),
         'drupal' => array(
           'media' => 1,
