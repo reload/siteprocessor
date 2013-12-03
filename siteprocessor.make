@@ -37,9 +37,6 @@ projects[google_analytics][version] = "1.4"
 projects[jcaption][subdir] = "contrib"
 projects[jcaption][version] = "1.3"
 
-projects[jquery_colorpicker][subdir] = "contrib"
-projects[jquery_colorpicker][version] = "1.0-beta3"
-
 projects[mollom][subdir] = "contrib"
 projects[mollom][version] = "2.8"
 

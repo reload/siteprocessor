@@ -228,15 +228,6 @@ function siteprocessor_permissions_user_default_permissions() {
     'module' => 'image',
   );
 
-  // Exported permission: 'administer jquery colorpicker'.
-  $permissions['administer jquery colorpicker'] = array(
-    'name' => 'administer jquery colorpicker',
-    'roles' => array(
-      'superadmin' => 'superadmin',
-    ),
-    'module' => 'jquery_colorpicker',
-  );
-
   // Exported permission: 'administer languages'.
   $permissions['administer languages'] = array(
     'name' => 'administer languages',
