@@ -1,7 +1,8 @@
-core = "7.x"
-dependencies[] = "strongarm"
-features[ctools][] = "strongarm:strongarm:1"
-features[variable][] = "siteprocessor_facebook_language"
-name = "Siteprocessor Facebook"
-package = "Siteprocessor"
-version = "7.x-1.0-rc1"
+name = Siteprocessor Facebook
+core = 7.x
+package = Siteprocessor
+version = 7.x-1.0-rc1
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = siteprocessor_facebook_language

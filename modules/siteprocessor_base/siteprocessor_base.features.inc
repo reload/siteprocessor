@@ -7,16 +7,13 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function siteprocessor_base_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function siteprocessor_base_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panels_mini" && $api == "panels_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -28,7 +25,7 @@ function siteprocessor_base_ctools_plugin_api() {
 function siteprocessor_base_image_default_styles() {
   $styles = array();
 
-  // Exported image style: carousel_image
+  // Exported image style: carousel_image.
   $styles['carousel_image'] = array(
     'name' => 'carousel_image',
     'effects' => array(
@@ -42,16 +39,17 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '600',
-          'height' => '330',
+          'width' => 600,
+          'height' => 330,
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'carousel_image',
   );
 
-  // Exported image style: content_top_image
+  // Exported image style: content_top_image.
   $styles['content_top_image'] = array(
     'name' => 'content_top_image',
     'effects' => array(
@@ -65,16 +63,17 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '600',
+          'width' => 600,
           'height' => '',
           'upscale' => 1,
         ),
         'weight' => 1,
       ),
     ),
+    'label' => 'content_top_image',
   );
 
-  // Exported image style: image_tile
+  // Exported image style: image_tile.
   $styles['image_tile'] = array(
     'name' => 'image_tile',
     'effects' => array(
@@ -88,16 +87,17 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '285',
-          'height' => '214',
+          'width' => 285,
+          'height' => 214,
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'image_tile',
   );
 
-  // Exported image style: large_item_image
+  // Exported image style: large_item_image.
   $styles['large_item_image'] = array(
     'name' => 'large_item_image',
     'effects' => array(
@@ -111,16 +111,17 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '160',
-          'height' => '120',
+          'width' => 160,
+          'height' => 120,
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'large_item_image',
   );
 
-  // Exported image style: node_image
+  // Exported image style: node_image.
   $styles['node_image'] = array(
     'name' => 'node_image',
     'effects' => array(
@@ -134,16 +135,17 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '250',
+          'width' => 250,
           'height' => '',
           'upscale' => 0,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'node_image',
   );
 
-  // Exported image style: toplogo_image
+  // Exported image style: toplogo_image.
   $styles['toplogo_image'] = array(
     'name' => 'toplogo_image',
     'effects' => array(
@@ -157,13 +159,14 @@ function siteprocessor_base_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '995',
+          'width' => 995,
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'toplogo_image',
   );
 
   return $styles;

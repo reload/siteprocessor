@@ -10,7 +10,7 @@
 function siteprocessor_layout_100_default_page_manager_handlers() {
   $export = array();
 
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context';
@@ -27,7 +27,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = '100x';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -43,7 +43,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
   $display->title = '%node:title	';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = '1';
     $pane->type = 'panels_mini';
@@ -61,9 +61,10 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-1'] = $pane;
     $display->panels['1'][0] = 'new-1';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = '2';
     $pane->type = 'panels_mini';
@@ -84,6 +85,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-2'] = $pane;
     $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
@@ -98,7 +100,7 @@ function siteprocessor_layout_100_default_page_manager_handlers() {
  * Implements hook_default_page_manager_pages().
  */
 function siteprocessor_layout_100_default_page_manager_pages() {
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'articles';
@@ -127,7 +129,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_articles_panel_context';
@@ -144,7 +146,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = '100x';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -160,7 +162,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $display->title = 'Seneste nyheder';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = '1';
     $pane->type = 'panels_mini';
@@ -178,9 +180,10 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-1'] = $pane;
     $display->panels['1'][0] = 'new-1';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = '2';
     $pane->type = 'panels_mini';
@@ -198,6 +201,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-2'] = $pane;
     $display->panels['2'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
@@ -206,7 +210,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['articles'] = $page;
 
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'event_overview';
@@ -235,7 +239,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_event_overview_panel_context';
@@ -252,7 +256,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = '100x';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -268,8 +272,8 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $display->title = 'Seneste nyheder';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
-    $pane->pid = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
     $pane->panel = '1';
     $pane->type = 'panels_mini';
     $pane->subtype = 'top_row';
@@ -286,10 +290,11 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-1'] = $pane;
-    $display->panels['1'][0] = 'new-1';
-    $pane = new stdClass;
-    $pane->pid = 'new-2';
+    $pane->locks = '';
+    $display->content['new-3'] = $pane;
+    $display->panels['1'][0] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
     $pane->panel = '2';
     $pane->type = 'panels_mini';
     $pane->subtype = 'events_page';
@@ -306,15 +311,16 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-2'] = $pane;
-    $display->panels['2'][0] = 'new-2';
+    $pane->locks = '';
+    $display->content['new-4'] = $pane;
+    $display->panels['2'][0] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['event_overview'] = $page;
 
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'event_overview_by_calendar';
@@ -352,7 +358,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_event_overview_by_calendar_panel_context';
@@ -369,7 +375,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = '100x';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -389,8 +395,8 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $display->title = 'Arrangementer';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
-    $pane->pid = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
     $pane->panel = '1';
     $pane->type = 'panels_mini';
     $pane->subtype = 'top_row';
@@ -407,10 +413,11 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-1'] = $pane;
-    $display->panels['1'][0] = 'new-1';
-    $pane = new stdClass;
-    $pane->pid = 'new-2';
+    $pane->locks = '';
+    $display->content['new-5'] = $pane;
+    $display->panels['1'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
     $pane->panel = '2';
     $pane->type = 'panels_mini';
     $pane->subtype = 'event_by_calendar';
@@ -430,15 +437,16 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-2'] = $pane;
-    $display->panels['2'][0] = 'new-2';
+    $pane->locks = '';
+    $display->content['new-6'] = $pane;
+    $display->panels['2'][0] = 'new-6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['event_overview_by_calendar'] = $page;
 
-  $page = new stdClass;
+  $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'front_page';
@@ -465,7 +473,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'admin_paths' => FALSE,
   );
   $page->default_handlers = array();
-  $handler = new stdClass;
+  $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'page_front_page_panel_context';
@@ -482,7 +490,7 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
   );
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = '100x';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -502,8 +510,8 @@ function siteprocessor_layout_100_default_page_manager_pages() {
   $display->title = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
-    $pane->pid = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
     $pane->panel = '1';
     $pane->type = 'panels_mini';
     $pane->subtype = 'top_row';
@@ -520,10 +528,11 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-1'] = $pane;
-    $display->panels['1'][0] = 'new-1';
-    $pane = new stdClass;
-    $pane->pid = 'new-2';
+    $pane->locks = '';
+    $display->content['new-7'] = $pane;
+    $display->panels['1'][0] = 'new-7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8';
     $pane->panel = '2';
     $pane->type = 'panels_mini';
     $pane->subtype = 'front_page_content';
@@ -540,14 +549,15 @@ function siteprocessor_layout_100_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-2'] = $pane;
-    $display->panels['2'][0] = 'new-2';
+    $pane->locks = '';
+    $display->content['new-8'] = $pane;
+    $display->panels['2'][0] = 'new-8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['front_page'] = $page;
 
- return $pages;
+  return $pages;
 
 }

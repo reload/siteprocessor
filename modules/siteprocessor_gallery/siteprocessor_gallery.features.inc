@@ -7,12 +7,10 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function siteprocessor_gallery_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function siteprocessor_gallery_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -24,7 +22,7 @@ function siteprocessor_gallery_ctools_plugin_api() {
 function siteprocessor_gallery_image_default_styles() {
   $styles = array();
 
-  // Exported image style: gallery_thumbnail
+  // Exported image style: gallery_thumbnail.
   $styles['gallery_thumbnail'] = array(
     'name' => 'gallery_thumbnail',
     'effects' => array(
@@ -38,12 +36,13 @@ function siteprocessor_gallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '130',
-          'height' => '93',
+          'width' => 130,
+          'height' => 93,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
+    'label' => 'gallery_thumbnail',
   );
 
   return $styles;

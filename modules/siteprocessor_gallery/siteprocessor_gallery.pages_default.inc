@@ -64,7 +64,7 @@ function siteprocessor_gallery_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-1';
     $pane->panel = '2_1';
     $pane->type = 'panels_mini';
     $pane->subtype = 'node_view';
@@ -85,8 +85,8 @@ function siteprocessor_gallery_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['2_1'][0] = 'new-2';
+    $display->content['new-1'] = $pane;
+    $display->panels['2_1'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -10,7 +10,7 @@
 function siteprocessor_layout_33_66_default_panels_mini() {
   $export = array();
 
-  $mini = new stdClass;
+  $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
   $mini->name = 'left_column';
@@ -20,7 +20,7 @@ function siteprocessor_layout_33_66_default_panels_mini() {
   $mini->requiredcontexts = array();
   $mini->contexts = array();
   $mini->relationships = array();
-  $display = new panels_display;
+  $display = new panels_display();
   $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
@@ -33,7 +33,7 @@ function siteprocessor_layout_33_66_default_panels_mini() {
   $display->title = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'block';
@@ -51,9 +51,10 @@ function siteprocessor_layout_33_66_default_panels_mini() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
+    $pane->locks = '';
     $display->content['new-1'] = $pane;
     $display->panels['middle'][0] = 'new-1';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = 'middle';
     $pane->type = 'block';
@@ -71,9 +72,10 @@ function siteprocessor_layout_33_66_default_panels_mini() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
+    $pane->locks = '';
     $display->content['new-2'] = $pane;
     $display->panels['middle'][1] = 'new-2';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -88,9 +90,10 @@ function siteprocessor_layout_33_66_default_panels_mini() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
+    $pane->locks = '';
     $display->content['new-3'] = $pane;
     $display->panels['middle'][2] = 'new-3';
-    $pane = new stdClass;
+    $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -105,6 +108,7 @@ function siteprocessor_layout_33_66_default_panels_mini() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 3;
+    $pane->locks = '';
     $display->content['new-4'] = $pane;
     $display->panels['middle'][3] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
