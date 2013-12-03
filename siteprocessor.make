@@ -81,7 +81,7 @@ projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
 
 projects[oembed][subdir] = "contrib"
-projects[oembed][version] = "0.1-beta2"
+projects[oembed][version] = "0.1-beta3"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.1"
