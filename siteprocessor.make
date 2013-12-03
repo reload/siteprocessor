@@ -44,7 +44,7 @@ projects[mollom][subdir] = "contrib"
 projects[mollom][version] = "2.8"
 
 projects[link][subdir] = "contrib"
-projects[link][version] = "1.0"
+projects[link][version] = "1.2"
 
 projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.3"
