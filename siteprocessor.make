@@ -84,7 +84,7 @@ projects[oembed][subdir] = "contrib"
 projects[oembed][version] = "0.1-beta3"
 
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = "2.1"
+projects[wysiwyg][version] = "2.2"
 
 projects[webtrends][type] = "module"
 projects[webtrends][download][type] = "git"
@@ -101,4 +101,4 @@ projects[field_collection][subdir] = "contrib"
 projects[field_collection][version] = "1.0-beta4"
 
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.zip"
