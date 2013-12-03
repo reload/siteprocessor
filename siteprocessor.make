@@ -29,7 +29,7 @@ projects[email][subdir] = "contrib"
 projects[email][version] = "1.2"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta6"
+projects[features][version] = "2.0"
 
 projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "1.4"
@@ -74,7 +74,7 @@ projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.2"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.0-beta5"
+projects[strongarm][version] = "2.0"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
