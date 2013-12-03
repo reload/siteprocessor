@@ -5,7 +5,7 @@ projects[drupal][type] = core
 projects[drupal][version] = "7.24"
 
 projects[calendar][subdir] = "contrib"
-projects[calendar][version] = "3.1"
+projects[calendar][version] = "3.4"
 
 projects[better_exposed_filters][subdir] = "contrib"
 projects[better_exposed_filters][version] = "3.0-beta3"
@@ -17,7 +17,7 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.5"
+projects[date][version] = "2.6"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.3"
@@ -71,6 +71,7 @@ projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = "2.0-beta1"
 
 projects[panels][subdir] = "contrib"
+projects[panels][version] = "3.3"
 projects[panels][version] = "3.3"
 
 projects[strongarm][subdir] = "contrib"
