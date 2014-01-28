@@ -100,10 +100,10 @@ function siteprocessor_article_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['path'] = 'feed/articles';
   $handler->display->display_options['displays'] = array(
+    'panel_pane_1' => 'panel_pane_1',
     'panel_pane_3' => 'panel_pane_3',
     'default' => 0,
     'block' => 0,
-    'panel_pane_1' => 0,
     'panel_pane_2' => 0,
   );
   $export['latest_articles'] = $view;
