@@ -59,7 +59,7 @@ projects[location][subdir] = "contrib"
 projects[location][version] = "3.1"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "1.3"
+projects[media][version] = "1.4"
 
 projects[menu_block][subdir] = "contrib"
 projects[menu_block][version] = "2.3"
